@@ -1,95 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Infuzy</title>
-  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infuzy | About Us</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link href="static/css/tailwind.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        .nav-link:hover { color: #8b5cf6; }
+        .btn-primary {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3 rgba(99,102,241,0.3), 0 4px 6px -2 rgba(99,102,241,0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Navbar (same everywhere) -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="text-2xl font-bold text-indigo-600">Infuzy</a>
-      <ul class="flex space-x-6">
-        <li><a href="for-nurses.html" class="text-gray-600 hover:text-indigo-600 font-medium">For Nurses</a></li>
-        <li><a href="for-providers.html" class="text-gray-600 hover:text-indigo-600 font-medium">For Providers</a></li>
-        <li><a href="about.html" class="text-gray-600 hover:text-indigo-600 font-medium">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="bg-indigo-600 text-white py-20 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">About Infuzy</h1>
-    <p class="text-lg md:text-xl max-w-2xl mx-auto animate__animated animate__fadeInUp">
-      We’re on a mission to transform infusion care by connecting providers and patients with qualified nurses—quickly, safely, and reliably.
-    </p>
-  </section>
-
-  <!-- Mission / Values -->
-  <section class="py-16 container mx-auto px-6 md:px-12">
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Vision</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-white p-8 rounded-xl shadow" data-aos="fade-up">
-        <i data-feather="compass" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Guided by Purpose</h3>
-        <p>We believe access to infusion therapy should be safe, seamless, and patient-centered.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
-        <i data-feather="trending-up" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Scalable Solutions</h3>
-        <p>We help practices and pharmacies scale infusion services without the burden of permanent staffing.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl shadow" data-aos="fade-up" data-aos-delay="200">
-        <i data-feather="heart" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Patient-Centered Care</h3>
-        <p>Every match we make is designed to improve outcomes and build trust between patients and providers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="py-16 bg-indigo-50">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-      <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Meet Our Team</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Employee 1 -->
-        <div class="bg-white p-8 rounded-xl shadow" data-aos="fade-up">
-          <img src="static/images/employee1.jpg" alt="Employee 1" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
-          <h3 class="text-xl font-semibold">Alex Morgan</h3>
-          <p class="text-indigo-600 mb-4">Co-Founder & CEO</p>
-          <p>Alex brings experience in healthcare operations and technology innovation, leading Infuzy’s vision to modernize infusion staffing.</p>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="activity" class="h-8 w-8 text-indigo-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">Infuzy</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="nav-link border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="for-nurses.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Nurses</a>
+                        <a href="for-providers.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Providers</a>
+                        <a href="about.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium">Sign In</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <i data-feather="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <!-- Employee 2 -->
-        <div class="bg-white p-8 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
-          <img src="static/images/employee2.jpg" alt="Employee 2" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
-          <h3 class="text-xl font-semibold">Jordan Lee</h3>
-          <p class="text-indigo-600 mb-4">Co-Founder & COO</p>
-          <p>Jordan has a background in nursing and healthcare administration, ensuring Infuzy delivers quality care with every match.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient pt-24 pb-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl lg:text-6xl animate__animated animate__fadeIn">
+                About Infuzy
+            </h1>
+            <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-2xl mx-auto">
+                Our mission is to revolutionize home infusion services, connecting healthcare providers with qualified nurses to deliver exceptional care.
+            </p>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="bg-white py-16 text-center">
-    <h2 class="text-3xl font-bold mb-6" data-aos="zoom-in">We’re just getting started</h2>
-    <p class="text-lg mb-8" data-aos="zoom-in" data-aos-delay="100">Join us as we build the future of infusion care together.</p>
-    <a href="for-providers.html" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">Work With Us</a>
-  </section>
+    <!-- Our Story Section -->
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Story</h2>
+            <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Delivering quality home infusion with technology and care
+            </p>
+            <p class="mt-4 text-lg text-gray-500">
+                Infuzy was founded to solve the challenges of matching qualified nurses with patients who need home infusion services. By streamlining the process and leveraging technology, we ensure patients receive timely and high-quality care.
+            </p>
+        </div>
+    </div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-8 mt-16 text-center">
-    <p>&copy; 2025 Infuzy. All rights reserved.</p>
-  </footer>
+    <!-- Team Section -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Meet the Team</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">The people behind Infuzy</p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
+                <!-- Employee 1 -->
+                <div class="text-center" data-aos="fade-up">
+                    <img class="mx-auto h-32 w-32 rounded-full object-cover" src="static/images/employee1.jpg" alt="Alice Smith">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Alice Smith</h3>
+                    <p class="text-indigo-600">Co-Founder & CEO</p>
+                    <p class="mt-2 text-gray-500">Alice brings over 10 years of nursing experience and technology leadership to Infuzy, ensuring patient care is at the forefront.</p>
+                </div>
+                <!-- Employee 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img class="mx-auto h-32 w-32 rounded-full object-cover" src="static/images/employee2.jpg" alt="Bob Johnson">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Bob Johnson</h3>
+                    <p class="text-indigo-600">Co-Founder & CTO</p>
+                    <p class="mt-2 text-gray-500">Bob oversees our platform development, making sure the technology seamlessly connects nurses and providers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script>feather.replace();</script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">API</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Resources</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Guides</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Security</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <div class="flex space-x-6 md:order-2">
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                </div>
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; 2023 Infuzy, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+        feather.replace();
+    </script>
 </body>
 </html>
