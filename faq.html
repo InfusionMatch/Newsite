@@ -1,182 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NorthPeak Care | FAQs</title>
-<meta name="description" content="Frequently Asked Questions for nurses and providers using NorthPeak Care. Find answers on scheduling, credentialing, and more.">
-<link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Animate.css & AOS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<!-- Feather Icons -->
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-<style>
-  .hero-gradient {
-    background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%);
-  }
-  .btn-primary {
-    background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-    color: white;
-    transition: all 0.3s ease;
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-  }
-  .faq-answer.open {
-    max-height: 500px;
-    padding-top: 0.5rem;
-  }
-  .nav-link:hover { color: #27aae1; }
-</style>
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I sign up as a nurse?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can sign up through our 'For Nurses' page. Complete your profile and upload credentials to start receiving job matches." }
-    },
-    {
-      "@type": "Question",
-      "name": "Are background checks required?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all nurses undergo a comprehensive background check and credential verification before being matched with providers." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I choose my schedule?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Nurses can pick assignments that fit their availability, expertise, and location preferences." }
-    }
-  ]
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthPeak Care | FAQs</title>
+    <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #262262 50%, #27aae1 100%);
+        }
+        .faq-question {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .faq-question:hover {
+            background-color: #f3f4f6;
+        }
+        .answer-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .answer-container.open {
+            max-height: 500px;
+            padding-top: 0.5rem;
+        }
+        .nav-link:hover {
+            color: #8b5cf6;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+        }
+    </style>
 </head>
-
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center">
-      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
-    </a>
-
-    <!-- Links -->
-    <div class="hidden sm:flex space-x-6 flex-1 justify-center">
-      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
-      <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
-      <a href="faq.html" class="nav-link text-gray-900 font-medium border-b-2 border-indigo-500">FAQs</a>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center">
+            <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-8 w-auto sm:h-10 object-contain">
+          </a>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+          <a href="for-nurses.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Nurses</a>
+          <a href="for-providers.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Providers</a>
+          <a href="about.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+          <a href="faq.html" class="nav-link border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">FAQs</a>
+        </div>
+      </div>
+      <div class="hidden sm:ml-6 sm:flex sm:items-center">
+        <a href="comingsoon.html" class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium inline-block text-center">Sign In</a>
+      </div>
+      <div class="-mr-2 flex items-center sm:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+          <i data-feather="menu" class="block h-6 w-6"></i>
+        </button>
+      </div>
     </div>
-
-    <!-- Sign In -->
-    <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient pt-32 pb-28 text-white text-center">
-  <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Frequently Asked Questions</h1>
-  <p class="text-lg sm:text-xl mb-6 animate__animated animate__fadeInUp animate__delay-1s">Find answers quickly to questions from both nurses and providers.</p>
-  <div class="flex justify-center space-x-4">
-    <a href="#nurses" class="btn-primary px-4 py-2 rounded-md">For Nurses</a>
-    <a href="#providers" class="btn-primary px-4 py-2 rounded-md">For Providers</a>
-  </div>
-</section>
-
-<!-- Nurses FAQ -->
-<section id="nurses" class="py-16 bg-gray-50">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-center mb-8">For Nurses</h2>
-    <div class="space-y-6">
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up">
-        <h3 class="font-semibold text-gray-900">How do I sign up as a nurse?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">You can sign up through our "For Nurses" page. Complete your profile and upload credentials to start receiving job matches.</p>
-        </div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="font-semibold text-gray-900">Are background checks required?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">Yes, all nurses undergo a comprehensive background check and credential verification before being matched with providers.</p>
-        </div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="font-semibold text-gray-900">Can I choose my schedule?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">Absolutely. Nurses can pick assignments that fit their availability, expertise, and location preferences. Pick up only when you want to work!</p>
-        </div>
-      </div>
+<div class="hero-gradient pt-24 pb-32 text-white text-center" data-aos="fade-down">
+    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl lg:text-6xl animate__animated animate__fadeIn">
+        Frequently Asked Questions
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+        Find answers quickly to questions from both nurses and providers.
+    </p>
+    <div class="mt-6 flex justify-center space-x-4">
+        <button class="btn-primary px-4 py-2 rounded-md toggle-tab" data-target="#nurses">Nurses</button>
+        <button class="btn-primary px-4 py-2 rounded-md toggle-tab" data-target="#providers">Providers</button>
     </div>
-  </div>
-</section>
+</div>
 
-<!-- Providers FAQ -->
-<section id="providers" class="py-16">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-center mb-8">For Providers</h2>
-    <div class="space-y-6">
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up">
-        <h3 class="font-semibold text-gray-900">How do I post a job request?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">Providers can post job requests by signing in and using the dashboard to specify location, schedule, and nurse requirements.</p>
+<!-- Nurses FAQ Section -->
+<div id="nurses" class="py-16 bg-gray-50 faq-tab" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">For Nurses</h2>
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up">
+                <h3 class="font-semibold text-gray-900">How do I sign up as a nurse?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">You can sign up through our "For Nurses" page. Complete your profile and upload credentials to start receiving job matches.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="font-semibold text-gray-900">Are background checks required?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">Yes, all nurses undergo a comprehensive background check and credential verification before being matched with providers.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="font-semibold text-gray-900">Can I choose my schedule?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">Absolutely. Nurses can pick assignments that fit their availability, expertise, and location preferences.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="font-semibold text-gray-900">How do you verify nurse credentials?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">All nurses are verified through background checks, licensing validation, and credential documentation before appearing on the platform. We also continuously monitor nurses for license changes daily.</p>
-        </div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow cursor-pointer faq-question" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="font-semibold text-gray-900">Is there support if issues arise?</h3>
-        <div class="faq-answer mt-2">
-          <p class="text-gray-500">Yes, our support team is available to assist with scheduling, billing, or platform usage issues for providers and nurses alike.</p>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
+
+<!-- Providers FAQ Section -->
+<div id="providers" class="py-16 bg-gray-50 faq-tab hidden" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">For Providers</h2>
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up">
+                <h3 class="font-semibold text-gray-900">How do I post a job request?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">Providers can post job requests by signing in and using the dashboard to specify location, schedule, and nurse requirements.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="font-semibold text-gray-900">How do you verify nurse credentials?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">All nurses are verified through background checks, licensing validation, and credential documentation before appearing on the platform.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow faq-question" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="font-semibold text-gray-900">Is there support if issues arise?</h3>
+                <div class="answer-container mt-2">
+                    <p class="text-gray-500">Yes, our support team is available to assist with scheduling, billing, or platform usage issues for providers and nurses alike.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Footer -->
-<footer class="bg-gray-800">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
-        <ul class="mt-4 space-y-4">
-          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
-          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
-          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
-        <ul class="mt-4 space-y-4">
-          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col md:items-end">
-        <div class="flex space-x-6 mb-4">
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i
+<footer class="bg-gray-800" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+                <ul class="mt-4 space-y-4">
+                    <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Privacy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+                <ul class="mt-4 space-y-4">
+                    <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col md:items-end">
+                <div class="flex space-x-6 mb-4">
+                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                </div>
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    feather.replace();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const a = q.querySelector('.answer-container');
+            a.classList.toggle('open');
+        });
+    });
+
+    // Tab toggle between nurses/providers
+    document.querySelectorAll('.toggle-tab').forEach(button => {
+        button.addEventListener('click', () => {
+            const target = document.querySelector(button.dataset.target);
+            document.querySelectorAll('.faq-tab').forEach(tab => tab.classList.add('hidden'));
+            target.classList.remove('hidden');
+        });
+    });
+</script>
+</body>
+</html>
