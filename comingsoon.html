@@ -52,14 +52,17 @@
     </p>
 
     <!-- Email Signup Form -->
-    <form class="flex flex-col sm:flex-row items-center gap-4 justify-center"
-          action="https://formspree.io/f/xdkwalka"
+    <form id="notify-form" class="flex flex-col sm:flex-row items-center gap-4 justify-center"
+          action="https://formspree.io/f/your-form-id"
           method="POST"
           data-aos="fade-up" data-aos-delay="400">
       <input type="email" name="email" placeholder="you@example.com" required
              class="px-4 py-3 rounded-md border border-gray-300 w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-indigo-500">
       <button type="submit" class="btn-primary px-6 py-3 rounded-md font-medium">Notify Me</button>
     </form>
+
+    <!-- Success Message -->
+    <p id="success-message" class="text-green-400 mt-4 hidden">Thank you! You'll be notified when we launch.</p>
 
     <!-- Social Icons -->
     <div class="flex space-x-6 mt-8" data-aos="fade-up" data-aos-delay="600">
@@ -83,6 +86,27 @@
 <script>
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   feather.replace();
+
+  // AJAX Form Submission
+  const form = document.getElementById('notify-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.classList.remove('hidden');
+        form.reset();
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    }).catch(error => alert('Oops! Something went wrong.'));
+  });
 </script>
 </body>
 </html>
