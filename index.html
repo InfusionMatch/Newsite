@@ -1,272 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NorthPeak Care | Smarter Staffing. Better Care.</title>
-    <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #262262 50%, #27aae1 100%);
-        }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .nav-link:hover {
-            color: #8b5cf6;
-        }
-        .btn-primary {
-            background: linear-gradient(90deg, #1c75bc 0%, #0097b2 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthPeak Care | Smarter Staffing. Better Care.</title>
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
-<body class="font-all round gothic text-gray-800">
-    <!-- Navigation -->
- <nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      
-      <!-- Logo + Links -->
-      <div class="flex items-center">
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="index.html" class="flex items-center">
-  <img src="static/navagationlogotemp.png" 
-       alt="NorthPeak Care Logo" 
-       class="h-8 w-auto sm:h-10 object-contain">
-</a>
-     
+          <img src="static/logo.png" alt="NorthPeak Care" class="h-10 w-auto" />
         </div>
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-          <a href="index.html" class="nav-link border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
-          <a href="for-nurses.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Nurses</a>
-          <a href="for-providers.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">For Providers</a>
-          <a href="about.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
-          <a href="faq.html" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">FAQs</a>
+        <!-- Nav Links -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Home</a>
+          <a href="nurses.html" class="text-gray-700 hover:text-indigo-600 font-medium">For Nurses</a>
+          <a href="providers.html" class="text-gray-700 hover:text-indigo-600 font-medium">For Providers</a>
+          <a href="about.html" class="text-gray-700 hover:text-indigo-600 font-medium">About</a>
+          <a href="faq.html" class="text-gray-700 hover:text-indigo-600 font-medium">FAQs</a>
+        </div>
+        <!-- CTA -->
+        <div class="flex items-center">
+          <a href="signin.html" class="ml-4 px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+            Sign In
+          </a>
         </div>
       </div>
+    </div>
+  </nav>
 
-      <!-- Sign In Button -->
-      <div class="hidden sm:ml-6 sm:flex sm:items-center">
-        <a href="comingsoon.html" class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium inline-block text-center">
-    Sign In
-</a>
+  <!-- Hero Section -->
+  <section class="hero-gradient pt-32 pb-40 text-white text-center" data-aos="fade-down">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-gothic animate__animated animate__fadeIn">
+        Smarter Staffing. Better Care.
+      </h1>
+      <h2 class="mt-4 text-xl sm:text-2xl lg:text-3xl text-indigo-100 animate__animated animate__fadeIn animate__delay-1s">
+        Connecting nurses and providers with technology that works.
+      </h2>
+      <p class="mt-6 text-lg sm:text-xl text-indigo-100 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-2s">
+        NorthPeak Care simplifies healthcare staffing, making it easier for professionals and providers to connect with the right opportunities at the right time.
+      </p>
+      <div class="mt-8 flex justify-center space-x-4">
+        <a href="nurses.html" class="px-6 py-3 rounded-xl bg-white text-indigo-700 font-semibold hover:bg-indigo-100 transition">
+          For Nurses
+        </a>
+        <a href="providers.html" class="px-6 py-3 rounded-xl bg-indigo-500 text-white font-semibold hover:bg-indigo-400 transition">
+          For Providers
+        </a>
       </div>
+    </div>
+  </section>
 
-      <!-- Mobile Menu Button -->
-      <div class="-mr-2 flex items-center sm:hidden">
-        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-          <i data-feather="menu" class="block h-6 w-6"></i>
-        </button>
+  <!-- Features Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Why Choose NorthPeak Care?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-2">Flexible Shifts</h3>
+          <p class="text-gray-600">Nurses pick when and where they work with complete freedom.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-2">Trusted Providers</h3>
+          <p class="text-gray-600">Providers connect with pre-vetted, skilled professionals.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-2">Easy to Use</h3>
+          <p class="text-gray-600">A tech-forward platform that works seamlessly for everyone.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-2">Secure Payments</h3>
+          <p class="text-gray-600">Fast, reliable payment processing you can count on.</p>
+        </div>
       </div>
-
     </div>
-  </div>
-</nav>
+  </section>
 
-
-    <!-- Hero Section -->
-    <div class="hero-gradient pt-24 pb-32 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-                <div class="px-4 sm:px-0 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
-                    <div>
-                        <h1 class="mt-1 text-4xl tracking-tight font-extrabold sm:text-5xl lg:text-6xl animate__animated animate__fadeIn">
-                            <span class="block">Modern Nursing Staffing Platform</span>
-                            <span class="block text-indigo-200">Built by Nurses</span>
-                        </h1>
-                        <p class="mt-3 text-base text-indigo-100 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Connect with qualified nurses and streamline your home healthcare services with our intelligent matching platform.
-                        </p>
-                        <!-- unused buttons -->
-                        <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
-                                <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Find Nurses</a>
-                                <a href="for-nurses.html" class="bg-white text-indigo-600 px-6 py-3 rounded-md text-base font-medium hover:bg-gray-50">Join As A Nurse</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-                        <img class="w-full rounded-lg" src="static/heroimagecomputer.jpg" alt="Nurse administering infusion">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- About Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        At NorthPeak Care, we believe healthcare staffing should be simple, transparent, and empowering. 
+        Our mission is to connect qualified nurses with providers through modern technology, 
+        ensuring better care for patients and flexibility for professionals.
+      </p>
     </div>
+  </section>
 
-    <!-- Features Section -->
-    <div class="py-16 bg-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    A better way to manage home health care and tasks
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Our platform connects healthcare providers with qualified nurses to deliver exceptional patient care.
-                </p>
-            </div>
+  <!-- Call to Action -->
+  <section class="bg-indigo-600 text-white py-16 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+    <p class="text-lg mb-6">Join NorthPeak Care today and experience smarter staffing.</p>
+    <a href="signup.html" class="px-6 py-3 rounded-xl bg-white text-indigo-700 font-semibold hover:bg-indigo-100 transition">
+      Sign Up Now
+    </a>
+  </section>
 
-            <div class="mt-20">
-                <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-                    <!-- Feature 1 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="clock"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Real-time Scheduling</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Instantly match with available nurses based on location, specialty, and availability.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="shield"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Verified Credentials</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                All nurses undergo rigorous background checks and credential verification.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="bar-chart-2"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Performance Analytics</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Track nurse performance and patient outcomes with detailed reporting.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 4 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="message-square"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Secure Messaging</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                HIPAA-compliant communication between providers, nurses, and patients.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 5 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="map-pin"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Job Tracking</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Real-time viewing of nurse visits and status of each job.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 6 -->
-                    <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i data-feather="dollar-sign"></i>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="text-lg font-medium text-gray-900">Flexible Payments</h3>
-                            <p class="mt-2 text-base text-gray-500">
-                                Easy invoicing and payment processing for both providers and nurses.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-white font-bold mb-4">NorthPeak Care</h3>
+        <p class="text-gray-400 text-sm">Smarter staffing. Better care.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="faq.html" class="hover:text-white">FAQs</a></li>
+          <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-white">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">For Nurses</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="nurses.html" class="hover:text-white">How It Works</a></li>
+          <li><a href="signup.html" class="hover:text-white">Join Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">For Providers</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="providers.html" class="hover:text-white">How It Works</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
-
-    
-    <!-- CTA Section -->
-<div class="py-16 px-4 sm:py-20 sm:px-6 lg:px-8 text-center"
-     style="background-color:#2b3990;">
-  <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-    <span class="block">Ready to transform your home health services?</span>
-  </h2>
-  <p class="mt-4 text-lg leading-6" style="color:#d0e2ff;">
-    Join hundreds of healthcare providers and nurses delivering better care through technology.
-  </p>
-  <a href="for-providers.html"
-     class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md sm:w-auto"
-     style="color:#1a73e8; background-color:#ffffff;">
-    Get Started
-  </a>
-</div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- Company Section -->
-            <div>
-                <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
-                <ul class="mt-4 space-y-4">
-                    <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
-                    <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
-                    <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
-                </ul>
-            </div>
-
-            <!-- FAQ Section -->
-            <div>
-                <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
-                <ul class="mt-4 space-y-4">
-                    <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
-                </ul>
-            </div>
-
-            <!-- Social Media -->
-            <div class="flex flex-col md:items-end">
-                <div class="flex space-x-6 mb-4">
-                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
-                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-                    <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-                </div>
-                <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
-            </div>
-        </div>
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      © 2025 NorthPeak Care. All rights reserved.
     </div>
-</footer>
+  </footer>
 
-
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        feather.replace();
-    </script>
 </body>
-
-  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-
 </html>
