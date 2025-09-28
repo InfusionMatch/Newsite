@@ -28,18 +28,21 @@
 
 <!-- Navbar -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16 items-center">
-      <div class="flex items-center space-x-2">
-        <i data-feather="activity" class="h-8 w-8 text-indigo-600"></i>
-        <span class="text-xl font-bold text-gray-900">NorthPeak Care</span>
-      </div>
-      <div class="hidden sm:flex space-x-4">
-        <span class="text-gray-400 italic">Coming Soon...</span>
-      </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+    </a>
+
+    <!-- Nav Links -->
+    <div class="hidden sm:flex space-x-6 justify-center flex-1">
+      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+      <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
+      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
-  </div>
-</nav>
 
 <!-- Hero Section -->
 <section class="hero-gradient flex flex-1 flex-col justify-center items-center text-center pt-24 pb-32">
@@ -64,13 +67,7 @@
     <!-- Success Message -->
     <p id="success-message" class="text-green-400 mt-4 hidden">Thank you! We will update you when we launch!</p>
 
-    <!-- Social Icons -->
-    <div class="flex space-x-6 mt-8" data-aos="fade-up" data-aos-delay="600">
-      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="twitter"></i></a>
-      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="facebook"></i></a>
-      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="instagram"></i></a>
-      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="linkedin"></i></a>
-    </div>
+
 
     <div class="mt-8" data-aos="fade-up" data-aos-delay="800">
       <a href="index.html" class="btn-primary px-6 py-3 rounded-md font-medium">Return to Home Page</a>
@@ -81,6 +78,14 @@
 <!-- Footer -->
 <footer class="bg-gray-800 py-6 text-center text-gray-400">
   &copy; 2025 NorthPeak Care, LLC. All rights reserved.
+
+        <!-- Social Icons -->
+    <div class="flex space-x-6 mt-8" data-aos="fade-up" data-aos-delay="600">
+      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="twitter"></i></a>
+      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="facebook"></i></a>
+      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="instagram"></i></a>
+      <a href="#" class="text-white hover:text-indigo-200"><i data-feather="linkedin"></i></a>
+    </div>
 </footer>
 
 <script>
