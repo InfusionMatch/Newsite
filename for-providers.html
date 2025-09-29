@@ -18,7 +18,6 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Custom Colors & Styles -->
   <style>
     .hero-gradient {
       background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%);
@@ -39,7 +38,6 @@
     nav { height: 60px; }
   </style>
 
-  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,12 +60,9 @@
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-    <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
-
-    <!-- Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
@@ -75,8 +70,6 @@
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
       <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
-
-    <!-- Sign In -->
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
@@ -84,93 +77,101 @@
 <!-- Hero Section -->
 <section class="relative hero-gradient pt-24 pb-28 text-white overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-indigo-800/60 to-indigo-900/70"></div>
-
   <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
-
-      <!-- Hero Text -->
       <div data-aos="fade-down">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">
-          Smarter Staffing. Better Care.
-        </h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">Smarter Staffing. Better Care.</h1>
         <p class="text-lg sm:text-xl mb-6 max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
           NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.
         </p>
-        <a href="#capabilities" 
-           class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105">
-          Get Started
-        </a>
+        <a href="#benefits" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105">Get Started</a>
       </div>
-
-      <!-- Hero Image -->
       <div class="relative flex justify-center lg:justify-end" data-aos="fade-left">
         <img src="static/laptopwithimage.jpg" alt="NorthPeak Care platform preview"
              class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-contain">
       </div>
     </div>
   </div>
-
   <!-- Scroll Arrow -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
     <a href="#benefits" class="block animate-bounce">
       <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
 
-<!-- Benefits / Features -->
-<section class="py-16 container mx-auto px-6 md:px-12">
-  <section id="benefits" class="py-20 bg-gray-50">
+<!-- Why Providers Choose NorthPeak Care -->
+<section id="benefits" class="py-20 bg-gray-50 relative">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Providers Choose NorthPeak Care</h2>
-  <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
-    <div class="space-y-8">
-      <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up">
-        <i data-feather="users" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Qualified Nurses</h3>
-        <p>Access a network of vetted nurses with the right skills for your patients.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="100">
-        <i data-feather="zap" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">On-Demand Coverage</h3>
-        <p>Scale staffing up or down as needed, without the overhead of full-time hires.</p>
-      </div>
+  
+  <div class="max-w-7xl mx-auto px-6 relative grid md:grid-cols-9 gap-4 items-center">
+
+    <!-- Card 1 -->
+    <div class="md:col-span-2 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
+      <i data-feather="users" class="w-12 h-12 mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Qualified Nurses</h3>
+      <p>Access a network of vetted nurses with the right skills for your patients.</p>
     </div>
-    <div class="space-y-8">
-      <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="200">
-        <i data-feather="monitor" class="w-12 h-12 text-indigo-600 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Ease of Use</h3>
-        <p>Our custom platform allows for easy management of patient visit requests, documentation, and billing.</p>
-      </div>
+
+    <!-- Arrow 1→2 -->
+    <div class="hidden md:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="md:col-span-2 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="100">
+      <i data-feather="zap" class="w-12 h-12 mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">On-Demand Coverage</h3>
+      <p>Scale staffing up or down as needed, without the overhead of full-time hires.</p>
+    </div>
+
+    <!-- Arrow 2→3 -->
+    <div class="hidden md:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="md:col-span-2 bg-gradient-to-br from-[#1c75bc] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="200">
+      <i data-feather="monitor" class="w-12 h-12 mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Ease of Use</h3>
+      <p>Our custom platform allows for easy management of patient visit requests, documentation, and billing.</p>
+    </div>
+
+    <!-- Arrow 3→4 -->
+    <div class="hidden md:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="md:col-span-2 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="300">
+      <i data-feather="shield" class="w-12 h-12 mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Compliance & Safety</h3>
+      <p>All nurses are verified and insured, ensuring safe and compliant staffing every time.</p>
     </div>
   </div>
+
+  <!-- Scroll Arrow to Capabilities -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
     <a href="#capabilities" class="block animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
 
-<!-- Capabilities -->
+<!-- Capabilities Section -->
 <section id="capabilities" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Image -->
       <div data-aos="fade-right">
         <img src="static/nurseinfusion.jpg" alt="Nurse giving infusion" class="rounded-2xl shadow-lg w-full object-cover">
       </div>
-
-      <!-- Capabilities Cards -->
       <div>
-        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">
-          NorthPeak Care’s Capabilities
-        </h2>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">NorthPeak Care’s Capabilities</h2>
         <div class="grid gap-8">
           <div class="bg-white p-6 rounded-xl shadow feature-card" data-aos="fade-up">
             <i data-feather="check-square" class="w-10 h-10 text-indigo-600 mb-3"></i>
@@ -191,14 +192,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Scroll Arrow to Services -->
+  <div class="mt-12 flex justify-center">
+    <a href="#services" class="block animate-bounce">
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+    </a>
+  </div>
 </section>
 
-<!-- Services Offered -->
-<section class="py-20 bg-white">
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Services Content -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Services Offered</h2>
         <ul class="space-y-5 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="100">
@@ -208,17 +215,23 @@
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Central line care and maintenance</li>
         </ul>
       </div>
-
-      <!-- Image -->
       <div data-aos="fade-left">
         <img src="static/blooddraw.jpg" alt="Nursing services" class="rounded-2xl shadow-lg w-full object-cover">
       </div>
     </div>
+
+    <!-- Scroll Arrow to CTA -->
+    <div class="mt-12 flex justify-center">
+      <a href="#cta" class="block animate-bounce">
+        <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-indigo-50 py-16 text-center">
+<!-- CTA Section -->
+<section id="cta" class="bg-indigo-50 py-16 text-center">
   <h2 class="text-3xl font-bold mb-6" data-aos="zoom-in">Ready to expand your nursing services?</h2>
   <p class="text-lg mb-8" data-aos="zoom-in" data-aos-delay="100">Partner with NorthPeak Care and get reliable staffing support.</p>
   <a href="vendorform.html" class="btn-primary px-6 py-3 rounded-lg shadow hover:opacity-90 transition" data-aos="zoom-in" data-aos-delay="200">Get Started</a>
@@ -247,26 +260,4 @@
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-        </div>
-        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>feather.replace();</script>
-<script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
-
-</body>
-</html>
+          <a href="#" class="
