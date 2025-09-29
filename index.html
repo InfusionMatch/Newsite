@@ -19,27 +19,32 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-/* Updated hero gradient to lighter blue/purple mix */
-  .hero-gradient {
-    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #60a5fa 100%);
-  }
+    /* Hero Gradient */
+    .hero-gradient {
+      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #60a5fa 100%);
+    }
 
-  /* Updated buttons */
-  .btn-primary {
-    background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
-    color: white;
-    transition: all 0.3s ease;
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3 rgba(59,130,246,0.3), 0 4px 6px -2 rgba(59,130,246,0.1);
-  }
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(59,130,246,0.3), 0 4px 6px -2 rgba(59,130,246,0.1);
+    }
+
+    /* Feature Cards Hover */
     .feature-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
     }
+
+    /* Bouncing Arrow */
     .bounce-arrow {
       animation: bounce 2s infinite;
+      cursor: pointer;
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
@@ -63,19 +68,18 @@
       Connect with qualified nurses and streamline your home healthcare services with our intelligent matching platform.
     </p>
 
-  <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center animate__animated animate__fadeIn animate__delay-2s">
-  <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">Partner With Us</a>
-  <a href="for-nurses.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">I'm A Nurse</a>
-</div>
-
+    <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center animate__animated animate__fadeIn animate__delay-2s">
+      <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">Partner With Us</a>
+      <a href="for-nurses.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">I'm A Nurse</a>
+    </div>
   </div>
 
   <!-- Bouncing Scroll Arrow -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-    <a href="#features" class="bounce-arrow">
+    <div class="bounce-arrow" onclick="scrollToFeatures()">
       <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -87,7 +91,7 @@
       <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">Our platform connects healthcare providers with qualified nurses to deliver exceptional patient care.</p>
     </div>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Feature cards -->
+      <!-- Feature Cards -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up">
         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
           <i data-feather="clock"></i>
@@ -179,7 +183,15 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   feather.replace();
 
-  // Smooth scroll for anchors
+  // Custom scroll for arrow to align features heading at top
+  function scrollToFeatures() {
+    const featuresSection = document.getElementById('features');
+    const heading = featuresSection.querySelector('h2'); // "A better way to manage home health care"
+    const topOffset = heading.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+  }
+
+  // Smooth scroll for all other anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -188,7 +200,7 @@
     });
   });
 
-  // Parallax effect for hero logo (optional subtle movement)
+  // Parallax effect for hero logo
   const heroLogo = document.querySelector('.hero-gradient img');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
