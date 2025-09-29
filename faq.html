@@ -10,18 +10,22 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Animate.css & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    nav {
-      height: 60px;
-    }
+    nav { height: 60px; }
+    
     .faq-card {
-      background-color: #ffffff;
+      background-color: #EEF2FF; /* subtle colored background like feature cards */
       border-radius: 1rem;
       padding: 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2 rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .faq-card:hover {
@@ -42,9 +46,7 @@
       margin-top: 0.5rem;
       color: #4B5563; /* Tailwind gray-600 */
     }
-    .faq-answer.open {
-      margin-top: 0.5rem;
-    }
+    .faq-answer.open { margin-top: 0.5rem; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -67,53 +69,53 @@
   <!-- Nurse Questions -->
   <h2 class="text-2xl font-bold text-gray-800 mb-6">For Nurses</h2>
   <div class="space-y-4">
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Is there a minimum or maximum number of shifts that I need to pick up?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        No! You can pick up as many or as few shifts that you want. You just need to keep up with your compliance to make sure you are able to pick up shifts. This is as easy as uploading new documents as they expire.
+        No! You can pick up as many or as few shifts as you want. Keep your compliance up to date by uploading new documents as they expire.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="50">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Why do I need liability insurance?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Great question! As a contractor you need your own liability insurance. While we do not endorse a particular provider, a quick search can help you get what you need. The insurance is very inexpensive, less than $150 per year.
+        As a contractor, you need liability insurance. It is inexpensive, usually under $150/year.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="100">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Do I need my own equipment?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Yes! You will need the ability to take vital signs including BP and SPO2. You also need your own mask if you choose to wear one or the client requires it.
+        Yes, you need the ability to take vital signs (BP, SPO2) and your own mask if required.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="150">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Do you pay for mileage or travel time?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        No, we only pay for hours working at the client's house. You will not be reimbursed for mileage or other expenses. You can talk with a tax expert to see if these expenses might be tax deductible.
+        No, only hours worked at the client’s home are paid. Consult a tax expert for possible deductions.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="200">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         What does it mean to be a private contractor in terms of pay?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        As a contractor, you are responsible for paying your own income taxes. If you earn more than $600 in one year with NorthPeak Care, you will receive a 1099 form for tax purposes.
+        Contractors pay their own taxes. If you earn over $600/year, you will receive a 1099 form.
       </div>
     </div>
   </div>
@@ -121,43 +123,43 @@
   <!-- Partner Questions -->
   <h2 class="text-2xl font-bold text-gray-800 mt-12 mb-6">For Partners</h2>
   <div class="space-y-4">
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         How do you ensure compliance and that the nurses have valid licenses?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        We connect directly with NURSYS to confirm licensure at time of nurse sign up. We also get reports from them if there is a problem with a license or if it has expired.
+        We connect with NURSYS to confirm licensure and receive alerts if licenses expire or have issues.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="50">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         How do you ensure HIPAA compliance?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        We partner with a 3rd party company to ensure that our website is secure and that we collect all data necessary for HIPAA compliance. Visit our HIPAA compliance page to learn more!
+        We partner with a 3rd party to secure our website and collect all necessary HIPAA data.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="100">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Is there a monthly fee or set up fee?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Nope! You pay only when a nurse completes an infusion for you.
+        No, you pay only when a nurse completes an infusion.
       </div>
     </div>
 
-    <div class="faq-card">
+    <div class="faq-card" data-aos="fade-up" data-aos-delay="150">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
-        We have custom requirements or a special request. Can you accommodate?
+        Can you accommodate custom requests?
         <i data-feather="chevron-down"></i>
       </button>
       <div class="faq-answer">
-        The advantage of being a small team is that we can add bespoke or requested features very quickly!
+        Yes! Our small team can quickly implement bespoke features or requests.
       </div>
     </div>
   </div>
@@ -165,28 +167,42 @@
 
 <!-- Footer -->
 <footer class="bg-gray-800 mt-16">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-    <p>&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
   feather.replace();
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
   function toggleFAQ(el) {
     const answer = el.nextElementSibling;
     const isOpen = answer.classList.contains('open');
-    
-    const isMobile = window.innerWidth < 768;
-
-    if (isMobile) {
-      document.querySelectorAll('.faq-answer.open').forEach(a => {
-        if (a !== answer) {
-          a.style.maxHeight = null;
-          a.classList.remove('open');
-        }
-      });
-    }
 
     if (isOpen) {
       answer.style.maxHeight = null;
@@ -203,6 +219,5 @@
     });
   });
 </script>
-
 </body>
 </html>
