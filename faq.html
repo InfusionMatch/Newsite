@@ -19,13 +19,26 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    nav { height: 60px; }
-    
+    /* Hero gradient and button styling */
+    .hero-gradient {
+      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
+    }
+
+    /* FAQ card styling */
     .faq-card {
-      background-color: #EEF2FF; /* subtle colored background like feature cards */
+      background-color: #EEF2FF;
       border-radius: 1rem;
       padding: 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2 rgba(0,0,0,0.05);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .faq-card:hover {
@@ -44,31 +57,52 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       margin-top: 0.5rem;
-      color: #4B5563; /* Tailwind gray-600 */
+      color: #4B5563;
     }
     .faq-answer.open { margin-top: 0.5rem; }
+
+    /* Tab buttons */
+    .faq-tabs button {
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .faq-tabs button.active {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+    }
+    .faq-tabs button:not(.active) {
+      background-color: #E5E7EB;
+      color: #1F2937;
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-<!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-center space-x-6">
-    <a href="index.html" class="text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-    <a href="for-nurses.html" class="text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
-    <a href="for-providers.html" class="text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
-    <a href="about.html" class="text-gray-800 hover:text-indigo-500 font-medium">About</a>
-    <a href="faq.html" class="text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
-    <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
+<!-- Hero Section -->
+<section class="hero-gradient relative overflow-hidden min-h-64 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+  <div class="hero-overlay absolute inset-0 bg-black/25 z-0"></div>
+  <div class="relative z-10 py-16">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg animate__animated animate__fadeInDown">
+      Frequently Asked Questions
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-1s">
+      Find answers to common questions for nurses and healthcare partners.
+    </p>
   </div>
-</nav>
+</section>
 
-<div class="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <h1 class="text-4xl font-extrabold text-gray-900 text-center mb-12">Frequently Asked Questions</h1>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
 
-  <!-- Nurse Questions -->
-  <h2 class="text-2xl font-bold text-gray-800 mb-6">For Nurses</h2>
-  <div class="space-y-4">
+  <!-- Tabs for Nurses / Partners -->
+  <div class="faq-tabs flex justify-center space-x-4 mb-8">
+    <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
+    <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
+  </div>
+
+  <!-- Nurse FAQs -->
+  <div id="nurses" class="faq-list space-y-4">
     <div class="faq-card" data-aos="fade-up">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Is there a minimum or maximum number of shifts that I need to pick up?
@@ -78,7 +112,6 @@
         No! You can pick up as many or as few shifts as you want. Keep your compliance up to date by uploading new documents as they expire.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="50">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Why do I need liability insurance?
@@ -88,7 +121,6 @@
         As a contractor, you need liability insurance. It is inexpensive, usually under $150/year.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="100">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Do I need my own equipment?
@@ -98,7 +130,6 @@
         Yes, you need the ability to take vital signs (BP, SPO2) and your own mask if required.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="150">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Do you pay for mileage or travel time?
@@ -108,7 +139,6 @@
         No, only hours worked at the client’s home are paid. Consult a tax expert for possible deductions.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="200">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         What does it mean to be a private contractor in terms of pay?
@@ -120,9 +150,8 @@
     </div>
   </div>
 
-  <!-- Partner Questions -->
-  <h2 class="text-2xl font-bold text-gray-800 mt-12 mb-6">For Partners</h2>
-  <div class="space-y-4">
+  <!-- Partner FAQs -->
+  <div id="partners" class="faq-list space-y-4 hidden">
     <div class="faq-card" data-aos="fade-up">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         How do you ensure compliance and that the nurses have valid licenses?
@@ -132,7 +161,6 @@
         We connect with NURSYS to confirm licensure and receive alerts if licenses expire or have issues.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="50">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         How do you ensure HIPAA compliance?
@@ -142,7 +170,6 @@
         We partner with a 3rd party to secure our website and collect all necessary HIPAA data.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="100">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Is there a monthly fee or set up fee?
@@ -152,7 +179,6 @@
         No, you pay only when a nurse completes an infusion.
       </div>
     </div>
-
     <div class="faq-card" data-aos="fade-up" data-aos-delay="150">
       <button class="faq-question w-full" onclick="toggleFAQ(this)">
         Can you accommodate custom requests?
@@ -163,6 +189,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <!-- Footer -->
@@ -200,10 +227,10 @@
   feather.replace();
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
+  // Toggle FAQ answers
   function toggleFAQ(el) {
     const answer = el.nextElementSibling;
     const isOpen = answer.classList.contains('open');
-
     if (isOpen) {
       answer.style.maxHeight = null;
       answer.classList.remove('open');
@@ -213,11 +240,20 @@
     }
   }
 
+  // Switch tabs
+  function showFAQ(tab) {
+    document.getElementById('nurses').classList.toggle('hidden', tab !== 'nurses');
+    document.getElementById('partners').classList.toggle('hidden', tab !== 'partners');
+    document.getElementById('nurseTab').classList.toggle('active', tab === 'nurses');
+    document.getElementById('partnerTab').classList.toggle('active', tab === 'partners');
+  }
+
   window.addEventListener('resize', () => {
     document.querySelectorAll('.faq-answer.open').forEach(answer => {
       answer.style.maxHeight = answer.scrollHeight + "px";
     });
   });
 </script>
+
 </body>
 </html>
