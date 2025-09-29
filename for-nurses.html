@@ -33,12 +33,26 @@
       box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),
                   0 4px 6px -2 rgba(38,34,98,0.1);
     }
+    .feature-card {
+      transition: all 0.3s ease;
+    }
     .feature-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),
                   0 10px 10px -5px rgba(0,0,0,0.04);
     }
     nav { height: 60px; }
+    /* How It Works arrows */
+    .arrow-between {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      color: #262262;
+    }
+    .arrow-between path {
+      stroke: #262262;
+      stroke-width: 3;
+    }
   </style>
 
   <!-- JSON-LD Structured Data -->
@@ -67,7 +81,6 @@
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
-
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
@@ -75,13 +88,12 @@
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
       <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
-
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient pt-24 pb-28 text-white">
+<section class="hero-gradient relative pt-24 pb-28 text-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       <div class="lg:col-span-6 flex flex-col justify-center">
@@ -117,8 +129,6 @@
 <section id="features" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
-
-      <!-- Features / Benefits -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Why Nurses Love NorthPeak Care</h2>
         <div class="grid gap-6">
@@ -139,8 +149,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Requirements -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="200">
@@ -150,12 +158,10 @@
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
         </ul>
 
-        <!-- Static Image under Requirements -->
         <div class="mt-8" data-aos="fade-up" data-aos-delay="300">
           <img src="static/malenursecomputer.jpg" alt="Male nurse using computer" class="rounded-2xl shadow-lg w-full object-cover">
         </div>
 
-        <!-- Second Scroll Arrow -->
         <div class="mt-6 flex justify-center">
           <a href="#cta" class="block animate-bounce">
             <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
@@ -165,7 +171,6 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -174,21 +179,40 @@
 <section class="bg-gray-50 py-20">
   <div class="max-w-7xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold text-gray-900 mb-12" data-aos="fade-up">How It Works</h2>
-    <div class="grid gap-12 md:grid-cols-3">
-      <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">1</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Interview</h3>
-        <p class="text-gray-600">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+    <div class="grid gap-12 md:grid-cols-3 relative items-center">
+      <!-- Step 1 -->
+      <div class="bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
+        <h3 class="text-xl font-semibold mb-2">Interview</h3>
+        <p>Meet with the NorthPeak Care team to discuss your experience and goals.</p>
       </div>
-      <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">2</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Onboard</h3>
-        <p class="text-gray-600">Use our easy online platform to complete onboarding quickly and efficiently.</p>
+
+      <!-- Arrow 1→2 -->
+      <div class="hidden md:flex justify-center items-center">
+        <svg class="arrow-between" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+        </svg>
       </div>
-      <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="600">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">3</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Start Picking Shifts</h3>
-        <p class="text-gray-600">Work when and where you want by choosing shifts that fit your schedule.</p>
+
+      <!-- Step 2 -->
+      <div class="bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
+        <h3 class="text-xl font-semibold mb-2">Onboard</h3>
+        <p>Use our easy online platform to complete onboarding quickly and efficiently.</p>
+      </div>
+
+      <!-- Arrow 2→3 -->
+      <div class="hidden md:flex justify-center items-center">
+        <svg class="arrow-between" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+        </svg>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="600">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
+        <h3 class="text-xl font-semibold mb-2">Start Picking Shifts</h3>
+        <p>Work when and where you want by choosing shifts that fit your schedule.</p>
       </div>
     </div>
   </div>
