@@ -98,7 +98,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient relative pt-24 pb-28 text-white overflow-hidden">
+<section class="hero-gradient relative pt-24 pb-20 text-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col justify-center text-center">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
@@ -107,26 +107,16 @@
       <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
         Find answers to common questions for nurses and healthcare partners.
       </p>
-    </div>
-  </div>
 
-  <!-- Optional Scroll Arrow -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#features" class="block animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </a>
+      <!-- Tabs for Nurses / Partners moved here, with margin-top -->
+      <div class="faq-tabs flex justify-center space-x-4 mt-12">
+        <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
+        <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
+      </div>
+    </div>
   </div>
 </section>
 
-
-  <!-- Tabs for Nurses / Partners -->
-  <div class="faq-tabs flex justify-center space-x-4 mb-8">
-    <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
-    <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
-  </div>
 
   <!-- Nurse FAQs -->
   <div id="nurses" class="faq-list space-y-4">
