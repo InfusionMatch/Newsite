@@ -19,26 +19,12 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    .hero-gradient {
-      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%);
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
-    }
-    .feature-card {
-      transition: all 0.3s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-    }
-    nav { height: 60px; }
+    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
+    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
+    .feature-card { transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
+    nav { z-index: 20; }
   </style>
 
   <script type="application/ld+json">
@@ -61,11 +47,9 @@
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-    <a href="index.html" class="flex items-center">
-      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
-    </a>
+<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+    <a href="index.html" class="flex items-center"><img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain"></a>
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
@@ -78,31 +62,23 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="relative hero-gradient pt-24 pb-28 text-white overflow-hidden">
+<section class="relative hero-gradient pt-24 pb-28 text-white overflow-hidden min-h-[calc(100vh-60px)]">
   <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-indigo-800/60 to-indigo-900/70"></div>
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+  <div class="relative z-0 max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
       <div data-aos="fade-down">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">
-          Smarter Staffing. Better Care.
-        </h1>
-        <p class="text-lg sm:text-xl mb-6 max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
-          NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.
-        </p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">Smarter Staffing. Better Care.</h1>
+        <p class="text-lg sm:text-xl mb-6 max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.</p>
         <a href="#benefits" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105">Get Started</a>
       </div>
       <div class="relative flex justify-center lg:justify-end" data-aos="fade-left">
-        <img src="static/laptopwithimage.jpg" alt="NorthPeak Care platform preview"
-             class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-contain">
+        <img src="static/laptopwithimage.jpg" alt="Platform preview" class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-contain">
       </div>
     </div>
   </div>
-
-  <!-- Scroll Arrow to Benefits -->
   <div class="mt-12 flex justify-center">
     <a href="#benefits" class="block animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
@@ -110,42 +86,31 @@
 <!-- Benefits Section -->
 <section id="benefits" class="py-20 bg-gray-50 relative">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Providers Choose NorthPeak Care</h2>
-  
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-    <!-- Card 1 -->
     <div class="bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
       <i data-feather="users" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Qualified Nurses</h3>
       <p>Access a network of vetted nurses with the right skills for your patients.</p>
     </div>
-
-    <!-- Card 2 -->
     <div class="bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="100">
       <i data-feather="zap" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">On-Demand Coverage</h3>
       <p>Scale staffing up or down as needed, without the overhead of full-time hires.</p>
     </div>
-
-    <!-- Card 3 -->
     <div class="bg-gradient-to-br from-[#1c75bc] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="200">
       <i data-feather="monitor" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Ease of Use</h3>
       <p>Our custom platform allows for easy management of patient visit requests, documentation, and billing.</p>
     </div>
-
-    <!-- Card 4 -->
     <div class="bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="300">
       <i data-feather="shield" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Compliance & Safety</h3>
       <p>All nurses are verified and insured, ensuring safe and compliant staffing every time.</p>
     </div>
   </div>
-
-  <!-- Scroll Arrow to Capabilities -->
   <div class="mt-12 flex justify-center">
     <a href="#capabilities" class="block animate-bounce">
-      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
@@ -154,8 +119,8 @@
 <section id="capabilities" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div data-aos="fade-right">
-        <img src="static/nurseinfusion.jpg" alt="Nurse giving infusion" class="rounded-2xl shadow-lg w-full object-cover">
+      <div data-aos="fade-right" class="flex justify-center lg:justify-start">
+        <img src="static/nurseinfusion.jpg" alt="Nurse giving infusion" class="rounded-2xl shadow-lg w-full max-w-md lg:max-w-lg object-cover">
       </div>
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">NorthPeak Care’s Capabilities</h2>
@@ -179,12 +144,9 @@
       </div>
     </div>
   </div>
-
-  <!-- Scroll Arrow to Services -->
   <div class="mt-12 flex justify-center">
     <a href="#services" class="block animate-bounce">
-      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
@@ -203,16 +165,13 @@
         </ul>
       </div>
       <div data-aos="fade-left">
-        <img src="static/blooddraw.jpg" alt="Nursing services" class="rounded-2xl shadow-lg w-full object-cover">
+        <img src="static/blooddraw.jpg" alt="Nursing services" class="rounded-2xl shadow-lg w-full max-w-md lg:max-w-lg object-cover">
       </div>
     </div>
   </div>
-
-  <!-- Scroll Arrow to CTA -->
   <div class="mt-12 flex justify-center">
     <a href="#cta" class="block animate-bounce">
-      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </a>
   </div>
 </section>
@@ -257,7 +216,6 @@
 
 <script>feather.replace();</script>
 <script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
-
 <script>
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -268,6 +226,5 @@
     });
   });
 </script>
-
 </body>
 </html>
