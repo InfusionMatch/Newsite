@@ -30,8 +30,8 @@
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(38,34,98,0.3),
-                  0 4px 6px -2px rgba(38,34,98,0.1);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),
+                  0 4px 6px -2 rgba(38,34,98,0.1);
     }
     .feature-card:hover {
       transform: translateY(-8px);
@@ -64,12 +64,10 @@
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-    <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
 
-    <!-- Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
@@ -78,44 +76,36 @@
       <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
 
-    <!-- Sign In -->
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="relative hero-gradient pt-32 pb-40 text-white overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-indigo-800/60 to-indigo-900/70"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Hero Text -->
-      <div data-aos="fade-down">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 animate__animated animate__fadeInDown animate__faster">
-          Nursing on Your Own Terms
+<section class="hero-gradient pt-24 pb-28 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-6 flex flex-col justify-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+          Modern Nursing Staffing Platform
         </h1>
-        <p class="text-lg sm:text-xl mb-8 max-w-xl animate__animated animate__fadeInUp animate__faster">
-          Work flexible shifts, earn competitive pay, and make a real impact with NorthPeak Care.
+        <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl animate__animated animate__fadeIn animate__delay-1s">
+          Connect with qualified nurses and streamline your home healthcare services with our intelligent matching platform.
         </p>
-        <a href="#features"
-           class="inline-block btn-primary px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105 animate__animated animate__fadeInUp animate__faster">
-          Join NorthPeak Care
-        </a>
+        <div class="mt-6 flex space-x-4 animate__animated animate__fadeIn animate__delay-2s">
+          <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Find Nurses</a>
+          <a href="for-nurses.html" class="bg-white text-indigo-700 px-6 py-3 rounded-md text-base font-medium hover:bg-gray-50">Find Shifts</a>
+        </div>
       </div>
-
-      <!-- Hero Image -->
-      <div data-aos="fade-left">
-        <img src="static/nursesmiling.jpg" alt="Smiling nurse" class="rounded-2xl shadow-lg w-full object-cover animate__animated animate__fadeInLeft animate__faster">
+      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
+        <img src="static/heroimagecomputer.jpg" alt="Nurse administering infusion" class="rounded-lg shadow-lg w-full max-w-md animate__animated animate__fadeIn">
       </div>
-
     </div>
   </div>
 
   <!-- Scroll Arrow -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
     <a href="#features" class="block">
-      <svg id="scrollArrow" class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+      <svg class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
       </svg>
@@ -123,46 +113,7 @@
   </div>
 </section>
 
-<!-- Smooth scroll JS -->
-<script>
-  function smoothScroll(targetSelector, duration = 1000) {
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = this.getAttribute('href');
-      smoothScroll(target, 1500); // Duration in ms (1.5s = slower)
-    });
-  });
-</script>
-
-
-
+<!-- Features / Requirements Section -->
 <section id="features" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
@@ -193,72 +144,61 @@
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="200">
-          <li class="flex items-start">
-            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-            <span>2+ years of nursing experience with infusion and IV therapy</span>
-          </li>
-          <li class="flex items-start">
-            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-            <span>BLS Certification</span>
-          </li>
-          <li class="flex items-start">
-            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-            <span>ACLS Certification</span>
-          </li>
-          <li class="flex items-start">
-            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-            <span>Independent Malpractice Insurance</span>
-          </li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience with infusion and IV therapy</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>BLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>ACLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
         </ul>
+
+        <!-- Static Image under Requirements -->
+        <div class="mt-8" data-aos="fade-up" data-aos-delay="300">
+          <img src="static/malenursecomputer.jpg" alt="Male nurse using computer" class="rounded-2xl shadow-lg w-full object-cover">
+        </div>
+
+        <!-- Second Scroll Arrow -->
+        <div class="mt-6 flex justify-center">
+          <a href="#cta" class="block animate-bounce">
+            <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-
 <!-- How It Works Section -->
 <section class="bg-gray-50 py-20">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-12" data-aos="fade-up">
-      How It Works
-    </h2>
+    <h2 class="text-3xl font-bold text-gray-900 mb-12" data-aos="fade-up">How It Works</h2>
     <div class="grid gap-12 md:grid-cols-3">
-      <!-- Step 1 -->
       <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">
-          1
-        </div>
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">1</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Interview</h3>
         <p class="text-gray-600">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
       </div>
-
-      <!-- Step 2 -->
       <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">
-          2
-        </div>
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">2</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Onboard</h3>
         <p class="text-gray-600">Use our easy online platform to complete onboarding quickly and efficiently.</p>
       </div>
-
-      <!-- Step 3 -->
       <div class="bg-white rounded-2xl shadow-md p-8 feature-card" data-aos="fade-up" data-aos-delay="600">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">
-          3
-        </div>
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">3</div>
         <h3 class="text-xl font-semibold text-gray-900 mb-2">Start Picking Shifts</h3>
         <p class="text-gray-600">Work when and where you want by choosing shifts that fit your schedule.</p>
       </div>
     </div>
-
-    <!-- CTA Button -->
-    <div class="mt-12" data-aos="fade-up" data-aos-delay="800">
-      <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow hover:opacity-90 transition">
-        Apply Now
-      </a>
-    </div>
   </div>
+</section>
+
+<!-- CTA Section -->
+<section id="cta" class="bg-indigo-50 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6" data-aos="zoom-in">Ready to start your flexible nursing career?</h2>
+  <p class="text-lg mb-8" data-aos="zoom-in" data-aos-delay="100">Join NorthPeak Care and take control of your schedule while making a real impact.</p>
+  <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow hover:opacity-90 transition" data-aos="zoom-in" data-aos-delay="200">Apply Now</a>
 </section>
 
 <!-- Footer -->
@@ -294,5 +234,17 @@
 
 <script>feather.replace();</script>
 <script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
 </body>
 </html>
