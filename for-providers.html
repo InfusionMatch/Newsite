@@ -31,6 +31,9 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
     }
+    .feature-card {
+      transition: all 0.3s ease;
+    }
     .feature-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
@@ -80,7 +83,9 @@
   <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
       <div data-aos="fade-down">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">Smarter Staffing. Better Care.</h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">
+          Smarter Staffing. Better Care.
+        </h1>
         <p class="text-lg sm:text-xl mb-6 max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
           NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.
         </p>
@@ -92,79 +97,61 @@
       </div>
     </div>
   </div>
-  <!-- Scroll Arrow -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#benefits" class="block animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-    </a>
-  </div>
 </section>
 
 <!-- Why Providers Choose NorthPeak Care -->
 <section id="benefits" class="py-20 bg-gray-50 relative">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Providers Choose NorthPeak Care</h2>
+  
+  <div class="max-w-7xl mx-auto px-6 relative grid md:grid-cols-1 lg:grid-cols-9 gap-4 items-center justify-items-center">
 
-  <div class="flex flex-nowrap items-center gap-4 overflow-x-auto px-4 md:px-0">
     <!-- Card 1 -->
-    <div class="flex-shrink-0 w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
+    <div class="md:col-span-2 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
       <i data-feather="users" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Qualified Nurses</h3>
       <p>Access a network of vetted nurses with the right skills for your patients.</p>
     </div>
 
     <!-- Arrow 1→2 -->
-    <div class="flex-shrink-0 flex items-center justify-center">
-      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-      </svg>
+    <div class="hidden lg:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
     </div>
 
     <!-- Card 2 -->
-    <div class="flex-shrink-0 w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="md:col-span-2 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="100">
       <i data-feather="zap" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">On-Demand Coverage</h3>
       <p>Scale staffing up or down as needed, without the overhead of full-time hires.</p>
     </div>
 
     <!-- Arrow 2→3 -->
-    <div class="flex-shrink-0 flex items-center justify-center">
-      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-      </svg>
+    <div class="hidden lg:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
     </div>
 
     <!-- Card 3 -->
-    <div class="flex-shrink-0 w-64 bg-gradient-to-br from-[#1c75bc] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="md:col-span-2 bg-gradient-to-br from-[#1c75bc] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="200">
       <i data-feather="monitor" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Ease of Use</h3>
       <p>Our custom platform allows for easy management of patient visit requests, documentation, and billing.</p>
     </div>
 
     <!-- Arrow 3→4 -->
-    <div class="flex-shrink-0 flex items-center justify-center">
-      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-      </svg>
+    <div class="hidden lg:flex justify-center items-center md:col-span-1">
+      <svg class="w-12 h-12 text-gray-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
     </div>
 
     <!-- Card 4 -->
-    <div class="flex-shrink-0 w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="md:col-span-2 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up" data-aos-delay="300">
       <i data-feather="shield" class="w-12 h-12 mb-4"></i>
       <h3 class="font-semibold text-xl mb-2">Compliance & Safety</h3>
       <p>All nurses are verified and insured, ensuring safe and compliant staffing every time.</p>
     </div>
   </div>
-
-  <!-- Scroll Arrow to Capabilities -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#capabilities" class="block animate-bounce">
-      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-    </a>
-  </div>
 </section>
-
 
 <!-- Capabilities Section -->
 <section id="capabilities" class="py-20 bg-gray-50">
@@ -222,14 +209,6 @@
         <img src="static/blooddraw.jpg" alt="Nursing services" class="rounded-2xl shadow-lg w-full object-cover">
       </div>
     </div>
-
-    <!-- Scroll Arrow to CTA -->
-    <div class="mt-12 flex justify-center">
-      <a href="#cta" class="block animate-bounce">
-        <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -275,13 +254,14 @@
 <script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
 
 <script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
   });
-});
 </script>
 
 </body>
