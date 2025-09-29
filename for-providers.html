@@ -260,4 +260,26 @@
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
           <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-          <a href="#" class="
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>feather.replace();</script>
+<script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
