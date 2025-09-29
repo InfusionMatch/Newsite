@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NorthPeak Care | Nurse Application</title>
+  <title>Nurse Application | NorthPeak Care</title>
   <meta name="description" content="Apply to join NorthPeak Care as a nurse and streamline your healthcare services.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
-  <!-- Tailwind CSS + Forms Plugin -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      plugins: [tailwind.forms],
-    }
-  </script>
 
   <!-- Animate.css & AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -23,10 +18,8 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+  <!-- Custom Styles -->
   <style>
-    .hero-gradient {
-      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
-    }
     .btn-primary {
       background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
       color: white;
@@ -39,7 +32,6 @@
     nav { height: 60px; }
   </style>
 </head>
-
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
@@ -49,35 +41,22 @@
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
-      <a href="index.html" class="text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-      <a href="for-nurses.html" class="text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
-      <a href="for-providers.html" class="text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
-      <a href="about.html" class="text-gray-800 hover:text-indigo-500 font-medium">About</a>
-      <a href="faq.html" class="text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
+      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+      <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
+      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero-gradient pt-24 pb-28 text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
-      Join NorthPeak Care
-    </h1>
-    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
-      Apply now to be part of a modern nursing staffing platform connecting you with healthcare opportunities.
-    </p>
-  </div>
-</div>
-
-<!-- Form Section -->
-<main class="py-12">
+<!-- Nurse Form Section -->
+<main class="pt-24 pb-12">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
-      
-      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Apply to Join</h2>
-      <p class="text-gray-600 mb-6">Complete the form below — required fields are marked. We’ll review and reach out.</p>
+      <h1 class="text-3xl font-bold text-gray-900 mb-4 text-center">Nurse Application</h1>
+      <p class="text-gray-600 mb-6 text-center">Complete the form below to apply and join NorthPeak Care.</p>
 
       <!-- Success / Error messages -->
       <div id="form-success" class="hidden mb-6 rounded-lg bg-green-50 border border-green-200 p-4">
@@ -109,7 +88,7 @@
       </div>
 
       <!-- Formspree form -->
-      <form id="join-form" action="https://formspree.io/f/xnngpngj" method="POST" class="space-y-4" novalidate>
+      <form id="nurse-form" action="https://formspree.io/f/xnngpngj" method="POST" class="space-y-4" novalidate>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label for="first_name" class="block text-sm font-medium text-gray-700">First name <span class="text-red-500">*</span></label>
@@ -182,14 +161,30 @@
 
 <!-- Footer -->
 <footer class="bg-gray-800 mt-12">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-gray-400">
-    <div class="flex justify-between items-center">
-      <p>&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
-      <div class="flex space-x-4">
-        <a href="#"><i data-feather="twitter"></i></a>
-        <a href="#"><i data-feather="facebook"></i></a>
-        <a href="#"><i data-feather="instagram"></i></a>
-        <a href="#"><i data-feather="linkedin"></i></a>
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
       </div>
     </div>
   </div>
@@ -199,44 +194,38 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   feather.replace();
 
-  const form = document.getElementById('join-form');
-  const successDiv = document.getElementById('form-success');
-  const errorDiv = document.getElementById('form-error');
+  const form = document.getElementById('nurse-form');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
 
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    const values = Object.fromEntries(formData.entries());
-
-    // simple validation: all required fields filled?
-    const requiredFields = ['first_name','last_name','email','phone','zip','years'];
-    const missing = requiredFields.some(f => !values[f] || values[f].trim() === '');
-
-    if (missing) {
-      successDiv.classList.add('hidden');
-      errorDiv.classList.remove('hidden');
-      return;
-    }
+    const action = form.action;
 
     try {
-      const response = await fetch(form.action, {
-        method: 'POST',
+      const response = await fetch(action, {
+        method: form.method,
         body: formData,
-        headers: { 'Accept': 'application/json' },
+        headers: { 'Accept': 'application/json' }
       });
+
       if (response.ok) {
+        successMsg.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
         form.reset();
-        errorDiv.classList.add('hidden');
-        successDiv.classList.remove('hidden');
       } else {
-        throw new Error('Form submission error');
+        const data = await response.json();
+        errorMsg.classList.remove('hidden');
+        successMsg.classList.add('hidden');
+        errorMsg.querySelector('#form-error-text').innerText = data?.errors?.[0]?.message || 'Please fill all required fields and try again.';
       }
-    } catch (err) {
-      successDiv.classList.add('hidden');
-      errorDiv.classList.remove('hidden');
+    } catch (error) {
+      errorMsg.classList.remove('hidden');
+      successMsg.classList.add('hidden');
+      errorMsg.querySelector('#form-error-text').innerText = 'Submission failed. Please try again later.';
     }
   });
 </script>
-
 </body>
 </html>
