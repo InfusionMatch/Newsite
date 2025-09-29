@@ -1,111 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NorthPeak Care | Coming Soon</title>
-<link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NorthPeak Care | Coming Soon</title>
+  <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
     body { font-family: 'Inter', sans-serif; }
-    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%); }
+    .hero-gradient {
+      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
+    }
     .btn-primary {
-        background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-        color: white;
-        transition: all 0.3s ease;
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+      transition: all 0.3s ease;
     }
     .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(38,34,98,0.3),
+                  0 4px 6px -2px rgba(38,34,98,0.1);
     }
-</style>
+  </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
-<!-- Navbar -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center">
-      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
-    </a>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+      </a>
 
-    <!-- Nav Links -->
-    <div class="hidden sm:flex space-x-6 justify-center flex-1">
-      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
-      <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
-      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
+      <!-- Nav Links -->
+      <div class="hidden sm:flex space-x-6 justify-center flex-1">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+        <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+        <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+        <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
+        <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
+      </div>
     </div>
+  </nav>
 
-<!-- Hero Section -->
-<section class="hero-gradient flex flex-1 flex-col justify-center items-center text-center pt-24 pb-32">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 animate__animated animate__fadeInDown" data-aos="fade-down">
-      Coming Soon
-    </h1>
-    <p class="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
-      We’re working hard to launch NorthPeak Care. Stay tuned and be the first to know when we go live!
-    </p>
+  <!-- Hero Section -->
+  <section class="hero-gradient flex flex-1 flex-col justify-center items-center text-center pt-24 pb-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 animate__animated animate__fadeInDown" data-aos="fade-down">
+        Coming Soon
+      </h1>
+      <p class="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
+        We’re working hard to launch NorthPeak Care. Stay tuned and be the first to know when we go live!
+      </p>
 
-    <!-- Email Signup Form -->
-    <form id="notify-form" class="flex flex-col sm:flex-row items-center gap-4 justify-center"
-          action="https://formspree.io/f/xdkwalka"
-          method="POST"
-          data-aos="fade-up" data-aos-delay="400">
-      <input type="email" name="email" placeholder="you@example.com" required
-             class="px-4 py-3 rounded-md border border-gray-300 w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <button type="submit" class="btn-primary px-6 py-3 rounded-md font-medium">Notify Me</button>
-    </form>
+      <!-- Email Signup Form -->
+      <form id="notify-form" class="flex flex-col sm:flex-row items-center gap-4 justify-center"
+            action="https://formspree.io/f/xdkwalka"
+            method="POST"
+            data-aos="fade-up" data-aos-delay="400">
+        <input type="email" name="email" placeholder="you@example.com" required
+               class="px-4 py-3 rounded-md border border-gray-300 w-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <button type="submit" class="btn-primary px-6 py-3 rounded-md font-medium">Notify Me</button>
+      </form>
 
-    <!-- Success Message -->
-    <p id="success-message" class="text-green-400 mt-4 hidden">Thank you! We will update you when we launch!</p>
+      <!-- Success Message -->
+      <p id="success-message" class="text-green-400 mt-4 hidden">
+        Thank you! We will update you when we launch!
+      </p>
 
-
-
-    <div class="mt-8" data-aos="fade-up" data-aos-delay="800">
-      <a href="index.html" class="btn-primary px-6 py-3 rounded-md font-medium">Return to Home Page</a>
+      <div class="mt-8" data-aos="fade-up" data-aos-delay="800">
+        <a href="index.html" class="btn-primary px-6 py-3 rounded-md font-medium">Return to Home Page</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-gray-800 py-6 text-center text-gray-400">
-  &copy; 2025 NorthPeak Care, LLC. All rights reserved.
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center text-gray-400">
+    &copy; 2025 NorthPeak Care, LLC. All rights reserved.
+  </footer>
 
-   
-</footer>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    feather.replace();
 
-<script>
-  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-  feather.replace();
+    // AJAX Form Submission for Formspree
+    const form = document.getElementById('notify-form');
+    const successMessage = document.getElementById('success-message');
 
-  // AJAX Form Submission for Formspree
-  const form = document.getElementById('notify-form');
-  const successMessage = document.getElementById('success-message');
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        successMessage.classList.remove('hidden');
-        form.reset();
-      } else {
-        alert('Oops! Something went wrong. Please try again.');
-      }
-    }).catch(error => alert('Oops! Something went wrong. Please try again.'));
-  });
-</script>
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          successMessage.classList.remove('hidden');
+          form.reset();
+        } else {
+          alert('Oops! Something went wrong. Please try again.');
+        }
+      }).catch(error => alert('Oops! Something went wrong. Please try again.'));
+    });
+  </script>
 </body>
 </html>
