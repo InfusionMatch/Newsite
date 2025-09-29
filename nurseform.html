@@ -1,10 +1,81 @@
-<!-- Form area (centered) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NorthPeak Care | Nurse Application</title>
+  <meta name="description" content="Apply to join NorthPeak Care as a nurse and streamline your healthcare services.">
+  <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+
+  <!-- Tailwind CSS + Forms Plugin -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      plugins: [tailwind.forms],
+    }
+  </script>
+
+  <!-- Animate.css & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
+    }
+    nav { height: 60px; }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+
+<!-- Navigation -->
+<nav class="bg-white shadow-sm fixed w-full z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center">
+      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+    </a>
+    <div class="hidden sm:flex space-x-6 justify-center flex-1">
+      <a href="index.html" class="text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+      <a href="for-nurses.html" class="text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-providers.html" class="text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+      <a href="about.html" class="text-gray-800 hover:text-indigo-500 font-medium">About</a>
+      <a href="faq.html" class="text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
+    </div>
+    <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero-gradient pt-24 pb-28 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+      Join NorthPeak Care
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+      Apply now to be part of a modern nursing staffing platform connecting you with healthcare opportunities.
+    </p>
+  </div>
+</div>
+
+<!-- Form Section -->
 <main class="py-12">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- wrapper card -->
     <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
-      <!-- form title -->
+      
       <h2 class="text-2xl font-semibold text-gray-900 mb-4">Apply to Join</h2>
       <p class="text-gray-600 mb-6">Complete the form below — required fields are marked. We’ll review and reach out.</p>
 
@@ -12,7 +83,9 @@
       <div id="form-success" class="hidden mb-6 rounded-lg bg-green-50 border border-green-200 p-4">
         <div class="flex items-start">
           <div class="flex-shrink-0">
-            <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>
+            <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
+            </svg>
           </div>
           <div class="ml-3 text-sm text-green-700">
             <p class="font-medium">Thank you!</p>
@@ -24,7 +97,9 @@
       <div id="form-error" class="hidden mb-6 rounded-lg bg-red-50 border border-red-200 p-4">
         <div class="flex items-start">
           <div class="flex-shrink-0">
-            <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728"/></svg>
+            <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728"/>
+            </svg>
           </div>
           <div class="ml-3 text-sm text-red-700">
             <p class="font-medium">Submission failed</p>
@@ -98,9 +173,70 @@
 
         <div class="flex items-center justify-between gap-4">
           <button id="submit-btn" type="submit" class="btn-primary px-6 py-2 rounded-md font-medium">Submit</button>
-          <button id="reset-btn" type="button" class="px-4 py-2 rounded-md border border-gray-300 text-sm" onclick="document.getElementById('join-form').reset();">Reset</button>
+          <button type="reset" class="px-4 py-2 rounded-md border border-gray-300 text-sm">Reset</button>
         </div>
       </form>
     </div>
   </div>
 </main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 mt-12">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-gray-400">
+    <div class="flex justify-between items-center">
+      <p>&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="#"><i data-feather="twitter"></i></a>
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  feather.replace();
+
+  const form = document.getElementById('join-form');
+  const successDiv = document.getElementById('form-success');
+  const errorDiv = document.getElementById('form-error');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const values = Object.fromEntries(formData.entries());
+
+    // simple validation: all required fields filled?
+    const requiredFields = ['first_name','last_name','email','phone','zip','years'];
+    const missing = requiredFields.some(f => !values[f] || values[f].trim() === '');
+
+    if (missing) {
+      successDiv.classList.add('hidden');
+      errorDiv.classList.remove('hidden');
+      return;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      });
+      if (response.ok) {
+        form.reset();
+        errorDiv.classList.add('hidden');
+        successDiv.classList.remove('hidden');
+      } else {
+        throw new Error('Form submission error');
+      }
+    } catch (err) {
+      successDiv.classList.add('hidden');
+      errorDiv.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>
