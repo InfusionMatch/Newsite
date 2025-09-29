@@ -91,22 +91,22 @@
     <div class="grid lg:grid-cols-2 gap-12 items-center">
 
       <!-- Hero Text -->
-      <div data-aos="fade-down" class="text-center lg:text-left">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 animate__animated animate__fadeInDown animate__delay-0.3s">
+      <div data-aos="fade-down">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 animate__animated animate__fadeInDown animate__faster">
           Nursing on Your Own Terms
         </h1>
-        <p class="text-lg sm:text-xl mb-8 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeInUp animate__delay-0.6s">
+        <p class="text-lg sm:text-xl mb-8 max-w-xl animate__animated animate__fadeInUp animate__faster">
           Work flexible shifts, earn competitive pay, and make a real impact with NorthPeak Care.
         </p>
-        <a href="nurseform.html"
-           class="inline-block btn-primary px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105 animate__animated animate__fadeInUp animate__delay-0.9s">
+        <a href="#features"
+           class="inline-block btn-primary px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105 animate__animated animate__fadeInUp animate__faster">
           Join NorthPeak Care
         </a>
       </div>
 
       <!-- Hero Image -->
       <div data-aos="fade-left">
-        <img src="static/nursesmiling.jpg" alt="Smiling nurse" class="rounded-2xl shadow-lg w-full object-cover animate__animated animate__fadeInLeft animate__delay-0.9s">
+        <img src="static/nursesmiling.jpg" alt="Smiling nurse" class="rounded-2xl shadow-lg w-full object-cover animate__animated animate__fadeInLeft animate__faster">
       </div>
 
     </div>
@@ -114,63 +114,77 @@
 
   <!-- Scroll Arrow -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#features" class="animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
+    <a href="#features" class="block">
+      <svg id="scrollArrow" class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
       </svg>
     </a>
   </div>
 </section>
 
+<!-- Smooth scroll JS -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
-<!-- Features / Benefits -->
-<section class="py-16 container mx-auto px-6 md:px-12">
-  <section id="features" class="py-16 container mx-auto px-6 md:px-12">
-  <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Nurses Love NorthPeak Care</h2>
-  <div class="grid md:grid-cols-3 gap-10">
-    <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up">
-      <i data-feather="clock" class="w-12 h-12 text-indigo-600 mb-4"></i>
-      <h3 class="font-semibold text-xl mb-2">Flexibility</h3>
-      <p>Choose when and where you want to work. Balance your career with your lifestyle.</p>
-    </div>
-    <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="100">
-      <i data-feather="dollar-sign" class="w-12 h-12 text-indigo-600 mb-4"></i>
-      <h3 class="font-semibold text-xl mb-2">Competitive Pay</h3>
-      <p>Earn industry-leading rates with transparent, fast payouts after each completed shift.</p>
-    </div>
-    <div class="bg-white p-8 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="200">
-      <i data-feather="heart" class="w-12 h-12 text-indigo-600 mb-4"></i>
-      <h3 class="font-semibold text-xl mb-2">Impact</h3>
-      <p>Deliver care where it matters most — in homes and clinics, helping patients thrive.</p>
-    </div>
-  </div>
-</section>
 
-<!-- Requirements Section -->
-<section class="bg-white py-20">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">
-      Requirements for Nurses
-    </h2>
-    <ul class="space-y-4 text-lg text-gray-700 text-left max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-      <li class="flex items-start">
-        <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-        <span>2+ years of nursing experience with infusion and IV therapy</span>
-      </li>
-      <li class="flex items-start">
-        <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-        <span>BLS Certification</span>
-      </li>
-      <li class="flex items-start">
-        <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-        <span>ACLS Certification</span>
-      </li>
-      <li class="flex items-start">
-        <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
-        <span>Independent Malpractice Insurance</span>
-      </li>
-    </ul>
+<section id="features" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12">
+
+      <!-- Features / Benefits -->
+      <div>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Why Nurses Love NorthPeak Care</h2>
+        <div class="grid gap-6">
+          <div class="bg-white p-6 rounded-xl shadow feature-card" data-aos="fade-up">
+            <i data-feather="clock" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Flexibility</h3>
+            <p>Choose when and where you want to work. Balance your career with your lifestyle.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="100">
+            <i data-feather="dollar-sign" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Competitive Pay</h3>
+            <p>Earn industry-leading rates with transparent, fast payouts after each completed shift.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow feature-card" data-aos="fade-up" data-aos-delay="200">
+            <i data-feather="heart" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Impact</h3>
+            <p>Deliver care where it matters most — in homes and clinics, helping patients thrive.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requirements -->
+      <div>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Requirements for Nurses</h2>
+        <ul class="space-y-4 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="200">
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
+            <span>2+ years of nursing experience with infusion and IV therapy</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
+            <span>BLS Certification</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
+            <span>ACLS Certification</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>
+            <span>Independent Malpractice Insurance</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </section>
 
