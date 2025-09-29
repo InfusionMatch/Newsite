@@ -3,122 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service | NorthPeak Care</title>
+  <title>Vendor Application | NorthPeak Care</title>
+  <meta name="description" content="NorthPeak Care vendor application form. Partner with us to provide home healthcare services.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	 <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
-        }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .nav-link:hover {
-            color: #8b5cf6;
-        }
-        .btn-primary {
-            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
-        }
-    </style>
+
+  <!-- Custom Styles -->
+  <style>
+    .btn-primary {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
+    }
+    nav { height: 60px; }
+  </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-  <!-- Navigation -->
-  <nav class="bg-white shadow-sm fixed w-full z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <a href="index.html" class="flex items-center">
-            <img src="static/navagationlogotemp.png" 
-                 alt="NorthPeak Care Logo" 
-                 class="h-8 w-auto sm:h-10 object-contain">
-          </a>
-        </div>
-        <div class="hidden sm:flex sm:space-x-8">
-          <a href="index.html" class="nav-link px-3 py-2 text-sm text-gray-700">Home</a>
-          <a href="for-nurses.html" class="nav-link px-3 py-2 text-sm text-gray-700">For Nurses</a>
-          <a href="for-providers.html" class="nav-link px-3 py-2 text-sm text-gray-700">For Providers</a>
-          <a href="about.html" class="nav-link px-3 py-2 text-sm text-gray-700">About</a>
-          <a href="faq.html" class="nav-link px-3 py-2 text-sm text-gray-700">FAQs</a>
-        </div>
-      </div>
+<!-- Navigation -->
+<nav class="bg-white shadow-sm fixed w-full z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center">
+      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+    </a>
+    <div class="hidden sm:flex space-x-6 justify-center flex-1">
+      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+      <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
+      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
-  </nav>
+    <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
+  </div>
+</nav>
 
-	    <!-- Hero Section -->
-<div class="hero-gradient pt-24 pb-32 text-white text-center" data-aos="fade-down">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-gothic animate__animated animate__fadeIn">
-            Partner With NorthPeak Care
-        </h1>
-        <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-3s">
-            Fill out your information, and we will be in touch soon!
-        </p>
-    </div>
-</div>
+<!-- Vendor Form Section -->
+<main class="pt-24 pb-12">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4 text-center">Partner Contact Request</h1>
+      <p class="text-gray-600 mb-6 text-center">Complete the form below to partner with NorthPeak Care.</p>
 
-
-
-  <!-- Page Header -->
- 
-
-<div class="max-w-3xl mx-auto px-4 py-12">
-  <iframe 
-    aria-label="Partner With Us" 
-    frameborder="0" 
-    class="w-full rounded-lg shadow-md" 
-    style="height:1200px;border:none;" 
-    src="https://forms.zohopublic.com/jonahnorthp1/form/VendorLeads/formperma/7UsZknXhnyR9svhsJyxYcY8LPZfyDcqKZDo4Z_ptTKc">
-  </iframe>
-</div>
-
-
-  
-
-  <!-- Footer -->
-  <footer class="bg-gray-800">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-white text-sm font-semibold uppercase">Company</h3>
-          <ul class="mt-4 space-y-4">
-            <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
-            <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
-            <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white text-sm font-semibold uppercase">FAQ</h3>
-          <ul class="mt-4 space-y-4">
-            <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
-          </ul>
-        </div>
-        <div class="flex flex-col md:items-end">
-          <div class="flex space-x-6 mb-4">
-            <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-            <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
-            <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-            <a href="comingsoon.html" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+      <!-- Success / Error messages -->
+      <div id="form-success" class="hidden mb-6 rounded-lg bg-green-50 border border-green-200 p-4">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
+            </svg>
           </div>
-          <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+          <div class="ml-3 text-sm text-green-700">
+            <p class="font-medium">Thank you!</p>
+            <p>We received your information and will contact you shortly.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
 
-  <script>
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-    feather.replace();
-  </script>
+      <div id="form-error" class="hidden mb-6 rounded-lg bg-red-50 border border-red-200 p-4">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728"/>
+            </svg>
+          </div>
+          <div class="ml-3 text-sm text-red-700">
+            <p class="font-medium">Submission failed</p>
+            <p id="form-error-text">Please fill all required fields and try again.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formspree form -->
+      <form id="vendor-form" action="https://formspree.io/f/mjkaykay" method="POST" class="space-y-4" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="first_name" class="block text-sm font-medium text-gray-700">First name <span class="text-red-500">*</span></label>
+            <input id="first_name" name="first_name" required type="text" autocomplete="given-name"
+                   class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </div>
+          <div>
+            <label for="last_name" class="block text-sm font-medium text-gray-700">Last name <span class="text-red-500">*</span></label>
+            <input id="last_name" name="last_name" required type="text" autocomplete="family-name"
+                   class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label for="company_name" class="block text-sm font-medium text-gray-700">Company Name <span class="text-red-500">*</span></label>
+          <input id="company_name" name="company_name" required type="text"
+                 class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
+            <input id="email" name="email" required type="email" autocomplete="email"
+                   class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone <span class="text-red-500">*</span></label>
+            <input id="phone" name="phone" required type="tel" autocomplete="tel"
+                   class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label for="zip" class="block text-sm font-medium text-gray-700">Zip Code <span class="text-red-500">*</span></label>
+          <input id="zip" name="zip" required type="text"
+                 class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+        </div>
+
+        <div class="flex items-center justify-between gap-4">
+          <button id="submit-btn" type="submit" class="btn-primary px-6 py-2 rounded-md font-medium">Submit</button>
+          <button id="reset-btn" type="button" class="px-4 py-2 rounded-md border border-gray-300 text-sm" onclick="document.getElementById('vendor-form').reset();">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 mt-12">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  feather.replace();
+
+  const form = document.getElementById('vendor-form');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const action = form.action;
+
+    try {
+      const response = await fetch(action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        successMsg.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+        form.reset();
+      } else {
+        const data = await response.json();
+        errorMsg.classList.remove('hidden');
+        successMsg.classList.add('hidden');
+        errorMsg.querySelector('#form-error-text').innerText = data?.errors?.[0]?.message || 'Please fill all required fields and try again.';
+      }
+    } catch (error) {
+      errorMsg.classList.remove('hidden');
+      successMsg.classList.add('hidden');
+      errorMsg.querySelector('#form-error-text').innerText = 'Submission failed. Please try again later.';
+    }
+  });
+</script>
 </body>
 </html>
