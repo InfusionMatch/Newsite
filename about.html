@@ -32,33 +32,59 @@
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full">
+<!-- Navigation -->
+<nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
+    <!-- Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
-      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500">Home</a>
-      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500">Nurses</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500">Providers</a>
+      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
+      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
       <a href="about.html" class="nav-link text-indigo-600 font-semibold">About</a>
-      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500">FAQs</a>
+      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
+    <!-- Sign In -->
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
+
 <!-- Hero Section -->
-<section class="hero-gradient pt-24 pb-32 min-h-screen flex flex-col justify-center text-center lg:text-left relative">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <h1 class="text-5xl md:text-6xl font-extrabold animate__animated animate__fadeInDown" data-aos="fade-down">
-      About NorthPeak Care
-    </h1>
-    <p class="mt-4 text-xl md:text-2xl max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
-      Our mission is to revolutionize home health services, connecting healthcare providers with qualified nurses to deliver exceptional care.
-    </p>
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+      <div class="lg:col-span-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+          About NorthPeak Care
+        </h1>
+        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
+          NorthPeak Care is dedicated to providing trusted healthcare services with smarter staffing solutions. Learn about our mission, values, and team.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 sm:justify-start justify-center animate__animated animate__fadeIn animate__delay-2s">
+          <a href="#team" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Meet the Team</a>
+        </div>
+      </div>
+      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
+        <img src="static/abouthero.jpg" alt="Healthcare team smiling" class="rounded-lg shadow-lg w-full max-w-md animate__animated animate__fadeIn">
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Arrow -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    <a href="#mission" class="block animate-bounce">
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </a>
   </div>
 </section>
+
 
 <!-- Our Story Section -->
 <section class="py-16 bg-gray-50" data-aos="fade-up">
@@ -142,5 +168,18 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   feather.replace();
 </script>
+
+<script>feather.replace();</script>
+<script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
 </body>
 </html>
