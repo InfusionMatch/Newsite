@@ -38,8 +38,8 @@
     }
     .feature-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),
-                  0 10px 10px -5px rgba(0,0,0,0.04);
+      box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),
+                  0 10px 10px -5 rgba(0,0,0,0.04);
     }
     nav { height: 64px; }
     .arrow-between {
@@ -52,6 +52,9 @@
       stroke: #262262;
       stroke-width: 3;
     }
+    /* Hide features section initially */
+    #features { opacity: 0; transition: opacity 1s ease; }
+    #features.visible { opacity: 1; }
   </style>
 </head>
 
@@ -77,9 +80,10 @@
   </div>
 </nav>
 
-  <section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="heroContent" class="opacity-0 transition-opacity duration-1000 lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
       <div class="lg:col-span-6">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
           Take Control of Your Work-Life Balance
@@ -106,30 +110,6 @@
     </a>
   </div>
 </section>
-
-<script>
-  const heroContent = document.getElementById('heroContent');
-  const scrollArrow = document.getElementById('scrollArrow');
-
-  // Fade in function
-  function showHero() {
-    heroContent.classList.remove('opacity-0');
-    heroContent.classList.add('opacity-100');
-  }
-
-  // Fade in on scroll (when hero is partially visible)
-  window.addEventListener('scroll', () => {
-    const heroTop = heroContent.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if (heroTop < windowHeight * 0.9) { // trigger slightly before fully visible
-      showHero();
-    }
-  });
-
-  // Fade in when clicking the arrow
-  scrollArrow.addEventListener('click', showHero);
-</script>
-
 
 <!-- Features / Requirements -->
 <section id="features" class="py-20 bg-gray-50">
@@ -251,9 +231,10 @@
   </div>
 </footer>
 
-<script>feather.replace();</script>
-<script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
 <script>
+  feather.replace();
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -261,6 +242,27 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+  // Fade in features on scroll
+  const featuresSection = document.getElementById('features');
+  const scrollArrow = document.getElementById('scrollArrow');
+
+  function revealFeatures() {
+    const top = featuresSection.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.9) {
+      featuresSection.classList.add('visible');
+    }
+  }
+
+  window.addEventListener('scroll', revealFeatures);
+
+  // Also fade in when arrow is clicked
+  scrollArrow.addEventListener('click', () => {
+    featuresSection.classList.add('visible');
+  });
+
+  // Initial check in case already in viewport
+  revealFeatures();
 </script>
 
 </body>
