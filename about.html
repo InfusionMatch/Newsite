@@ -18,20 +18,22 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%); }
+    body { font-family: 'Inter', sans-serif; }
+    nav { height: 64px; z-index: 20; }
+    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
     .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
+    .feature-card { transition: all 0.3s ease; }
     .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
     .nav-link { font-medium: 500; transition: color 0.2s; }
     .nav-link:hover { color: #6366f1; }
-    nav { height: 64px; z-index: 20; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+<nav class="bg-white shadow-sm fixed w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
@@ -47,18 +49,18 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient relative pt-16 min-h-screen text-white flex flex-col justify-center text-center">
+<section class="hero-gradient pt-24 pb-32 min-h-screen flex flex-col justify-center text-center lg:text-left relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <h1 class="text-5xl md:text-6xl font-extrabold animate__animated animate__fadeInDown" data-aos="fade-down">
       About NorthPeak Care
     </h1>
-    <p class="mt-4 text-xl md:text-2xl max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
+    <p class="mt-4 text-xl md:text-2xl max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
       Our mission is to revolutionize home health services, connecting healthcare providers with qualified nurses to deliver exceptional care.
     </p>
   </div>
 </section>
 
-<!-- Our Story Section with Image -->
+<!-- Our Story Section -->
 <section class="py-16 bg-gray-50" data-aos="fade-up">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -140,6 +142,5 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   feather.replace();
 </script>
-
 </body>
 </html>
