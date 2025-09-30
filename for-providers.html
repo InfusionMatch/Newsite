@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NorthPeak Care | For Providers</title>
   <meta name="description" content="Partner with NorthPeak Care for scalable nurse staffing. Access qualified nurses on-demand with compliance and safety guaranteed.">
-  <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=3">
+  <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
- 
+
   <!-- Animate.css & AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,57 +18,72 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+  <!-- Custom Styles -->
   <style>
+    body { font-family: 'Inter', sans-serif; }
     .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
+    nav { height: 64px; z-index: 20; }
     .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
     .feature-card { transition: all 0.3s ease; }
     .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
-    nav { z-index: 20; }
   </style>
 </head>
 
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
-    <a href="index.html" class="flex items-center"><img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain"></a>
+<nav class="bg-white shadow-sm fixed w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+    </a>
+    <!-- Nav Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
+      <a href="for-providers.html" class="nav-link text-indigo-600 font-semibold">Providers</a>
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
       <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
+    <!-- Sign In -->
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="relative hero-gradient pt-16 text-white overflow-hidden min-h-screen flex items-center">
-  <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-indigo-800/60 to-indigo-900/70"></div>
-  <div class="relative z-0 max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
-      <div data-aos="fade-down">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate__animated animate__fadeIn">Smarter Staffing. Better Care.</h1>
-        <p class="text-lg sm:text-xl mb-6 max-w-2xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.</p>
-        <a href="#benefits" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl shadow-lg font-semibold transition transform hover:scale-105">Get Started</a>
+<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+      <div class="lg:col-span-6" data-aos="fade-down">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+          Smarter Staffing. Better Care.
+        </h1>
+        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
+          NorthPeak Care connects experienced infusion nurses with flexible opportunities and healthcare providers who need them most.
+        </p>
+        <div class="mt-6">
+          <a href="#benefits" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Get Started</a>
+        </div>
       </div>
-      <div class="relative flex justify-center lg:justify-end" data-aos="fade-left">
-        <img src="static/laptopwithimage.jpg" alt="Platform preview" class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-contain">
+      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center lg:justify-end" data-aos="fade-left">
+        <img src="static/laptopwithimage.jpg" alt="Platform preview" class="rounded-2xl shadow-lg w-full max-w-md lg:max-w-lg">
       </div>
     </div>
   </div>
-  <div class="mt-10 flex justify-center absolute bottom-6 w-full">
+  <!-- Scroll Arrow -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
     <a href="#benefits" class="block animate-bounce">
-      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
     </a>
   </div>
 </section>
 
 <!-- Benefits Section -->
-<section id="benefits" class="py-20 bg-gray-50 relative">
+<section id="benefits" class="py-20 bg-gray-50">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Providers Choose NorthPeak Care</h2>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
     <div class="bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
@@ -94,24 +109,55 @@
   </div>
   <div class="mt-12 flex justify-center">
     <a href="#capabilities" class="block animate-bounce">
-      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+      <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
     </a>
   </div>
 </section>
 
-<!-- (rest of page unchanged: capabilities, services, CTA, footer, scripts) -->
+<!-- Footer -->
+<footer class="bg-gray-800">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script>feather.replace();</script>
 <script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
 <script>
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
 </script>
+
 </body>
 </html>
