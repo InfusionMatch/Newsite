@@ -18,25 +18,17 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Custom Styles -->
   <style>
-    .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
-    }
-    nav { height: 60px; }
+    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
+    nav { height: 64px; z-index: 20; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
@@ -227,5 +219,6 @@
     }
   });
 </script>
+
 </body>
 </html>
