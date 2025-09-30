@@ -122,6 +122,7 @@
   </div>
 </section>
 
+
 <!-- CTA -->
 <section id="cta" class="bg-indigo-50 py-16 text-center">
   <h2 class="text-3xl font-bold mb-6">Ready to start your flexible nursing career?</h2>
@@ -165,25 +166,26 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
   const featuresSection = document.getElementById('features');
-  const scrollArrow = document.getElementById('scrollArrow');
+const scrollArrow = document.getElementById('scrollArrow');
 
-  // Fade in when arrow is clicked
-  scrollArrow.addEventListener('click', () => {
-    featuresSection.scrollIntoView({ behavior: 'smooth' });
-    featuresSection.classList.add('opacity-100');
+// Fade in when arrow is clicked
+scrollArrow.addEventListener('click', () => {
+  featuresSection.scrollIntoView({ behavior: 'smooth' });
+  featuresSection.classList.add('opacity-100');
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      featuresSection.classList.add('opacity-100');
+      observer.unobserve(featuresSection);
+    }
   });
+}, { threshold: 0.2 });
 
-  // Fade in on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        featuresSection.classList.add('opacity-100');
-        observer.unobserve(featuresSection);
-      }
-    });
-  }, { threshold: 0.1 });
+observer.observe(featuresSection);
 
-  observer.observe(featuresSection);
 
   // Smooth scroll for all anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
