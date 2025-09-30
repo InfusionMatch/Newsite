@@ -23,17 +23,18 @@
     .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
     .arrow-between path { stroke: #262262; stroke-width: 3; }
     
-    /* Ensure features section starts hidden */
-    #features.hidden-initial {
+    /* Start completely hidden */
+    #features {
+      visibility: hidden;
       opacity: 0;
       transform: translateY(50px);
-      pointer-events: none;
     }
     
-    #features.visible {
+    /* Animate in when visible */
+    #features.show {
+      visibility: visible;
       opacity: 1;
       transform: translateY(0);
-      pointer-events: auto;
       transition: opacity 1s ease, transform 1s ease;
     }
   </style>
@@ -90,7 +91,7 @@
 </section>
 
 <!-- Features / Requirements (Initially Hidden) -->
-<section id="features" class="py-20 bg-gray-50 hidden-initial">
+<section id="features" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Features -->
@@ -174,33 +175,36 @@
 
   const features = document.getElementById('features');
   const scrollArrow = document.getElementById('scrollArrow');
-  let hasRevealed = false;
+  let isRevealed = false;
 
-  const revealFeatures = () => {
-    if (!hasRevealed) {
-      features.classList.remove('hidden-initial');
-      features.classList.add('visible');
-      hasRevealed = true;
+  function revealFeatures() {
+    if (!isRevealed) {
+      features.classList.add('show');
+      isRevealed = true;
     }
-  };
+  }
 
-  // Reveal on scroll - only watch for the first time
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting && !hasRevealed) {
-        revealFeatures();
-      }
-    });
-  }, { threshold: 0.1 });
-  observer.observe(features);
-
-  // Reveal on arrow click
-  scrollArrow.addEventListener('click', () => {
+  // Arrow click handler
+  scrollArrow.addEventListener('click', function() {
     revealFeatures();
-    setTimeout(() => {
+    setTimeout(function() {
       features.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   });
+
+  // Scroll detection using IntersectionObserver
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !isRevealed) {
+        revealFeatures();
+      }
+    });
+  }, { 
+    threshold: 0.05,
+    rootMargin: '0px'
+  });
+
+  observer.observe(features);
 </script>
 
 </body>
