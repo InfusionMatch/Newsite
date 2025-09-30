@@ -18,40 +18,20 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    .hero-gradient {
-      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
-    }
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-    }
-    .nav-link {
-      font-medium: 500;
-      text-gray-800;
-      transition: color 0.2s;
-    }
-    .nav-link:hover {
-      color: #6366f1;
-    }
-    nav {
-      height: 60px;
-    }
+    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%); }
+    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
+    .nav-link { font-medium: 500; transition: color 0.2s; }
+    .nav-link:hover { color: #6366f1; }
+    nav { height: 64px; z-index: 20; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
@@ -67,12 +47,12 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient pt-24 pb-32 text-white text-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 animate__animated animate__fadeInDown" data-aos="fade-down">
+<section class="hero-gradient relative pt-16 min-h-screen text-white flex flex-col justify-center text-center">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <h1 class="text-5xl md:text-6xl font-extrabold animate__animated animate__fadeInDown" data-aos="fade-down">
       About NorthPeak Care
     </h1>
-    <p class="text-xl md:text-2xl mb-8 animate__animated animate__fadeInUp animate__delay-1s max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+    <p class="mt-4 text-xl md:text-2xl max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up" data-aos-delay="200">
       Our mission is to revolutionize home health services, connecting healthcare providers with qualified nurses to deliver exceptional care.
     </p>
   </div>
@@ -82,20 +62,18 @@
 <section class="py-16 bg-gray-50" data-aos="fade-up">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-      <!-- Text -->
       <div>
         <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Story</h2>
         <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
           Delivering quality home health services with technology and care
         </p>
         <p class="mt-4 text-lg text-gray-500">
-          NorthPeak Care was founded by two flight nurses on shift talking about the future of healthcare. The identified problem of the lack of homecare services forcing many patients into unneeded hospital stays surfaced. 
+          NorthPeak Care was founded by two flight nurses on shift talking about the future of healthcare. They identified the problem of the lack of homecare services forcing many patients into unneeded hospital stays.
         </p>
         <p class="mt-4 text-lg text-gray-500">
           NorthPeak Care was formed with the idea of streamlining the process and leveraging technology, to ensure patients receive timely and high-quality care. Reducing costs to both the patient and the healthcare system while maintaining quality of care.
         </p>
       </div>
-      <!-- Image -->
       <div class="flex justify-center">
         <img src="static/helo.jpg" alt="Helicopter nursing inspiration" class="rounded-lg shadow-lg object-cover max-h-96">
       </div>
@@ -104,21 +82,19 @@
 </section>
 
 <!-- Team Section -->
-<div class="py-16" data-aos="fade-up">
+<section class="py-16" data-aos="fade-up">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Meet the Team</h2>
       <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">The people behind NorthPeak Care</p>
     </div>
     <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
-      <!-- Employee 1 -->
       <div class="text-center" data-aos="fade-up">
         <img class="mx-auto h-32 w-32 rounded-full object-cover" src="static/photosam.png" alt="Sam">
         <h3 class="mt-4 text-xl font-semibold text-gray-900">Sam S., BSN, RN</h3>
         <p class="text-indigo-600">Co-Founder</p>
         <p class="mt-2 text-gray-500">Sam brings over 8 years of nursing experience, including Emergency, Home Health, and Critical Care Transport. He specializes in nurse and provider onboarding and experience.</p>
       </div>
-      <!-- Employee 2 -->
       <div class="text-center" data-aos="fade-up" data-aos-delay="100">
         <img class="mx-auto h-32 w-32 rounded-full object-cover" src="static/photojonah.png" alt="Jonah">
         <h3 class="mt-4 text-xl font-semibold text-gray-900">Jonah P., MSN, RN</h3>
@@ -127,7 +103,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Footer -->
 <footer class="bg-gray-800" data-aos="fade-up">
