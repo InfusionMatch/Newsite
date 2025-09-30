@@ -18,7 +18,7 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Colors & Button Styles -->
+  <!-- Custom Styles -->
   <style>
     .hero-gradient {
       background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%);
@@ -41,8 +41,7 @@
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),
                   0 10px 10px -5px rgba(0,0,0,0.04);
     }
-    nav { height: 60px; }
-    /* How It Works arrows */
+    nav { height: 64px; }
     .arrow-between {
       width: 40px;
       height: 40px;
@@ -54,56 +53,42 @@
       stroke-width: 3;
     }
   </style>
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "NorthPeak Care",
-    "url": "https://www.northpeakcare.com",
-    "logo": "https://www.northpeakcare.com/static/navagationlogotemp.png",
-    "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.twitter.com/",
-      "https://www.instagram.com/",
-      "https://www.linkedin.com/"
-    ]
-  }
-  </script>
 </head>
 
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
+    <!-- Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
       <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-      <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="for-nurses.html" class="nav-link text-indigo-600 font-semibold">Nurses</a>
       <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
       <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
+    <!-- Sign In -->
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-gradient relative pt-24 pb-28 text-white overflow-hidden">
+<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-      <div class="lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+      <div class="lg:col-span-6">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
           Take Control of Your Work-Life Balance
         </h1>
-        <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl animate__animated animate__fadeIn animate__delay-1s">
+        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
           Join NorthPeak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 animate__animated animate__fadeIn animate__delay-2s">
+        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 sm:justify-start justify-center animate__animated animate__fadeIn animate__delay-2s">
           <a href="nurseform.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Sign Up Now!</a>
         </div>
       </div>
@@ -112,7 +97,6 @@
       </div>
     </div>
   </div>
-
   <!-- Scroll Arrow -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
     <a href="#features" class="block">
@@ -124,10 +108,11 @@
   </div>
 </section>
 
-<!-- Features / Requirements Section -->
+<!-- Features / Requirements -->
 <section id="features" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Features -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Why Nurses Love NorthPeak Care</h2>
         <div class="grid gap-6">
@@ -148,6 +133,7 @@
           </div>
         </div>
       </div>
+      <!-- Requirements -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="200">
@@ -156,17 +142,13 @@
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>ACLS Certification</li>
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
         </ul>
-
         <div class="mt-8" data-aos="fade-up" data-aos-delay="300">
           <img src="static/malenursecomputer.jpg" alt="Male nurse using computer" class="rounded-2xl shadow-lg w-full object-cover">
         </div>
-
         <div class="mt-6 flex justify-center">
           <a href="#cta" class="block animate-bounce">
             <svg class="w-10 h-10 text-indigo-700" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-            </svg>
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
           </a>
         </div>
       </div>
@@ -174,46 +156,41 @@
   </div>
 </section>
 
+<!-- Steps -->
 <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-2 md:px-0">
   <!-- Step 1 -->
   <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="200">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
-    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Interview</h3>
-    <p class="text-center md:text-left">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+    <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
+    <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
   </div>
-
-  <!-- Arrow 1→2 -->
+  <!-- Arrow -->
   <div class="flex md:flex-col justify-center items-center">
     <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
     </svg>
   </div>
-
   <!-- Step 2 -->
   <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="400">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
-    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Onboard</h3>
-    <p class="text-center md:text-left">Use our easy online platform to complete onboarding quickly and efficiently.</p>
+    <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
+    <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
   </div>
-
-  <!-- Arrow 2→3 -->
+  <!-- Arrow -->
   <div class="flex md:flex-col justify-center items-center">
     <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
     </svg>
   </div>
-
   <!-- Step 3 -->
   <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white" data-aos="fade-up" data-aos-delay="600">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
-    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Start Picking Shifts</h3>
-    <p class="text-center md:text-left">Work when and where you want by choosing shifts that fit your schedule.</p>
+    <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
+    <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
   </div>
 </div>
 
-
-
-<!-- CTA Section -->
+<!-- CTA -->
 <section id="cta" class="bg-indigo-50 py-16 text-center">
   <h2 class="text-3xl font-bold mb-6" data-aos="zoom-in">Ready to start your flexible nursing career?</h2>
   <p class="text-lg mb-8" data-aos="zoom-in" data-aos-delay="100">Join NorthPeak Care and take control of your schedule while making a real impact.</p>
@@ -253,14 +230,12 @@
 
 <script>feather.replace();</script>
 <script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
-
 <script>
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
 </script>
