@@ -19,48 +19,17 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    .hero-gradient {
-      background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%);
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),
-                  0 4px 6px -2 rgba(38,34,98,0.1);
-    }
-    .feature-card {
-      transition: all 0.3s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),
-                  0 10px 10px -5 rgba(0,0,0,0.04);
-    }
+    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
+    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),0 4px 6px -2 rgba(38,34,98,0.1); }
+    .feature-card { transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),0 10px 10px -5 rgba(0,0,0,0.04); }
     nav { height: 64px; }
-    .arrow-between {
-      width: 40px;
-      height: 40px;
-      margin: 0 auto;
-      color: #262262;
-    }
-    .arrow-between path {
-      stroke: #262262;
-      stroke-width: 3;
-    }
-    /* Hide features initially */
-    #features {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    #features.visible {
-      opacity: 1;
-    }
+    .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
+    .arrow-between path { stroke: #262262; stroke-width: 3; }
   </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800">
 
 <!-- Navigation -->
@@ -102,17 +71,17 @@
   </div>
   <!-- Scroll Arrow -->
   <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#features" id="scrollArrow" class="block">
+    <button id="scrollArrow" class="block">
       <svg class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
       </svg>
-    </a>
+    </button>
   </div>
 </section>
 
-<!-- Features / Requirements -->
-<section id="features" class="py-20 bg-gray-50">
+<!-- Features / Requirements (Initially Hidden) -->
+<section id="features" class="py-20 bg-gray-50 opacity-0 transition-opacity duration-1000">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Features -->
@@ -153,7 +122,14 @@
   </div>
 </section>
 
-<!-- Footer and scripts remain the same -->
+<!-- CTA -->
+<section id="cta" class="bg-indigo-50 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">Ready to start your flexible nursing career?</h2>
+  <p class="text-lg mb-8">Join NorthPeak Care and take control of your schedule while making a real impact.</p>
+  <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow hover:opacity-90 transition">Apply Now</a>
+</section>
+
+<!-- Footer -->
 <footer class="bg-gray-800">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -188,29 +164,35 @@
   feather.replace();
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
-  // Smooth scroll
+  const featuresSection = document.getElementById('features');
+  const scrollArrow = document.getElementById('scrollArrow');
+
+  // Fade in when arrow is clicked
+  scrollArrow.addEventListener('click', () => {
+    featuresSection.scrollIntoView({ behavior: 'smooth' });
+    featuresSection.classList.add('opacity-100');
+  });
+
+  // Fade in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        featuresSection.classList.add('opacity-100');
+        observer.unobserve(featuresSection);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(featuresSection);
+
+  // Smooth scroll for all anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({ behavior: 'smooth' });
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
-
-  // Fade in features when scroll or arrow click
-  const featuresSection = document.getElementById('features');
-  const scrollArrow = document.getElementById('scrollArrow');
-
-  function revealFeatures() {
-    const top = featuresSection.getBoundingClientRect().top;
-    if(top < window.innerHeight * 0.9) {
-      featuresSection.classList.add('visible');
-    }
-  }
-
-  window.addEventListener('scroll', revealFeatures);
-  scrollArrow.addEventListener('click', () => featuresSection.classList.add('visible'));
-  revealFeatures(); // initial check
 </script>
 
 </body>
