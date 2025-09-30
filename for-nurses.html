@@ -29,17 +29,11 @@
     /* Show with animation */
     .features-visible {
       display: block;
-      position: relative;
       animation: fadeInUp 1s ease forwards;
     }
     
-    #features-placeholder {
-      transition: min-height 0.5s ease;
-    }
-    
-    #features-placeholder.collapsed {
-      min-height: 0;
-      padding: 0;
+    #features-placeholder.hidden {
+      display: none;
     }
     
     @keyframes fadeInUp {
@@ -106,10 +100,10 @@
 </section>
 
 <!-- Placeholder to maintain spacing -->
-<div id="features-placeholder" class="py-20 bg-gray-50" style="min-height: 600px;"></div>
+<div id="features-placeholder" class="bg-gray-50" style="height: 800px;"></div>
 
 <!-- Features / Requirements (Initially Hidden) -->
-<section id="features" class="py-20 bg-gray-50 features-hidden" style="position: absolute; width: 100%; left: 0;">
+<section id="features" class="py-20 bg-gray-50 features-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Features -->
@@ -198,9 +192,9 @@
 
   function showFeatures() {
     if (!hasBeenRevealed) {
+      featuresPlaceholder.classList.add('hidden');
       features.classList.remove('features-hidden');
       features.classList.add('features-visible');
-      featuresPlaceholder.classList.add('collapsed');
       hasBeenRevealed = true;
       feather.replace(); // Re-render icons after display changes
     }
