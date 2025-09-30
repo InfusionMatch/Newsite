@@ -77,36 +77,29 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-      <div class="lg:col-span-6">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
-          Take Control of Your Work-Life Balance
-        </h1>
-        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
-          Join NorthPeak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
-        </p>
-        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 sm:justify-start justify-center animate__animated animate__fadeIn animate__delay-2s">
-          <a href="nurseform.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Sign Up Now!</a>
-        </div>
-      </div>
-      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
-        <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard" class="rounded-lg shadow-lg w-full max-w-md animate__animated animate__fadeIn">
-      </div>
-    </div>
-  </div>
-  <!-- Scroll Arrow -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <a href="#features" class="block">
-      <svg class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </a>
-  </div>
-</section>
+<script>
+  const heroContent = document.getElementById('heroContent');
+  const scrollArrow = document.getElementById('scrollArrow');
+
+  // Fade in function
+  function showHero() {
+    heroContent.classList.remove('opacity-0');
+    heroContent.classList.add('opacity-100');
+  }
+
+  // Fade in on scroll (when hero is partially visible)
+  window.addEventListener('scroll', () => {
+    const heroTop = heroContent.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (heroTop < windowHeight * 0.9) { // trigger slightly before fully visible
+      showHero();
+    }
+  });
+
+  // Fade in when clicking the arrow
+  scrollArrow.addEventListener('click', showHero);
+</script>
+
 
 <!-- Features / Requirements -->
 <section id="features" class="py-20 bg-gray-50">
