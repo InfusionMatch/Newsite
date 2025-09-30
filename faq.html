@@ -66,9 +66,8 @@
   </div>
 </nav>
 
-<!-- Hero Section (matches nurse page size) -->
-
-  <section class="hero-gradient pt-24 pb-32 text-white relative text-center overflow-hidden">
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-16 text-white relative text-center overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
       Frequently Asked Questions
@@ -76,80 +75,113 @@
     <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
       Find answers to common questions for nurses and healthcare partners.
     </p>
-        <div class="mt-6 flex justify-center lg:justify-start animate__animated animate__fadeIn animate__delay-2s faq-tabs">
-          <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
-          <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
-        </div>
+    <div class="mt-6 flex justify-center space-x-4 animate__animated animate__fadeIn animate__delay-2s faq-tabs">
+      <button id="nurseTab" class="active px-4 py-2" onclick="showFAQ('nurses')">For Nurses</button>
+      <button id="partnerTab" class="px-4 py-2" onclick="showFAQ('partners')">For Partners</button>
     </div>
   </div>
 </section>
 
 <!-- FAQ Lists -->
-<!-- Nurse FAQs -->
-<div id="nurses" class="faq-grid grid gap-6 grid-cols-1 lg:grid-cols-2">
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      What is the application process for nurses?
-      <span><i data-feather="chevron-down"></i></span>
+<div class="max-w-6xl mx-auto px-4 py-16 space-y-6">
+
+  <!-- Nurse FAQs -->
+  <div id="nurses" class="grid gap-6 grid-cols-1 lg:grid-cols-2">
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What is the application process for nurses?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        Nurses can apply through our online portal. After submitting your application, our team reviews it and schedules an onboarding session if approved.
+      </div>
     </div>
-    <div class="faq-answer">
-      Nurses can apply through our online portal. After submitting your application, our team reviews it and schedules an onboarding session if approved.
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        How do I pick my shifts?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        Nurses can select available shifts through the NorthPeak Care scheduling platform. Shift assignments are first-come, first-served and based on your qualifications and certifications.
+      </div>
+    </div>
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What certifications do I need?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        Standard RN or LPN/LVN licensure is required. Certain assignments may require additional certifications like ACLS, PALS, or critical care experience.
+      </div>
     </div>
   </div>
 
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      How do I pick my shifts?
-      <span><i data-feather="chevron-down"></i></span>
+  <!-- Partner FAQs -->
+  <div id="partners" class="hidden grid gap-6 grid-cols-1 lg:grid-cols-2">
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        How can my facility partner with NorthPeak Care?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        Fill out our provider partnership form on the website. Our team will review your application and contact you to discuss integration and scheduling options.
+      </div>
     </div>
-    <div class="faq-answer">
-      Nurses can select available shifts through the NorthPeak Care scheduling platform. Shift assignments are first-come, first-served and based on your qualifications and certifications.
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What are the costs associated with partnering?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        NorthPeak Care offers flexible pricing models depending on the services and staffing levels your facility requires. Contact our team for a custom quote.
+      </div>
+    </div>
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        How are nurses assigned to our facility?
+        <span><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        We match nurses to facilities based on qualifications, certifications, and availability. Our scheduling platform ensures smooth assignment and real-time updates.
+      </div>
     </div>
   </div>
 
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      What certifications do I need?
-      <span><i data-feather="chevron-down"></i></span>
-    </div>
-    <div class="faq-answer">
-      Standard RN or LPN/LVN licensure is required. Certain assignments may require additional certifications like ACLS, PALS, or critical care experience.
-    </div>
-  </div>
 </div>
 
-<!-- Partner FAQs -->
-<div id="partners" class="faq-grid hidden grid gap-6 grid-cols-1 lg:grid-cols-2">
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      How can my facility partner with NorthPeak Care?
-      <span><i data-feather="chevron-down"></i></span>
-    </div>
-    <div class="faq-answer">
-      Fill out our provider partnership form on the website. Our team will review your application and contact you to discuss integration and scheduling options.
-    </div>
-  </div>
+<script>
+  function toggleFAQ(el) {
+    const answer = el.querySelector('.faq-answer');
+    const isOpen = answer.classList.contains('open');
+    if (isOpen) {
+      answer.style.maxHeight = null;
+      answer.classList.remove('open');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.classList.add('open');
+    }
+  }
 
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      What are the costs associated with partnering?
-      <span><i data-feather="chevron-down"></i></span>
-    </div>
-    <div class="faq-answer">
-      NorthPeak Care offers flexible pricing models depending on the services and staffing levels your facility requires. Contact our team for a custom quote.
-    </div>
-  </div>
+  function showFAQ(tab) {
+    document.getElementById('nurses').classList.toggle('hidden', tab !== 'nurses');
+    document.getElementById('partners').classList.toggle('hidden', tab !== 'partners');
+    document.getElementById('nurseTab').classList.toggle('active', tab === 'nurses');
+    document.getElementById('partnerTab').classList.toggle('active', tab === 'partners');
+  }
 
-  <div class="faq-card" onclick="toggleFAQ(this)">
-    <div class="faq-question">
-      How are nurses assigned to our facility?
-      <span><i data-feather="chevron-down"></i></span>
-    </div>
-    <div class="faq-answer">
-      We match nurses to facilities based on qualifications, certifications, and availability. Our scheduling platform ensures smooth assignment and real-time updates.
-    </div>
-  </div>
-</div>
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.faq-answer.open').forEach(answer => {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    });
+  });
+
+  feather.replace();
+</script>
+
 
 
 <!-- Footer (same as nurse page) -->
