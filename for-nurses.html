@@ -204,7 +204,8 @@
   scrollArrow.addEventListener('click', function() {
     showFeatures();
     setTimeout(function() {
-      features.scrollIntoView({ behavior: 'smooth' });
+      const featuresTop = features.offsetTop - 80; // Account for fixed nav (80px)
+      window.scrollTo({ top: featuresTop, behavior: 'smooth' });
     }, 100);
   });
 
