@@ -31,25 +31,67 @@
       box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),
                   0 4px 6px -2 rgba(38,34,98,0.1);
     }
-    .faq-card { background-color: #EEF2FF; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 15px -3 rgba(0,0,0,0.1), 0 4px 6px -2 rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .faq-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
-    .faq-question { cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; margin-top: 0; color: #4B5563; }
-    .faq-answer.open { margin-top: 0.5rem; }
-    .faq-tabs button { padding: 0.5rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease; }
-    .faq-tabs button.active { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; }
-    .faq-tabs button:not(.active) { background-color: #E5E7EB; color: #1F2937; }
-    .feature-card { transition: all 0.3s ease; }
-    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+    .faq-card { 
+      background-color: #EEF2FF; 
+      border-radius: 1rem; 
+      padding: 1.5rem; 
+      box-shadow: 0 10px 15px -3 rgba(0,0,0,0.1), 0 4px 6px -2 rgba(0,0,0,0.05); 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .faq-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); 
+    }
+    .faq-question { 
+      font-weight: 600; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      color: #1F2937;
+    }
+    .faq-answer { 
+      max-height: 0; 
+      overflow: hidden; 
+      transition: max-height 0.3s ease; 
+      margin-top: 0; 
+      color: #4B5563; 
+    }
+    .faq-answer.open { 
+      margin-top: 0.75rem; 
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 0.5rem;
+    }
+    .faq-icon.rotate {
+      transform: rotate(180deg);
+    }
+    .faq-tabs button { 
+      padding: 0.5rem 1.5rem; 
+      border-radius: 0.5rem; 
+      font-weight: 600; 
+      transition: all 0.3s ease; 
+    }
+    .faq-tabs button.active { 
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%); 
+      color: white; 
+    }
+    .faq-tabs button:not(.active) { 
+      background-color: #E5E7EB; 
+      color: #1F2937; 
+    }
+    .faq-tabs button:not(.active):hover {
+      background-color: #D1D5DB;
+    }
     nav { height: 64px; }
-    .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
-    .arrow-between path { stroke: #262262; stroke-width: 3; }
   </style>
 </head>
 
 <body class="font-sans antialiased text-gray-800">
 
-<!-- Navigation (matches nurse page exactly) -->
+<!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center">
@@ -89,31 +131,51 @@
   <div id="nurses" class="grid gap-6 grid-cols-1 lg:grid-cols-2">
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        What is the application process for nurses?
-        <span><i data-feather="chevron-down"></i></span>
+        Is there a minimum or maximum number of shifts that I need to pick up?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        Nurses can apply through our online portal. After submitting your application, our team reviews it and schedules an onboarding session if approved.
+        No! You can pick up as many or as few shifts that you want. You just need to keep up with your compliance to make sure you are able to pick up shifts. This is as easy as uploading new documents as they expire.
       </div>
     </div>
 
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        How do I pick my shifts?
-        <span><i data-feather="chevron-down"></i></span>
+        Why do I need liability insurance?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        Nurses can select available shifts through the NorthPeak Care scheduling platform. Shift assignments are first-come, first-served and based on your qualifications and certifications.
+        Great question! As a contractor you need your own liability insurance. While we do not endorse a particular provider, a quick search can help you get what you need. The insurance is very inexpensive — less than $150 per year!
       </div>
     </div>
 
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        What certifications do I need?
-        <span><i data-feather="chevron-down"></i></span>
+        Do I need my own equipment?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        Standard RN or LPN/LVN licensure is required. Certain assignments may require additional certifications like ACLS, PALS, or critical care experience.
+        Yes! You will need the ability to take vital signs including BP and SpO₂. You also need your own mask if you choose to wear one or if the client requires it.
+      </div>
+    </div>
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Do you pay for mileage or travel time?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        No, we only pay for hours working at the client's house. You will not be reimbursed for mileage or other expenses. You can talk with a tax expert to see if these expenses might be tax deductible, however!
+      </div>
+    </div>
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What does it mean to be a private contractor in terms of pay?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        As a contractor you will be responsible for paying your own income taxes. If you earn more than $600 in one year with us, you'll receive a 1099 form at tax time.
       </div>
     </div>
   </div>
@@ -122,69 +184,48 @@
   <div id="partners" class="hidden grid gap-6 grid-cols-1 lg:grid-cols-2">
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        How can my facility partner with NorthPeak Care?
-        <span><i data-feather="chevron-down"></i></span>
+        How do you ensure compliance and that the nurses have valid licenses?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        Fill out our provider partnership form on the website. Our team will review your application and contact you to discuss integration and scheduling options.
+        We connect directly with NURSYS to confirm licensure at time of nurse sign-up. We also get reports from them if there is a problem with a license or if it has expired.
       </div>
     </div>
 
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        What are the costs associated with partnering?
-        <span><i data-feather="chevron-down"></i></span>
+        How do you ensure HIPAA compliance?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        NorthPeak Care offers flexible pricing models depending on the services and staffing levels your facility requires. Contact our team for a custom quote.
+        We partner with a 3rd-party company to ensure that our website is secure and that we collect all data necessary for HIPAA compliance. Visit our HIPAA compliance page to learn more!
       </div>
     </div>
 
     <div class="faq-card" onclick="toggleFAQ(this)">
       <div class="faq-question">
-        How are nurses assigned to our facility?
-        <span><i data-feather="chevron-down"></i></span>
+        Is there a monthly fee or set up fee?
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
       </div>
       <div class="faq-answer">
-        We match nurses to facilities based on qualifications, certifications, and availability. Our scheduling platform ensures smooth assignment and real-time updates.
+        Nope! You pay only when a nurse completes an infusion for you.
+      </div>
+    </div>
+
+    <div class="faq-card" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        We have custom requirements or a special request.
+        <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+      </div>
+      <div class="faq-answer">
+        Speak with our team! The advantage of being a small team is that we can add bespoke or requested features very quickly.
       </div>
     </div>
   </div>
 
 </div>
 
-<script>
-  function toggleFAQ(el) {
-    const answer = el.querySelector('.faq-answer');
-    const isOpen = answer.classList.contains('open');
-    if (isOpen) {
-      answer.style.maxHeight = null;
-      answer.classList.remove('open');
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-      answer.classList.add('open');
-    }
-  }
-
-  function showFAQ(tab) {
-    document.getElementById('nurses').classList.toggle('hidden', tab !== 'nurses');
-    document.getElementById('partners').classList.toggle('hidden', tab !== 'partners');
-    document.getElementById('nurseTab').classList.toggle('active', tab === 'nurses');
-    document.getElementById('partnerTab').classList.toggle('active', tab === 'partners');
-  }
-
-  window.addEventListener('resize', () => {
-    document.querySelectorAll('.faq-answer.open').forEach(answer => {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-    });
-  });
-
-  feather.replace();
-</script>
-
-
-
-<!-- Footer (same as nurse page) -->
+<!-- Footer -->
 <footer class="bg-gray-800">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -220,14 +261,18 @@
   AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
   function toggleFAQ(el) {
-    const answer = el.nextElementSibling;
+    const answer = el.querySelector('.faq-answer');
+    const icon = el.querySelector('.faq-icon');
     const isOpen = answer.classList.contains('open');
+    
     if (isOpen) {
       answer.style.maxHeight = null;
       answer.classList.remove('open');
+      icon.classList.remove('rotate');
     } else {
       answer.style.maxHeight = answer.scrollHeight + "px";
       answer.classList.add('open');
+      icon.classList.add('rotate');
     }
   }
 
