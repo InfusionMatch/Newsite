@@ -22,6 +22,20 @@
     nav { height: 64px; }
     .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
     .arrow-between path { stroke: #262262; stroke-width: 3; }
+    
+    /* Ensure features section starts hidden */
+    #features.hidden-initial {
+      opacity: 0;
+      transform: translateY(50px);
+      pointer-events: none;
+    }
+    
+    #features.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: opacity 1s ease, transform 1s ease;
+    }
   </style>
 </head>
 
@@ -76,7 +90,7 @@
 </section>
 
 <!-- Features / Requirements (Initially Hidden) -->
-<section id="features" class="py-20 bg-gray-50 opacity-0 transform translate-y-12 transition-all duration-1000">
+<section id="features" class="py-20 bg-gray-50 hidden-initial">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Features -->
@@ -160,24 +174,32 @@
 
   const features = document.getElementById('features');
   const scrollArrow = document.getElementById('scrollArrow');
+  let hasRevealed = false;
 
   const revealFeatures = () => {
-    features.classList.remove('opacity-0', 'translate-y-12');
-    features.classList.add('opacity-100', 'translate-y-0');
+    if (!hasRevealed) {
+      features.classList.remove('hidden-initial');
+      features.classList.add('visible');
+      hasRevealed = true;
+    }
   };
 
-  // Fade in on scroll
+  // Reveal on scroll - only watch for the first time
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) revealFeatures();
+      if(entry.isIntersecting && !hasRevealed) {
+        revealFeatures();
+      }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
   observer.observe(features);
 
-  // Fade in on arrow click
+  // Reveal on arrow click
   scrollArrow.addEventListener('click', () => {
-    features.scrollIntoView({ behavior: 'smooth' });
     revealFeatures();
+    setTimeout(() => {
+      features.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   });
 </script>
 
