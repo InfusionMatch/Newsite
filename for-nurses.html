@@ -20,22 +20,27 @@
     .feature-card { transition: all 0.3s ease; }
     .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),0 10px 10px -5 rgba(0,0,0,0.04); }
     nav { height: 64px; }
-    .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
-    .arrow-between path { stroke: #262262; stroke-width: 3; }
     
-    /* Start completely hidden */
-    #features {
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(50px);
+    /* Hide features section initially */
+    .features-hidden {
+      display: none;
     }
     
-    /* Animate in when visible */
-    #features.show {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 1s ease, transform 1s ease;
+    /* Show with animation */
+    .features-visible {
+      display: block;
+      animation: fadeInUp 1s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -91,7 +96,7 @@
 </section>
 
 <!-- Features / Requirements (Initially Hidden) -->
-<section id="features" class="py-20 bg-gray-50">
+<section id="features" class="py-20 bg-gray-50 features-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12">
       <!-- Features -->
@@ -130,8 +135,42 @@
       </div>
     </div>
   </div>
-</section>
 
+  <!-- How it works -->
+</section>
+<!-- Steps -->
+<div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-2 md:px-0">
+  <!-- Step 1 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
+    <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+  </div>
+  <!-- Arrow -->
+  <div class="flex md:flex-col justify-center items-center">
+    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+    </svg>
+  </div>
+  <!-- Step 2 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
+    <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
+  </div>
+  <!-- Arrow -->
+  <div class="flex md:flex-col justify-center items-center">
+    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+    </svg>
+  </div>
+  <!-- Step 3 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
+    <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
+  </div>
+</div>
 <!-- CTA -->
 <section id="cta" class="bg-indigo-50 py-16 text-center">
   <h2 class="text-3xl font-bold mb-6">Ready to start your flexible nursing career?</h2>
@@ -175,36 +214,40 @@
 
   const features = document.getElementById('features');
   const scrollArrow = document.getElementById('scrollArrow');
-  let isRevealed = false;
+  let hasBeenRevealed = false;
 
-  function revealFeatures() {
-    if (!isRevealed) {
-      features.classList.add('show');
-      isRevealed = true;
+  function showFeatures() {
+    if (!hasBeenRevealed) {
+      features.classList.remove('features-hidden');
+      features.classList.add('features-visible');
+      hasBeenRevealed = true;
+      feather.replace(); // Re-render icons after display changes
     }
   }
 
-  // Arrow click handler
+  // Click the arrow to reveal
   scrollArrow.addEventListener('click', function() {
-    revealFeatures();
+    showFeatures();
     setTimeout(function() {
       features.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   });
 
-  // Scroll detection using IntersectionObserver
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting && !isRevealed) {
-        revealFeatures();
+  // Detect when user scrolls near the features section
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      const heroSection = document.querySelector('.hero-gradient');
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight;
+      
+      // If user has scrolled past 80% of hero section
+      if (scrollPosition > heroBottom * 0.8) {
+        showFeatures();
       }
-    });
-  }, { 
-    threshold: 0.05,
-    rootMargin: '0px'
+    }, 50);
   });
-
-  observer.observe(features);
 </script>
 
 </body>
