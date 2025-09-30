@@ -18,12 +18,19 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+  <!-- Custom Styles -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    nav { height: 64px; z-index: 20; }
     .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
-    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1); }
+    .btn-primary {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),
+                  0 4px 6px -2 rgba(38,34,98,0.1);
+    }
     .faq-card { background-color: #EEF2FF; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 15px -3 rgba(0,0,0,0.1), 0 4px 6px -2 rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .faq-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
     .faq-question { cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
@@ -32,15 +39,19 @@
     .faq-tabs button { padding: 0.5rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease; }
     .faq-tabs button.active { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; }
     .faq-tabs button:not(.active) { background-color: #E5E7EB; color: #1F2937; }
-    .nav-link { font-medium: 500; transition: color 0.2s; }
-    .nav-link:hover { color: #6366f1; }
+    .feature-card { transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+    nav { height: 64px; }
+    .arrow-between { width: 40px; height: 40px; margin: 0 auto; color: #262262; }
+    .arrow-between path { stroke: #262262; stroke-width: 3; }
   </style>
 </head>
+
 <body class="font-sans antialiased text-gray-800">
 
-<!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full h-16 flex items-center px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+<!-- Navigation (matches nurse page exactly) -->
+<nav class="bg-white shadow-sm fixed w-full z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
     </a>
@@ -55,20 +66,25 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-gradient relative pt-16 min-h-screen text-white flex flex-col justify-center overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
-      Frequently Asked Questions
-    </h1>
-    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
-      Find answers to common questions for nurses and healthcare partners.
-    </p>
-
-    <!-- Tabs -->
-    <div class="faq-tabs flex justify-center space-x-4 mt-12">
-      <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
-      <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
+<!-- Hero Section (matches nurse page size) -->
+<section class="hero-gradient pt-24 pb-32 text-white relative text-center lg:text-left overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+      <div class="lg:col-span-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+          Frequently Asked Questions
+        </h1>
+        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0 animate__animated animate__fadeIn animate__delay-1s">
+          Find answers to common questions for nurses and healthcare partners.
+        </p>
+        <div class="mt-6 flex justify-center lg:justify-start animate__animated animate__fadeIn animate__delay-2s faq-tabs">
+          <button id="nurseTab" class="active" onclick="showFAQ('nurses')">For Nurses</button>
+          <button id="partnerTab" onclick="showFAQ('partners')">For Partners</button>
+        </div>
+      </div>
+      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
+        <img src="static/faqheroimage.jpg" alt="FAQ Graphic" class="rounded-lg shadow-lg w-full max-w-md animate__animated animate__fadeIn">
+      </div>
     </div>
   </div>
 </section>
@@ -83,7 +99,7 @@
   </div>
 </div>
 
-<!-- Footer (same as other pages) -->
+<!-- Footer (same as nurse page) -->
 <footer class="bg-gray-800">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
