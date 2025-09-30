@@ -25,6 +25,32 @@
     .feature-card { transition: all 0.3s ease; }
     .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1), 0 10px 10px -5 rgba(0,0,0,0.04); }
     nav { z-index: 20; }
+    
+    /* Hide benefits section initially */
+    .benefits-hidden {
+      display: none;
+    }
+    
+    /* Show with animation */
+    .benefits-visible {
+      display: block;
+      animation: fadeInUp 1s ease forwards;
+    }
+    
+    #benefits-placeholder.hidden {
+      display: none;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -77,19 +103,21 @@
   </div>
 
   <!-- Scroll Arrow -->
-<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-  <a href="#benefits" class="block animate-bounce">
-    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </a>
-</div>
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    <button id="scrollArrow" class="block">
+      <svg class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+  </div>
 </section>
 
+<!-- Placeholder to maintain spacing -->
+<div id="benefits-placeholder" class="bg-gray-50" style="height: 600px;"></div>
 
-<!-- Benefits Section -->
-<section id="benefits" class="py-20 bg-gray-50 relative">
+<!-- Benefits Section (Initially Hidden) -->
+<section id="benefits" class="py-20 bg-gray-50 relative benefits-hidden">
   <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Providers Choose NorthPeak Care</h2>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
     <div class="bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white feature-card" data-aos="fade-up">
@@ -128,7 +156,7 @@
         <img src="static/nurseinfusion.jpg" alt="Nurse giving infusion" class="rounded-2xl shadow-lg w-full max-w-md lg:max-w-lg object-cover">
       </div>
       <div>
-        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">NorthPeak Care’s Capabilities</h2>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900" data-aos="fade-up">NorthPeak Care's Capabilities</h2>
         <div class="grid gap-8">
           <div class="bg-white p-6 rounded-xl shadow feature-card" data-aos="fade-up">
             <i data-feather="check-square" class="w-10 h-10 text-indigo-600 mb-3"></i>
@@ -219,15 +247,69 @@
   </div>
 </footer>
 
-<script>feather.replace();</script>
-<script>AOS.init({ duration: 800, easing: 'ease-in-out', once: true });</script>
 <script>
-  // Smooth scroll
+  feather.replace();
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+  const benefits = document.getElementById('benefits');
+  const benefitsPlaceholder = document.getElementById('benefits-placeholder');
+  const scrollArrow = document.getElementById('scrollArrow');
+  let hasBeenRevealed = false;
+
+  function showBenefits() {
+    if (!hasBeenRevealed) {
+      benefitsPlaceholder.classList.add('hidden');
+      benefits.classList.remove('benefits-hidden');
+      benefits.classList.add('benefits-visible');
+      hasBeenRevealed = true;
+      feather.replace(); // Re-render icons after display changes
+      AOS.refresh(); // Refresh AOS animations
+    }
+  }
+
+  // Click the arrow to reveal
+  scrollArrow.addEventListener('click', function() {
+    showBenefits();
+    setTimeout(function() {
+      const benefitsTop = benefits.offsetTop - 80; // Account for fixed nav
+      window.scrollTo({ top: benefitsTop, behavior: 'smooth' });
+    }, 100);
+  });
+
+  // Detect when user scrolls near the benefits section
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      const heroSection = document.querySelector('.hero-gradient');
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight;
+      
+      // If user has scrolled past 80% of hero section
+      if (scrollPosition > heroBottom * 0.8) {
+        showBenefits();
+      }
+    }, 50);
+  });
+
+  // Smooth scroll for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+      const targetId = this.getAttribute('href');
+      if (targetId === '#benefits') {
+        showBenefits();
+        setTimeout(function() {
+          const target = document.querySelector(targetId);
+          const targetTop = target.offsetTop - 80;
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }, 100);
+      } else {
+        const target = document.querySelector(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     });
   });
 </script>
