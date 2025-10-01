@@ -1,65 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ==== Core Meta ==== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NorthPeak Care – Nursing Staffing Platform for Washington State</title>
-  <meta name="description"
-        content="NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services.">
+  <title>NorthPeak Care | Smarter Staffing. Better Care.</title>
+  <meta name="description" content="NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
-  <!-- ==== Open Graph / Twitter ==== -->
-  <meta property="og:title" content="NorthPeak Care – Smarter Staffing. Better Care.">
-  <meta property="og:description"
-        content="Connect with qualified nurses and streamline home healthcare services with our intelligent matching platform.">
-  <meta property="og:image" content="https://northpeakcare.com/static/indexlogo.png">
-  <meta property="og:url" content="https://northpeakcare.com/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NorthPeak Care – Smarter Staffing. Better Care.">
-  <meta name="twitter:description"
-        content="Connect with qualified nurses and streamline home healthcare services with our intelligent matching platform.">
-  <meta name="twitter:image" content="https://northpeakcare.com/static/indexlogo.png">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Animate.css & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- ==== Structured Data (JSON‑LD) ==== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "NorthPeak Care",
-    "url": "https://northpeakcare.com",
-    "logo": "https://northpeakcare.com/static/indexlogo.png",
-    "sameAs": [
-      "https://twitter.com/yourhandle",
-      "https://www.facebook.com/yourpage",
-      "https://www.linkedin.com/company/yourcompany"
-    ],
-    "description": "NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services."
-  }
-  </script>
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- ==== Styles ==== -->
-  <!-- Tailwind pre‑compiled CSS (no runtime compiler) -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css">
-
-  <!-- Animate.css (preload → stylesheet) -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  </noscript>
-
-  <!-- AOS CSS (preload → stylesheet) -->
-  <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-        as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  </noscript>
-
-  <!-- ==== Inline CSS (tiny, keep here for now) ==== -->
   <style>
     /* Hero Gradient */
     .hero-gradient {
@@ -69,18 +27,18 @@
     /* Buttons */
     .btn-primary {
       background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
-      color: #fff;
-      transition: all .3s ease;
+      color: white;
+      transition: all 0.3s ease;
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(59,130,246,.3), 0 4px 6px -2px rgba(59,130,246,.1);
+      box-shadow: 0 10px 15px -3 rgba(59,130,246,0.3), 0 4px 6px -2 rgba(59,130,246,0.1);
     }
 
     /* Feature Cards Hover */
     .feature-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
     }
 
     /* Bouncing Arrow */
@@ -89,74 +47,168 @@
       cursor: pointer;
     }
     @keyframes bounce {
-      0%,100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
-    }
-
-    /* Focus ring for keyboard users */
-    .focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(99,102,241,.5);
     }
   </style>
 </head>
-
 <body class="font-sans antialiased text-gray-800">
 
-  <!-- ==== Header / Hero ==== -->
-  <header class="hero-gradient relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-    <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-black/35"></div>
+<!-- Hero Section -->
+<section class="hero-gradient relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 z-0">
+  <!-- Overlay for readability -->
+  <div class="hero-overlay absolute inset-0 bg-black/35 z-0"></div>
 
-    <div class="relative z-10">
-      <!-- Optimised logo (WebP + PNG fallback) -->
-      <picture>
-        <source srcset="static/indexlogo.webp 1x, static/indexlogo@2x.webp 2x" type="image/webp">
-        <img src="static/indexlogo.png"
-             srcset="static/indexlogo.png 1x, static/indexlogo@2x.png 2x"
-             alt="NorthPeak Care logo – modern nursing staffing platform"
-             class="mx-auto w-48 sm:w-64 md:w-72 lg:w-96 animate__animated animate__fadeIn"
-             loading="lazy">
-      </picture>
+  <div class="relative z-10">
+    <img src="static/indexlogo.png" alt="NorthPeak Care Logo" class="mx-auto w-48 sm:w-64 md:w-72 lg:w-96 animate__animated animate__fadeIn">
+    <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg animate__animated animate__fadeInDown">
+      Modern Nursing Staffing Platform
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-1s">
+      Connect with qualified nurses and streamline your home healthcare services with our intelligent matching platform.
+    </p>
 
-      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg animate__animated animate__fadeInDown">
-        Modern Nursing Staffing Platform
-      </h1>
-      <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-1s">
-        Connect with qualified nurses and streamline your home healthcare services with our intelligent matching platform.
-      </p>
-
-      <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center animate__animated animate__fadeIn animate__delay-2s">
-        <a href="for-providers.html"
-           class="btn-primary px-6 py-3 rounded-md text-base font-medium focus-visible focus-visible"
-           >Partner With Us</a>
-        <a href="for-nurses.html"
-           class="btn-primary px-6 py-3 rounded-md text-base font-medium focus-visible focus-visible"
-           >I'm A Nurse</a>
-      </div>
+    <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center animate__animated animate__fadeIn animate__delay-2s">
+      <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">Partner With Us</a>
+      <a href="for-nurses.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium text-center btn-animated">I'm A Nurse</a>
     </div>
+  </div>
 
-    <!-- Bouncing scroll arrow -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-      <div class="bounce-arrow" onclick="scrollToFeatures()">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
-             d="M19 9l-7 7-7-7"></path></svg>
-      </div>
+  <!-- Bouncing Scroll Arrow -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+    <div class="bounce-arrow" onclick="scrollToFeatures()">
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ==== Main Content ==== -->
-  <main>
-    <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:text-center mb-12">
-          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">A better way to manage home health care</h2>
-          <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
-            Our platform connects healthcare providers with qualified nurses to deliver exceptional patient care.
-          </p>
+<!-- Features Section -->
+<section id="features" class="py-16 bg-gray-100 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">A better way to manage home health care</h2>
+      <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">Our platform connects healthcare providers with qualified nurses to deliver exceptional patient care.</p>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Feature Cards -->
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="clock"></i>
         </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Real-time Scheduling</h3>
+        <p class="mt-2 text-gray-500">Instantly match with available nurses based on location, specialty, and availability.</p>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="shield"></i>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Verified Credentials</h3>
+        <p class="mt-2 text-gray-500">All nurses undergo rigorous background checks and credential verification.</p>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="bar-chart-2"></i>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Performance Analytics</h3>
+        <p class="mt-2 text-gray-500">Track nurse performance and patient outcomes with detailed reporting.</p>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="message-square"></i>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Secure Messaging</h3>
+        <p class="mt-2 text-gray-500">HIPAA-compliant communication between providers, nurses, and patients.</p>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="map-pin"></i>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Job Tracking</h3>
+        <p class="mt-2 text-gray-500">Real-time viewing of nurse visits and status of each job.</p>
+      </div>
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+          <i data-feather="dollar-sign"></i>
+        </div>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Flexible Payments</h3>
+        <p class="mt-2 text-gray-500">Easy invoicing and payment processing for both providers and nurses.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!--
+<!-- CTA Section -->
+<!-- CTA Section -->
+<section class="py-12 px-4 sm:py-16 sm:px-6 lg:px-8 text-center" style="background-color:#2b3990;">
+  <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Ready to transform your home health services?</h2>
+  <p class="mt-4 text-lg leading-6 text-indigo-200">Join hundreds of healthcare providers and nurses delivering better care through technology.</p>
+  <a href="for-providers.html" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md" style="color:#1a73e8; background-color:#ffffff;">
+    Get Started
+  </a>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-gray-800">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Initialize AOS & Feather icons
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  feather.replace();
+
+  // Custom scroll for arrow to align features heading at top
+  function scrollToFeatures() {
+    const featuresSection = document.getElementById('features');
+    const heading = featuresSection.querySelector('h2'); // "A better way to manage home health care"
+    const topOffset = heading.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+  }
+
+  // Smooth scroll for all other anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Parallax effect for hero logo
+  const heroLogo = document.querySelector('.hero-gradient img');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    heroLogo.style.transform = `translateY(${Math.min(scrollY * 0.15, 50)}px)`;
+  });
+</script>
+
+</body>
+</html>
