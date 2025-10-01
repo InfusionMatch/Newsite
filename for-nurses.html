@@ -3,26 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Updated title & meta description -->
-  <title>Nurse Jobs – Flexible Shifts | NorthPeak Care</title>
-  <meta name="description"
-        content="Join NorthPeak Care as a nurse. Choose flexible shifts, earn competitive pay, and make a real impact. Apply now for rewarding nurse jobs.">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.northpeakcare.com/for-nurses.html">
-
-  <!-- Pre‑connect to CDNs for faster loading -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-  <!-- Open Graph tags for social sharing -->
-  <meta property="og:title" content="Nurse Jobs – Flexible Shifts | NorthPeak Care">
-  <meta property="og:description" content="Join NorthPeak Care as a nurse. Choose flexible shifts, earn competitive pay, and make a real impact.">
-  <meta property="og:url" content="https://www.northpeakcare.com/for-nurses.html">
-  <meta property="og:image" content="https://www.northpeakcare.com/static/nursesmiling.jpg">
-  <meta property="og:type" content="website">
-
+  <title>NorthPeak Care | For Nurses</title>
+  <meta name="description" content="Join NorthPeak Care as a nurse and take control of your schedule. Flexible shifts, competitive pay, and meaningful impact.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
   <!-- Tailwind CSS -->
@@ -31,56 +13,6 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Structured data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "NorthPeak Care",
-    "url": "https://www.northpeakcare.com",
-    "logo": "https://www.northpeakcare.com/static/navagationlogotemp.png",
-    "sameAs": [
-      "https://twitter.com/yourhandle",
-      "https://facebook.com/yourpage",
-      "https://instagram.com/yourhandle",
-      "https://linkedin.com/company/yourcompany"
-    ]
-  }
-  </script>
-
-  <!-- Structured data: Sample JobPosting (adjust values as needed) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Travel Nurse – Flexible Shifts",
-    "description": "Provide in‑home care with flexible scheduling and competitive pay.",
-    "datePosted": "2025-09-30",
-    "employmentType": "CONTRACTOR",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "NorthPeak Care",
-      "sameAs": "https://www.northpeakcare.com"
-    },
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      }
-    },
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": "USD",
-      "value": {
-        "@type": "QuantitativeValue",
-        "value": "30",
-        "unitText": "HOUR"
-      }
-    }
-  }
-  </script>
-
   <style>
     .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
     .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
@@ -88,14 +20,31 @@
     .feature-card { transition: all 0.3s ease; }
     .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),0 10px 10px -5 rgba(0,0,0,0.04); }
     nav { height: 64px; }
-
-    .features-hidden { display: none; }
-    .features-visible { display: block; animation: fadeInUp 1s ease forwards; }
-    #features-placeholder.hidden { display: none; }
-
+    
+    /* Hide features section initially */
+    .features-hidden {
+      display: none;
+    }
+    
+    /* Show with animation */
+    .features-visible {
+      display: block;
+      animation: fadeInUp 1s ease forwards;
+    }
+    
+    #features-placeholder.hidden {
+      display: none;
+    }
+    
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -135,7 +84,7 @@
         </div>
       </div>
       <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
-        <img src="static/nursesmiling.jpg" alt="Nurse smiling while reviewing shift schedule" class="rounded-lg shadow-lg w-full max-w-md">
+        <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard" class="rounded-lg shadow-lg w-full max-w-md">
       </div>
     </div>
   </div>
@@ -160,4 +109,166 @@
       <!-- Features -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Why Nurses Love NorthPeak Care</h2>
-        <div class="grid gap
+        <div class="grid gap-6">
+          <div class="bg-white p-6 rounded-xl shadow feature-card">
+            <i data-feather="clock" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Flexibility</h3>
+            <p>Choose when and where you want to work. Balance your career with your lifestyle.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow feature-card">
+            <i data-feather="dollar-sign" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Competitive Pay</h3>
+            <p>Earn industry-leading rates with transparent, fast payouts after each completed shift.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow feature-card">
+            <i data-feather="heart" class="w-10 h-10 text-indigo-600 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-1">Impact</h3>
+            <p>Deliver care where it matters most — in homes and clinics, helping patients thrive.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Requirements -->
+      <div>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">Requirements for Nurses</h2>
+        <ul class="space-y-4 text-lg text-gray-700">
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience with infusion and IV therapy</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>BLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>ACLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
+        </ul>
+        <div class="mt-8">
+          <img src="static/malenursecomputer.jpg" alt="Male nurse using computer" class="rounded-2xl shadow-lg w-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Arrow -->
+  <div class="flex justify-center mt-12">
+    <a href="#cta" class="block">
+      <svg class="w-10 h-10 text-indigo-700 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+  <!-- Steps -->
+<div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-2 md:px-0">
+  <!-- Step 1 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
+    <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+  </div>
+  <!-- Arrow -->
+  <div class="flex md:flex-col justify-center items-center">
+    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+    </svg>
+  </div>
+  <!-- Step 2 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
+    <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
+  </div>
+  <!-- Arrow -->
+  <div class="flex md:flex-col justify-center items-center">
+    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
+    </svg>
+  </div>
+  <!-- Step 3 -->
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
+    <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
+    <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
+  </div>
+</div>
+
+
+<!-- CTA -->
+<section id="cta" class="bg-indigo-50 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">Ready to start your flexible nursing career?</h2>
+  <p class="text-lg mb-8">Join NorthPeak Care and take control of your schedule while making a real impact.</p>
+  <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow hover:opacity-90 transition">Apply Now</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">FAQ</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="faq.html" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  feather.replace();
+
+  const features = document.getElementById('features');
+  const featuresPlaceholder = document.getElementById('features-placeholder');
+  const scrollArrow = document.getElementById('scrollArrow');
+  let hasBeenRevealed = false;
+
+  function showFeatures() {
+    if (!hasBeenRevealed) {
+      featuresPlaceholder.classList.add('hidden');
+      features.classList.remove('features-hidden');
+      features.classList.add('features-visible');
+      hasBeenRevealed = true;
+      feather.replace(); // Re-render icons after display changes
+    }
+  }
+
+  // Click the arrow to reveal
+  scrollArrow.addEventListener('click', function() {
+    showFeatures();
+    setTimeout(function() {
+      const featuresTop = features.offsetTop - 80; // Account for fixed nav (80px)
+      window.scrollTo({ top: featuresTop, behavior: 'smooth' });
+    }, 100);
+  });
+
+  // Detect when user scrolls near the features section
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      const heroSection = document.querySelector('.hero-gradient');
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight;
+      
+      // If user has scrolled past 80% of hero section
+      if (scrollPosition > heroBottom * 0.8) {
+        showFeatures();
+      }
+    }, 50);
+  });
+</script>
+
+</body>
+</html>
