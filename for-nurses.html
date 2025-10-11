@@ -160,6 +160,90 @@
   </div>
 </div>
 
+  <!-- Nurse FAQ Section -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+      Frequently Asked Questions – For Nurses
+    </h2>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Q1 -->
+      <div class="faq-card" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          Is there a minimum or maximum number of shifts that I need to pick up?
+          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+        </div>
+        <div class="faq-answer">
+          No! You can pick up as many or as few shifts as you want. Just keep your compliance documents up‑to‑date so the system knows you’re eligible.
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-card" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          Why do I need liability insurance?
+          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+        </div>
+        <div class="faq-answer">
+          As an independent contractor you must carry your own liability coverage. It’s inexpensive—often under $150 per year—and protects both you and the client.
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-card" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          Do I need my own equipment?
+          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+        </div>
+        <div class="faq-answer">
+          Yes. You’ll need a blood‑pressure cuff, pulse‑oximeter (SpO₂), and any personal protective equipment the client requires (e.g., a mask).
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-card" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          Do you pay for mileage or travel time?
+          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+        </div>
+        <div class="faq-answer">
+          We only reimburse the hours you work at the client’s location. Mileage and travel time are not paid, though you may be able to claim them as tax‑deductible expenses.
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="faq-card" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          What does it mean to be a private contractor in terms of pay?
+          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+        </div>
+        <div class="faq-answer">
+          As a contractor you receive the full hourly rate and are responsible for your own income taxes. If you earn more than $600 in a year, you’ll receive a 1099‑MISC at tax time.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple toggle for the FAQ cards – copy this if you don’t already have it
+  function toggleFAQ(el) {
+    const answer = el.querySelector('.faq-answer');
+    const icon   = el.querySelector('.faq-icon i');
+    const open   = answer.classList.toggle('open');
+
+    if (open) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.classList.add('rotate');
+    } else {
+      answer.style.maxHeight = null;
+      icon.classList.remove('rotate');
+    }
+  }
+</script>
+
+
 <!-- CTA + Form wrapper -->
 <section id="cta-form-wrapper" class="bg-indigo-50 py-16">
   <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start gap-12">
