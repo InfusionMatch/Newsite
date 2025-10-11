@@ -6,14 +6,33 @@
   <title>NorthPeak Care | Smarter Staffing. Better Care.</title>
   <meta name="description" content="NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Animate.css & AOS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          // class name will be `font-montserrat`
+          montserrat: ['Montserrat', 'sans-serif'],
+          // optionally replace the default `sans` stack
+          sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+
+  <!-- Animate.css & AOS (commented out – no animations) -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -44,27 +63,27 @@
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
+    "@context": "schema.org",
     "@type": "Organization",
     "name": "NorthPeak Care",
-    "url": "https://www.northpeakcare.com",
-    "logo": "https://www.northpeakcare.com/static/navagationlogotemp.png",
+    "url": "www.northpeakcare.com",
+    "logo": "www.northpeakcare.com/static/navagationlogotemp.png",
     "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.twitter.com/",
-      "https://www.instagram.com/",
-      "https://www.linkedin.com/"
+      "www.facebook.com/",
+      "www.twitter.com/",
+      "www.instagram.com/",
+      "www.linkedin.com/"
     ]
   }
   </script>
 </head>
 
-<body class="font-sans antialiased text-gray-800">
+<body class="font-montserrat antialiased text-gray-800">
+
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    
     <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
@@ -72,8 +91,7 @@
 
     <!-- Nav Links -->
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
-      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Pharmacies</a>
+      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Pharmacies</a>
       <a href="for-nurses.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
     </div>
@@ -88,19 +106,19 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       <div class="lg:col-span-6 flex flex-col justify-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold animate__animated animate__fadeInDown">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
           Home Infusion Nurses, Ready When You Are
         </h1>
-        <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl animate__animated animate__fadeIn animate__delay-1s">
-          Connecting qualified nurses and streamlining your home healthcare services. 
+        <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl">
+          Connecting qualified nurses and streamlining your home healthcare services.
         </p>
-        <div class="mt-6 flex space-x-4 animate__animated animate__fadeIn animate__delay-2s">
+        <div class="mt-6 flex space-x-4">
           <a href="for-providers.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Pharmacies</a>
           <a href="for-nurses.html" class="bg-white text-indigo-700 px-6 py-3 rounded-md text-base font-medium hover:bg-gray-50">Nurses</a>
         </div>
       </div>
       <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
-        <img src="static/StartingIV.jpg" alt="Nurse administering infusion" class="rounded-lg shadow-lg w-full max-w-md animate__animated animate__fadeIn">
+        <img src="static/StartingIV.jpg" alt="Nurse administering infusion" class="rounded-lg shadow-lg w-full max-w-md">
       </div>
     </div>
   </div>
@@ -110,30 +128,32 @@
 <div class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">NorthPeak Care's Solutions:</h2>
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">North Peak Care's Advantages:</h2>
       <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto"></p>
     </div>
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up">
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
           <i data-feather="user"></i>
         </div>
         <h3 class="mt-5 text-lg font-medium text-gray-900">Expert Infusion Nurses</h3>
         <p class="mt-2 text-gray-500">Our nurses bring diverse expertise from ER, ICU and Infusion settings, with extensive experience in Ports, PICCs and PIVs.</p>
       </div>
-      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
           <i data-feather="check-circle"></i>
         </div>
         <h3 class="mt-5 text-lg font-medium text-gray-900">More Patients, More Efficiency</h3>
         <p class="mt-2 text-gray-500">Partnering with NorthPeak Care enables pharmacies to expand their capacity, serve more patients, and maximize efficiency; without compromising outcomes. Streamlining the infusion process and ensuring reliable high-quality care.</p>
       </div>
-      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
           <i data-feather="heart"></i>
         </div>
-        <h3 class="mt-5 text-lg font-medium text-gray-900">Seemless Patient Care</h3>
-        <p class="mt-2 text-gray-500">From standard therapies to complex biologics, our nures are equipted to deliver safe, precise and compassionate care in the home.</p>
+        <h3 class="mt-5 text-lg font-medium text-gray-900">Seamless Patient Care</h3>
+        <p class="mt-2 text-gray-500">From standard therapies to complex biologics, our nurses are equipped to deliver safe, precise and compassionate care in the home.</p>
       </div>
     </div>
   </div>
@@ -143,11 +163,10 @@
 <div class="py-16 px-4 sm:py-20 sm:px-6 lg:px-8 text-center" style="background-color:#2b3990;">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Our Vision</h2>
-    <p class="mt-4 text-lg leading-6 text-indigo-200 max-w-3xl mx-auto">At NorthPeak Care, we're building more than a staffing platform, we're buildin the infrastructre for home infusion care's future. Our mission: empower pharmacies and clinicians to deliver life-changing and cost effective therapies in patient's homes with confidence, efficiency and scale.</p>
+    <p class="mt-4 text-lg leading-6 text-indigo-200 max-w-3xl mx-auto">
+      At North Peak Care, we're building more than a staffing platform, we're building the infrastructure for home infusion care's future. Our mission: empower pharmacies and clinicians to deliver life‑changing and cost‑effective therapies in patients' homes with confidence, efficiency and scale.
+    </p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="for-providers.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md" style="color:#1a73e8; background-color:#ffffff;">
-        Information for Pharmacies
-      </a>
       <a href="for-nurses.html" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md" style="color:#1a73e8; background-color:#ffffff;">
         Information for Nurses
       </a>
@@ -155,14 +174,17 @@
   </div>
 </div>
 
+
 <!-- Form Section -->
 <div class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- Left Column -->
-      <div class="flex flex-col justify-center">
-        <h2 class="text-3xl font-extrabold text-gray-900">Partner with Us</h2>
-        <p class="mt-4 text-lg text-gray-500">Help us shape the future of Home Care.</p>
+      <!-- Left Column – Image Placeholder -->
+      <div class="flex items-center justify-center">
+        <!-- Replace the src with your actual image URL -->
+        <img src="/static/indexlogo.png"
+             alt="Logo"
+             class="rounded-lg shadow-md w-full max-w-md object-cover">
       </div>
 
       <!-- Right Column (Form) -->
@@ -172,7 +194,8 @@
           <div class="flex items-start">
             <div class="flex-shrink-0">
               <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4"/>
               </svg>
             </div>
             <div class="ml-3 text-sm text-green-700">
@@ -186,7 +209,8 @@
           <div class="flex items-start">
             <div class="flex-shrink-0">
               <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728"/>
               </svg>
             </div>
             <div class="ml-3 text-sm text-red-700">
@@ -197,47 +221,90 @@
         </div>
 
         <!-- Formspree form -->
-        <form id="vendor-form" action="https://formspree.io/f/mjkaykay" method="POST" class="space-y-4" novalidate>
+        <form id="vendor-form"
+              action="https://formspree.io/f/mjkaykay"
+              method="POST"
+              class="space-y-4"
+              novalidate>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="first_name" class="block text-sm font-medium text-gray-700">First name <span class="text-red-500">*</span></label>
-              <input id="first_name" name="first_name" required type="text" autocomplete="given-name"
+              <label for="first_name"
+                     class="block text-sm font-medium text-gray-700">
+                First name <span class="text-red-500">*</span>
+              </label>
+              <input id="first_name"
+                     name="first_name"
+                     required
+                     type="text"
+                     autocomplete="given-name"
                      class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
             </div>
             <div>
-              <label for="last_name" class="block text-sm font-medium text-gray-700">Last name <span class="text-red-500">*</span></label>
-              <input id="last_name" name="last_name" required type="text" autocomplete="family-name"
+              <label for="last_name"
+                     class="block text-sm font-medium text-gray-700">
+                Last name <span class="text-red-500">*</span>
+              </label>
+              <input id="last_name"
+                     name="last_name"
+                     required
+                     type="text"
+                     autocomplete="family-name"
                      class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
             </div>
           </div>
 
           <div>
-            <label for="company_name" class="block text-sm font-medium text-gray-700">Company Name <span class="text-red-500">*</span></label>
-            <input id="company_name" name="company_name" required type="text"
+            <label for="company_name"
+                   class="block text-sm font-medium text-gray-700">
+              Company Name <span class="text-red-500">*</span>
+            </label>
+            <input id="company_name"
+                   name="company_name"
+                   required
+                   type="text"
                    class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
-              <input id="email" name="email" required type="email" autocomplete="email"
+              <label for="email"
+                     class="block text-sm font-medium text-gray-700">
+                Email <span class="text-red-500">*</span>
+              </label>
+              <input id="email"
+                     name="email"
+                     required
+                     type="email"
+                     autocomplete="email"
                      class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
             </div>
             <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel"
+              <label for="phone"
+                     class="block text-sm font-medium text-gray-700">
+                Phone
+              </label>
+              <input id="phone"
+                     name="phone"
+                     type="tel"
+                     autocomplete="tel"
                      class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
             </div>
           </div>
 
           <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-            <textarea id="message" name="message" rows="4"
+            <label for="message"
+                   class="block text-sm font-medium text-gray-700">
+              Message
+            </label>
+            <textarea id="message"
+                      name="message"
+                      rows="4"
                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"></textarea>
           </div>
 
           <div>
-            <button type="submit" class="btn-primary w-full px-6 py-3 rounded-md text-base font-medium">
+            <button type="submit"
+                    class="btn-primary w-full px-6 py-3 rounded-md text-base font-medium">
               Submit
             </button>
           </div>
@@ -246,6 +313,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Footer -->
 <footer class="bg-gray-800">
@@ -277,10 +345,5 @@
     </div>
   </div>
 </footer>
-
-<script>
-  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-  feather.replace();
-</script>
 </body>
 </html>
