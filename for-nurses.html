@@ -4,65 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NorthPeak Care | For Nurses</title>
-  <meta name="description" content="Join NorthPeak Care as a nurse and take control of your schedule. Flexible shifts, competitive pay, and meaningful impact.">
+  <meta name="description"
+        content="Join NorthPeak Care as a nurse and take control of your schedule. Flexible shifts, competitive pay, and meaningful impact.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Feather Icons -->
+  <!-- Feather Icons (kept) -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
+    /* ---- Font ---- */
+    body {
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system,
+                   BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                   Arial, "Noto Sans", sans-serif;
+    }
+
+    /* ---- Colors / Gradients ---- */
     .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
-    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; transition: all 0.3s ease; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3),0 4px 6px -2 rgba(38,34,98,0.1); }
-    .feature-card { transition: all 0.3s ease; }
-    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5 rgba(0,0,0,0.1),0 10px 10px -5 rgba(0,0,0,0.04); }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      color: white;
+    }
+
+    /* Remove all hover/transition animations */
+    .btn-primary,
+    .feature-card,
+    .feature-card:hover,
+    .arrow-between,
+    .animate-bounce,
+    .animate-pulse,
+    .transition,
+    .transform {
+      transition: none !important;
+      animation: none !important;
+    }
+
     nav { height: 64px; }
-    
-    /* Hide features section initially */
-    .features-hidden {
-      display: none;
-    }
-    
-    /* Show with animation */
-    .features-visible {
-      display: block;
-      animation: fadeInUp 1s ease forwards;
-    }
-    
-    #features-placeholder.hidden {
-      display: none;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
+    /* Hide features section initially – no fade‑in */
+    .features-hidden { display: none; }
+    .features-visible { display: block; }
+
+    /* Keep icons, just hide arrows */
+    .arrow-between { display: none; }
   </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800">
+<body class="antialiased text-gray-800">
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center">
-      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo" class="h-10 w-auto object-contain">
+      <img src="static/navagationlogotemp.png" alt="NorthPeak Care Logo"
+           class="h-10 w-auto object-contain">
     </a>
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
-      <a href="index.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Home</a>
       <a href="for-nurses.html" class="nav-link text-indigo-600 font-semibold">Nurses</a>
       <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
-      <a href="faq.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">FAQs</a>
     </div>
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
   </div>
@@ -79,24 +87,19 @@
         <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
           Join NorthPeak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 sm:justify-start justify-center">
-          <a href="nurseform.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">Sign Up Now!</a>
+        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+          <a href="nurseform.html"
+             class="btn-primary px-6 py-3 rounded-md text-base font-medium">Sign Up Now!</a>
         </div>
       </div>
       <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
-        <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard" class="rounded-lg shadow-lg w-full max-w-md">
+        <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard"
+             class="rounded-lg shadow-lg w-full max-w-md">
       </div>
     </div>
   </div>
-  <!-- Scroll Arrow -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-    <button id="scrollArrow" class="block">
-      <svg class="w-10 h-10 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </button>
-  </div>
+
+  <!-- Scroll arrow removed (no animation) -->
 </section>
 
 <!-- Placeholder to maintain spacing -->
@@ -118,7 +121,7 @@
           <div class="bg-white p-6 rounded-xl shadow feature-card">
             <i data-feather="dollar-sign" class="w-10 h-10 text-indigo-600 mb-3"></i>
             <h3 class="font-semibold text-lg mb-1">Competitive Pay</h3>
-            <p>Earn industry-leading rates with transparent, fast payouts after each completed shift.</p>
+            <p>Earn industry‑leading rates with transparent, fast payouts after each completed shift.</p>
           </div>
           <div class="bg-white p-6 rounded-xl shadow feature-card">
             <i data-feather="heart" class="w-10 h-10 text-indigo-600 mb-3"></i>
@@ -127,72 +130,51 @@
           </div>
         </div>
       </div>
+
       <!-- Requirements -->
       <div>
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700">
-          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience with infusion and IV therapy</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience</li>
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>BLS Certification</li>
-          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>ACLS Certification</li>
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
         </ul>
         <div class="mt-8">
-          <img src="static/malenursecomputer.jpg" alt="Male nurse using computer" class="rounded-2xl shadow-lg w-full object-cover">
+          <img src="static/malenursecomputer.jpg" alt="Male nurse using computer"
+               class="rounded-2xl shadow-lg w-full object-cover">
         </div>
       </div>
     </div>
   </div>
-  <!-- Scroll Arrow -->
-  <div class="flex justify-center mt-12">
-    <a href="#cta" class="block">
-      <svg class="w-10 h-10 text-indigo-700 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </a>
-  </div>
-</section>
-
-  <!-- Steps -->
+<!-- Steps (arrows and all animations removed) -->
 <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-2 md:px-0">
   <!-- Step 1 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
     <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
     <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
   </div>
-  <!-- Arrow -->
-  <div class="flex md:flex-col justify-center items-center">
-    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
-    </svg>
-  </div>
+
   <!-- Step 2 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 feature-card text-white">
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
     <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
     <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
   </div>
-  <!-- Arrow -->
-  <div class="flex md:flex-col justify-center items-center">
-    <svg class="arrow-between w-12 h-12 text-gray-400 animate-bounce md:rotate-0 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4"></path>
-    </svg>
-  </div>
+
   <!-- Step 3 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 feature-card text-white">
+  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
     <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
     <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
     <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
   </div>
 </div>
 
-
 <!-- CTA -->
 <section id="cta" class="bg-indigo-50 py-16 text-center">
   <h2 class="text-3xl font-bold mb-6">Ready to start your flexible nursing career?</h2>
   <p class="text-lg mb-8">Join NorthPeak Care and take control of your schedule while making a real impact.</p>
-  <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow hover:opacity-90 transition">Apply Now</a>
+  <a href="nurseform.html" class="btn-primary px-8 py-4 rounded-lg shadow">Apply Now</a>
 </section>
 
 <!-- Footer -->
@@ -228,47 +210,4 @@
 
 <script>
   feather.replace();
-
-  const features = document.getElementById('features');
-  const featuresPlaceholder = document.getElementById('features-placeholder');
-  const scrollArrow = document.getElementById('scrollArrow');
-  let hasBeenRevealed = false;
-
-  function showFeatures() {
-    if (!hasBeenRevealed) {
-      featuresPlaceholder.classList.add('hidden');
-      features.classList.remove('features-hidden');
-      features.classList.add('features-visible');
-      hasBeenRevealed = true;
-      feather.replace(); // Re-render icons after display changes
-    }
-  }
-
-  // Click the arrow to reveal
-  scrollArrow.addEventListener('click', function() {
-    showFeatures();
-    setTimeout(function() {
-      const featuresTop = features.offsetTop - 80; // Account for fixed nav (80px)
-      window.scrollTo({ top: featuresTop, behavior: 'smooth' });
-    }, 100);
-  });
-
-  // Detect when user scrolls near the features section
-  let scrollTimeout;
-  window.addEventListener('scroll', function() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(function() {
-      const heroSection = document.querySelector('.hero-gradient');
-      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-      const scrollPosition = window.scrollY + window.innerHeight;
-      
-      // If user has scrolled past 80% of hero section
-      if (scrollPosition > heroBottom * 0.8) {
-        showFeatures();
-      }
-    }, 50);
-  });
 </script>
-
-</body>
-</html>
