@@ -14,31 +14,14 @@
   </url>
 
   <url>
-    <loc>https://www.northpeakcare.com/providers.html</loc>
-    <lastmod>2025-09-27</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
     <loc>https://www.northpeakcare.com/about.html</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://www.northpeakcare.com/faq.html</loc>
-    <lastmod>2025-09-27</lastmod>
-    <priority>0.7</priority>
-  </url>
 
   <url>
     <loc>https://www.northpeakcare.com/signin.html</loc>
-    <lastmod>2025-09-27</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.northpeakcare.com/signup.html</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
   </url>
