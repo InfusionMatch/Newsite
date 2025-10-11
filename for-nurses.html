@@ -98,8 +98,8 @@
            class="h-10 w-auto object-contain">
     </a>
     <div class="hidden sm:flex space-x-6 justify-center flex-1">
+        <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Pharmacies</a>
       <a href="for-nurses.html" class="nav-link text-indigo-600 font-semibold">Nurses</a>
-      <a href="for-providers.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Providers</a>
       <a href="about.html" class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
     </div>
     <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
@@ -117,11 +117,13 @@
         <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
           Join NorthPeak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
-          <a href="nurseform.html" class="btn-primary px-6 py-3 rounded-md text-base font-medium">
-            Sign Up Now!
-          </a>
-        </div>
+       <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+ <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+  <!-- Updated to scroll to the CTA section -->
+  <a href="#cta" class="btn-primary px-6 py-3 rounded-md text-base font-medium">
+    Sign Up Now!
+  </a>
+</div>
       </div>
       <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
         <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard"
@@ -245,7 +247,7 @@ function toggleFAQ(el) {
 
 
 <!-- CTA + Form wrapper -->
-<section id="cta-form-wrapper" class="bg-indigo-50 py-16">
+<section id="cta" class="bg-indigo-50 py-16">
   <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start gap-12">
     <!-- CTA (left side) -->
     <div class="lg:w-1/2 text-left">
@@ -254,7 +256,8 @@ function toggleFAQ(el) {
         Join NorthPeak Care and take control of your schedule while making a real impact.
       </p>
     </div>
-    </section> 
+  </div>
+</section>
 
     <!-- Nurse Form (right side) -->
     <main class="lg:w-1/2 pt-0 pb-0">
