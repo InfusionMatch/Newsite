@@ -55,45 +55,44 @@
 
     /* Keep icons, just hide arrows */
     .arrow-between { display: none; }
-  </style>
 
-   <!-- FAQ styling -->
-  <style>
-    /* Make the question look clickable */
+    /* ---- FAQ styling (Tailwind @apply works only in a build step;
+        here we write the equivalent utilities directly) ---- */
     .faq-card {
-      @apply bg-white rounded-lg shadow-md p-4 cursor-pointer transition-colors duration-200;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem;
+      cursor: pointer;
     }
-    .faq-card:hover {
-      @apply bg-gray-50;
-    }
+    .faq-card:hover { background: #f9fafb; }
 
     .faq-question {
-      @apply flex justify-between items-center text-lg font-medium text-gray-800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: #1f2937;
     }
 
     .faq-answer {
-      @apply overflow-hidden max-h-0 text-gray-600 mt-2 transition-[max-height] duration-300 ease-out;
+      overflow: hidden;
+      max-height: 0;
+      color: #4b5563;
+      margin-top: 0.5rem;
+      transition: max-height 0.3s ease-out;
     }
-    .faq-answer.open {
-      @apply max-h-screen; /* overridden by inline maxHeight in JS */
-    }
+    .faq-answer.open { max-height: 100vh; }
 
-    /* Feather icon rotation */
     .faq-icon i {
-      @apply transition-transform duration-300;
+      transition: transform 0.3s;
     }
-    .faq-icon i.rotate {
-      @apply rotate-180;
-    }
-     html {
-  scroll-behavior: smooth;
-}
+    .faq-icon i.rotate { transform: rotate(180deg); }
+
+    /* ---- Smooth scrolling ---- */
+    html { scroll-behavior: smooth; }
   </style>
-
-  html {
-  scroll-behavior: smooth;
-}
-
 </head>
 
 <body class="antialiased text-gray-800">
