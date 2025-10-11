@@ -4,30 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Peak Care | Smarter Staffing. Better Care.</title>
-  <meta name="description" content="NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services.">
+  <meta name="description"
+        content="NorthPeak Care connects healthcare providers with qualified nurses to deliver exceptional home health care services.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
+
+  <!-- Montserrat font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
+        rel="stylesheet">
 
-
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS (single import) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          // class name will be `font-montserrat`
-          montserrat: ['Montserrat', 'sans-serif'],
-          // optionally replace the default `sans` stack
-          sans: ['Montserrat', 'system-ui', 'sans-serif'],
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+          },
         },
       },
-    },
-  };
-</script>
-
+    };
+  </script>
 
   <!-- Animate.css & AOS (commented out – no animations) -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
@@ -37,7 +35,7 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Hero Gradient and button colors -->
+  <!-- Custom styles -->
   <style>
     .hero-gradient {
       background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
@@ -55,28 +53,27 @@
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
     }
-    nav {
-      height: 60px;
-    }
+    nav { height: 60px; }
   </style>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON‑LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "schema.org",
     "@type": "Organization",
     "name": "North Peak Care",
-    "url": "www.northpeakcare.com",
-    "logo": "www.northpeakcare.com/static/navagationlogotemp.png",
+    "url": "https://www.northpeakcare.com",
+    "logo": "https://www.northpeakcare.com/static/navagationlogotemp.png",
     "sameAs": [
-      "www.facebook.com/",
-      "www.twitter.com/",
-      "www.instagram.com/",
-      "www.linkedin.com/"
+      "https://www.facebook.com/",
+      "https://www.twitter.com/",
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/"
     ]
   }
   </script>
 </head>
+
 
 <body class="font-montserrat antialiased text-gray-800">
 
@@ -138,40 +135,58 @@
 </div>
 
 
-<!-- Features Section -->
+<!-- Features Section – North Peak Care's Advantages -->
 <div class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">North Peak Care's Advantages:</h2>
-      <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto"></p>
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        North Peak Care's Advantages:
+      </h2>
     </div>
+
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- 1️⃣ Expert Infusion Nurses -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
           <i data-feather="user"></i>
         </div>
-        <h3 class="mt-5 text-lg font-medium text-gray-900">Expert Infusion Nurses</h3>
-        <p class="mt-2 text-gray-500">Our nurses bring diverse expertise from ER, ICU and Infusion settings, with extensive experience in Ports, PICCs and PIVs.</p>
+        <h3 class="mt-2 text-lg font-medium text-gray-900">Expert Infusion Nurses</h3>
+        <p class="mt-2 text-gray-500">
+          Our nurses bring diverse expertise from ER, ICU and infusion settings, with extensive experience in ports, PICCs and PIVs.
+        </p>
       </div>
 
+      <!-- 2️⃣ More Patients, More Efficiency -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
           <i data-feather="check-circle"></i>
         </div>
-        <h3 class="mt-5 text-lg font-medium text-gray-900">More Patients, More Efficiency</h3>
-        <p class="mt-2 text-gray-500">Partnering with NorthPeak Care enables pharmacies to expand their capacity, serve more patients, and maximize efficiency; without compromising outcomes. Streamlining staffing and ensuring reliable, high-quality care.</p>
+        <h3 class="mt-2 text-lg font-medium text-gray-900">More Patients, More Efficiency</h3>
+        <p class="mt-2 text-gray-500">
+          Partnering with NorthPeak Care enables pharmacies to expand capacity, serve more patients, and maximize efficiency without compromising outcomes.
+        </p>
       </div>
 
+      <!-- 3️⃣ Seamless Patient Care -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
           <i data-feather="heart"></i>
         </div>
-        <h3 class="mt-5 text-lg font-medium text-gray-900">Seamless Patient Care</h3>
-        <p class="mt-2 text-gray-500">From standard therapies to complex biologics, our nurses are equipped to deliver safe, precise and compassionate care in the home.</p>
+        <h3 class="mt-2 text-lg font-medium text-gray-900">Seamless Patient Care</h3>
+        <p class="mt-2 text-gray-500">
+          From standard therapies to complex biologics, our nurses are equipped to deliver safe, precise, and compassionate care in the home.
+        </p>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Make sure Feather icons are initialized (already in your <head>) -->
+<script>
+  // This runs after the page loads and replaces each <i data-feather> with the SVG icon.
+  feather.replace();
+</script>
+
 
 <!-- CTA Section -->
 <div class="py-16 px-4 sm:py-20 sm:px-6 lg:px-8 text-center" style="background-color:#2b3990;">
