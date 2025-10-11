@@ -187,68 +187,92 @@
     <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
       Frequently Asked Questions – For Nurses
     </h2>
+
     <div class="grid gap-6 md:grid-cols-2">
-      <!-- FAQ Card Template -->
-      <div class="faq-card" onclick="toggleFAQ(this)">
-        <div class="faq-question">
+      <!-- ---------- FAQ CARD TEMPLATE ---------- -->
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
+           onclick="toggleFAQ(this)">
+        <div class="flex justify-between items-center text-lg font-medium text-gray-800">
           Is there a minimum or maximum number of shifts that I need to pick up?
-          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+          <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
-        <div class="faq-answer">No! You can pick up as many or as few shifts as you want. Just keep your compliance documents up‑to‑date.</div>
+        <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
+          No! You can pick up as many or as few shifts as you want. Just keep your compliance documents up‑to‑date.
+        </div>
       </div>
 
-      <div class="faq-card" onclick="toggleFAQ(this)">
-        <div class="faq-question">
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
+           onclick="toggleFAQ(this)">
+        <div class="flex justify-between items-center text-lg font-medium text-gray-800">
           Why do I need liability insurance?
-          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+          <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
-        <div class="faq-answer">As an independent contractor you must carry your own liability coverage. It’s inexpensive—often under $150 per year—and protects both you and the client.</div>
+        <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
+          As an independent contractor you must carry your own liability coverage. It’s inexpensive—often under $150 per year—and protects both you and the client.
+        </div>
       </div>
 
-      <div class="faq-card" onclick="toggleFAQ(this)">
-        <div class="faq-question">
+      <!-- repeat the same structure for the remaining questions -->
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
+           onclick="toggleFAQ(this)">
+        <div class="flex justify-between items-center text-lg font-medium text-gray-800">
           Do I need my own equipment?
-          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+          <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
-        <div class="faq-answer">Yes. You’ll need a blood‑pressure cuff, pulse‑oximeter (SpO₂), and any PPE the client requires.</div>
+        <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
+          Yes. You’ll need a blood‑pressure cuff, pulse‑oximeter (SpO₂), and any PPE the client requires.
+        </div>
       </div>
 
-      <div class="faq-card" onclick="toggleFAQ(this)">
-        <div class="faq-question">
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
+           onclick="toggleFAQ(this)">
+        <div class="flex justify-between items-center text-lg font-medium text-gray-800">
           Do you pay for mileage or travel time?
-          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+          <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
-        <div class="faq-answer">We only reimburse the hours you work at the client’s location. Mileage and travel time are not paid, though you may claim them as tax‑deductible expenses.</div>
+        <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
+          We only reimburse the hours you work at the client’s location. Mileage and travel time are not paid, though you may claim them as tax‑deductible expenses.
+        </div>
       </div>
 
-      <div class="faq-card" onclick="toggleFAQ(this)">
-        <div class="faq-question">
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
+           onclick="toggleFAQ(this)">
+        <div class="flex justify-between items-center text-lg font-medium text-gray-800">
           What does it mean to be a private contractor in terms of pay?
-          <span class="faq-icon"><i data-feather="chevron-down"></i></span>
+          <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
-        <div class="faq-answer">As a contractor you receive the full hourly rate and are responsible for your own income taxes. If you earn more than $600 in a year, you’ll receive a 1099‑MISC.</div>
+        <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
+          As a contractor you receive the full hourly rate and are responsible for your own income taxes. If you earn more than $600 in a year, you’ll receive a 1099‑MISC.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ---------- FAQ SCRIPT (place after feather.replace()) ---------- -->
 <script>
-function toggleFAQ(el) {
-  const answer = el.querySelector('.faq-answer');
-  const icon   = el.querySelector('.faq-icon i');
-  const open   = answer.classList.toggle('open');
+  // Ensure Feather icons are rendered first
+  feather.replace();
 
-  if (open) {
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-    icon.classList.add('rotate');
-  } else {
-    answer.style.maxHeight = null;
-    icon.classList.remove('rotate');
+  function toggleFAQ(card) {
+    const answer = card.querySelector('div.mt-2');
+    const icon   = card.querySelector('.faq-icon i, .text-gray-500 i');
+
+    // Toggle the max‑height class
+    const isOpen = answer.classList.toggle('max-h-0');
+    // When we remove max‑h‑0 we need to set a concrete max‑height for the transition
+    if (!isOpen) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = null;
+    }
+
+    // Rotate the chevron
+    if (icon) {
+      icon.classList.toggle('rotate-180');
+    }
   }
-}
 </script>
-
-
 <!-- CTA + Form wrapper -->
 <section id="cta" class="bg-indigo-50 py-16">
   <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start gap-12">
