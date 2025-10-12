@@ -98,7 +98,6 @@
 <body class="antialiased text-gray-800">
 
 <!-- Navigation -->
-<!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
@@ -163,27 +162,27 @@
   });
 </script>
 
-
 <!-- ==================== Hero Section ==================== -->
 <section class="hero-gradient pt-24 pb-16 text-white relative text-center lg:text-left overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-      <div class="lg:col-span-6">
+      <!-- Text on the left -->
+      <div class="lg:col-span-6 order-2 lg:order-1">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
           Take Control of Your Work‑Life Balance
         </h1>
         <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
           Join NorthPeak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
         </p>
-       <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
- <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center">
-  <!-- Updated to scroll to the CTA section -->
-  <a href="#cta" class="btn-primary px-6 py-3 rounded-md text-base font-medium">
-    Sign Up Now!
-  </a>
-</div>
+        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center lg:justify-start">
+          <a href="#cta" class="btn-primary px-6 py-3 rounded-md text-base font-medium">
+            Sign Up Now!
+          </a>
+        </div>
       </div>
-      <div class="lg:col-span-6 mt-10 lg:mt-0 flex justify-center">
+      
+      <!-- Image on the right -->
+      <div class="lg:col-span-6 order-1 lg:order-2 mt-10 lg:mt-0 flex justify-center">
         <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard"
              class="rounded-lg shadow-lg w-full max-w-md">
       </div>
@@ -194,10 +193,10 @@
 <!-- ==================== Features / Requirements ==================== -->
 <section id="features" class="py-12 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12">
-      <div>
+    <div class="flex justify-center">
+      <div class="text-center max-w-2xl">
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Requirements for Nurses</h2>
-        <ul class="space-y-4 text-lg text-gray-700">
+        <ul class="space-y-4 text-lg text-gray-700 text-left inline-block">
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience</li>
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>BLS Certification</li>
           <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
@@ -208,27 +207,33 @@
 </section>
 
 <!-- ==================== Steps ==================== -->
-  <h2 class="text-3xl font-bold text-center mb-8">Steps to Join</h2>
-<div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 px-2 md:px-0">
-  <!-- Step 1 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
-    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
-    <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
-    <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-8">Steps to Join</h2>
+    <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-4">
+      <!-- Step 1 -->
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
+        <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
+        <p class="text-center">Meet with the NorthPeak Care team to discuss your experience and goals.</p>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
+        <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
+        <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
+        <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
+        <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
+      </div>
+    </div>
   </div>
-  <!-- Step 2 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white">
-    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
-    <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
-    <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
-  </div>
-  <!-- Step 3 -->
-  <div class="flex flex-col items-center md:w-64 bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
-    <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
-    <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
-    <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
-  </div>
-</div>
+</section>
 
 <!-- ==================== FAQ ==================== -->
 <section class="bg-gray-50 py-16">
@@ -257,7 +262,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          As an independent contractor you must carry your own liability coverage. It’s inexpensive, often under $150 per year, and protects both you and the client.
+          As an independent contractor you must carry your own liability coverage. It's inexpensive, often under $150 per year, and protects both you and the client.
         </div>
       </div>
 
@@ -269,7 +274,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          Yes. You’ll need a blood‑pressure cuff, pulse‑oximeter (SpO₂), and any PPE the client requires.
+          Yes. You'll need a blood‑pressure cuff, pulse‑oximeter (SpO₂), and any PPE the client requires.
         </div>
       </div>
 
@@ -280,7 +285,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          We only reimburse the hours you work at the client’s location. Mileage and travel time are not paid, though you may be able to claim them as tax‑deductible expenses. Ask your tax professional! 
+          We only reimburse the hours you work at the client's location. Mileage and travel time are not paid, though you may be able to claim them as tax‑deductible expenses. Ask your tax professional! 
         </div>
       </div>
 
@@ -291,7 +296,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          As a contractor you receive the full hourly rate and are responsible for your own income taxes. You are also responsbale for any expenses related to your work with us. If you earn more than $600 in a year, you’ll receive a 1099 from us.
+          As a contractor you receive the full hourly rate and are responsible for your own income taxes. You are also responsbale for any expenses related to your work with us. If you earn more than $600 in a year, you'll receive a 1099 from us.
         </div>
       </div>
     </div>
@@ -322,26 +327,26 @@
     }
   }
 </script>
-<!-- CTA + Form wrapper -->
-<section id="cta" class="bg-indigo-50 py-16">
-  <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start gap-12">
-    <!-- CTA (left side) -->
-    <div class="lg:w-1/2 text-left">
-      <h2 class="text-3xl font-bold mb-6">Ready to start picking up flexable shifts?</h2>
-      <p class="text-lg mb-8">
-        Join NorthPeak Care and take control of your schedule while making a real impact.
-      </p>
-    </div>
-  </div>
-</section>
 
-    <!-- Nurse Form (right side) -->
-    <main class="lg:w-1/2 pt-0 pb-0">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
-          <h1 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+<!-- ==================== CTA + Form Section ==================== -->
+<section id="cta" class="bg-indigo-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-start gap-12">
+      
+      <!-- CTA Text (left side) -->
+      <div class="lg:w-1/2 text-left">
+        <h2 class="text-3xl font-bold mb-6">Ready to start picking up flexible shifts?</h2>
+        <p class="text-lg mb-8">
+          Join NorthPeak Care and take control of your schedule while making a real impact.
+        </p>
+      </div>
+
+      <!-- Nurse Form (right side) -->
+      <div class="lg:w-1/2">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4 text-center">
             Nurse Application
-          </h1>
+          </h3>
           <p class="text-gray-600 mb-6 text-center">
             Complete the form below to apply and join NorthPeak Care.
           </p>
@@ -376,82 +381,81 @@
           </div>
 
           <!-- Formspree form -->
-<form id="nurse-form"
-      action="https://formspree.io/f/xnngpngj"
-      method="POST"
-      class="space-y-4"
-      novalidate>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label for="first_name"
-             class="block text-sm font-medium text-gray-700">
-        First name <span class="text-red-500">*</span>
-      </label>
-      <input id="first_name" name="first_name" required type="text"
-             autocomplete="given-name"
-             class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-    </div>
-    <div>
-      <label for="last_name"
-             class="block text-sm font-medium text-gray-700">
-        Last name <span class="text-red-500">*</span>
-      </label>
-      <input id="last_name" name="last_name" required type="text"
-             autocomplete="family-name"
-             class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-    </div>
-  </div>
+          <form id="nurse-form"
+                action="https://formspree.io/f/xnngpngj"
+                method="POST"
+                class="space-y-4"
+                novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="first_name"
+                       class="block text-sm font-medium text-gray-700">
+                  First name <span class="text-red-500">*</span>
+                </label>
+                <input id="first_name" name="first_name" required type="text"
+                       autocomplete="given-name"
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+              <div>
+                <label for="last_name"
+                       class="block text-sm font-medium text-gray-700">
+                  Last name <span class="text-red-500">*</span>
+                </label>
+                <input id="last_name" name="last_name" required type="text"
+                       autocomplete="family-name"
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+            </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label for="email"
-             class="block text-sm font-medium text-gray-700">
-        Email <span class="text-red-500">*</span>
-      </label>
-      <input id="email" name="email" required type="email"
-             autocomplete="email"
-             class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-    </div>
-    <div>
-      <label for="phone"
-             class="block text-sm font-medium text-gray-700">
-        Phone <span class="text-red-500">*</span>
-      </label>
-      <input id="phone" name="phone" required type="tel"
-             autocomplete="tel"
-             class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-    </div>
-  </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="email"
+                       class="block text-sm font-medium text-gray-700">
+                  Email <span class="text-red-500">*</span>
+                </label>
+                <input id="email" name="email" required type="email"
+                       autocomplete="email"
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+              <div>
+                <label for="phone"
+                       class="block text-sm font-medium text-gray-700">
+                  Phone <span class="text-red-500">*</span>
+                </label>
+                <input id="phone" name="phone" required type="tel"
+                       autocomplete="tel"
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+            </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label for="zip"
-             class="block text-sm font-medium text-gray-700">
-        Zip Code <span class="text-red-500">*</span>
-      </label>
-      <input id="zip" name="zip" required type="text"
-             class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-    </div>
-  </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="zip"
+                       class="block text-sm font-medium text-gray-700">
+                  Zip Code <span class="text-red-500">*</span>
+                </label>
+                <input id="zip" name="zip" required type="text"
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+            </div>
 
-  <div class="flex items-center justify-between gap-4">
-    <button id="submit-btn" type="submit"
-            class="btn-primary px-6 py-2 rounded-md font-medium">
-      Submit
-    </button>
-    <button type="reset"
-            class="px-4 py-2 rounded-md border border-gray-300 text-sm">
-      Reset
-    </button>
-  </div>
-</form>
-
+            <div class="flex items-center justify-between gap-4">
+              <button id="submit-btn" type="submit"
+                      class="btn-primary px-6 py-2 rounded-md font-medium">
+                Submit
+              </button>
+              <button type="reset"
+                      class="px-4 py-2 rounded-md border border-gray-300 text-sm">
+                Reset
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </main>
+      
+    </div>
   </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="bg-gray-800">
@@ -482,5 +486,5 @@
   feather.replace();
 </script>
 
-  </body>
+</body>
 </html>
