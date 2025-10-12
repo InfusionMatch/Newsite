@@ -12,6 +12,9 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
   <style>
     body { font-family: 'Montserrat', sans-serif; }
     nav { height: 64px; z-index: 20; }
@@ -21,8 +24,6 @@
   </style>
 </head>
 <body class="font-sans text-gray-800">
-
-
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
@@ -89,16 +90,26 @@
   });
 </script>
 
-
-<!-- Hero Section (image removed) -->
-<section class="hero-gradient pt-24 pb-32 text-white text-center overflow-hidden">
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-16 text-white relative text-center lg:text-left overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-      About NorthPeak Care
-    </h1>
-    <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto">
-      NorthPeak Care is dedicated to providing trusted healthcare services with smarter staffing solutions. Learn about our mission, values, and team.
-    </p>
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+      <!-- Text on the left -->
+      <div class="lg:col-span-6 order-2 lg:order-1">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+          About NorthPeak Care
+        </h1>
+        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
+          NorthPeak Care is dedicated to providing trusted healthcare services with smarter staffing solutions. Learn about our mission, values, and team.
+        </p>
+      </div>
+      
+      <!-- Logo on the right -->
+      <div class="lg:col-span-6 order-1 lg:order-2 mt-10 lg:mt-0 flex justify-center">
+        <img src="static/indexlogo.png" alt="NorthPeak Care Logo"
+             class="w-full max-w-md">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -111,21 +122,21 @@
       </h2>
       <p class="mt-4 text-lg text-gray-500">
         NorthPeak Care was founded by two flight nurses who envisioned a better future for healthcare. 
-        They recognized a critical gap in home care services that often lead to unnecessary hospital visits, 
-        causing increased costs, delayed treatment and increased risk to patients. 
+        They recognized a critical gap in home care services that often leads to unnecessary hospital visits, 
+        causing increased costs, delayed treatment, and increased risk to patients. 
         We seek to enhance patient outcomes and improve lives by improving home healthcare staffing.
       </p>
       <p class="mt-4 text-lg text-gray-500">
         NorthPeak Care was formed with the idea of streamlining the process and leveraging
-        technology, to ensure patients receive timely and high‑quality care. Reducing costs to
+        technology to ensure patients receive timely and high‑quality care. Reducing costs to
         both the patient and the healthcare system while maintaining quality of care.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Team Section -->
-<section class="py-16 bg-gray-50">
+<!-- Team Section with Indigo Background -->
+<section class="py-16 bg-indigo-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
       <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">The people behind NorthPeak Care</p>
@@ -136,7 +147,7 @@
         <h3 class="mt-4 text-xl font-semibold text-gray-900">Samuel Canales, BSN, RN</h3>
         <p class="text-indigo-600">Co-Founder</p>
         <p class="mt-2 text-gray-500">
-          With 12 years of nursing experience including time in flight, emergency and home infusion care, Sam has worked in settings ranging from rural communities to major urban centers and overseas.
+          With 12 years of nursing experience, including time in flight, emergency, and home infusion care, Sam has worked in settings ranging from rural communities to major urban centers and overseas.
         </p>
       </div>
       <div class="text-center">
@@ -144,7 +155,7 @@
         <h3 class="mt-4 text-xl font-semibold text-gray-900">Jonah Pregulman, MSN, RN</h3>
         <p class="text-indigo-600">Co-Founder</p>
         <p class="mt-2 text-gray-500">
-          Jonah brings almost 10 years of nursing experience, including Emergency, Informatics and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare.
+          Jonah brings almost 10 years of nursing experience, including Emergency, Informatics, and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare.
         </p>
       </div>
     </div>
@@ -175,6 +186,10 @@
     </div>
   </div>
 </footer>
+
+<script>
+  feather.replace();
+</script>
 
 </body>
 </html>
