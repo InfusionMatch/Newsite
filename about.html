@@ -123,10 +123,10 @@
 <!-- Hero Section - Our Founders -->
 <section class="pt-24 pb-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       
-      <!-- Left Side - Header and Description -->
-      <div class="flex flex-col justify-center mb-12 lg:mb-0">
+      <!-- Left Side - Header and Description (takes 4 columns) -->
+      <div class="lg:col-span-4 flex flex-col justify-start mb-12 lg:mb-0">
         <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
           Our Founders
         </h1>
@@ -135,17 +135,17 @@
         </p>
       </div>
 
-      <!-- Right Side - Founders -->
-      <div class="space-y-8">
+      <!-- Right Side - Founders Side by Side (takes 8 columns) -->
+      <div class="lg:col-span-8 grid md:grid-cols-2 gap-6">
         
         <!-- Samuel Canales -->
         <div class="bg-white">
           <h3 class="text-xl font-semibold text-gray-900 mb-4">Samuel Canales, BSN, RN</h3>
           <img src="static/photosam.png" 
                alt="Samuel Canales"
-               class="w-full max-w-sm rounded-lg shadow-md mb-4 object-cover"
-               style="height: 300px;">
-          <p class="text-gray-700 leading-relaxed">
+               class="w-full rounded-lg shadow-md mb-4 object-cover"
+               style="height: 250px;">
+          <p class="text-gray-700 leading-relaxed text-sm">
             With 12 years of nursing experience, including time in flight, emergency, and home infusion care. I've worked in settings ranging from rural communities to major urban centers and overseas. Throughout my career, I've seen both the strengths and shortcomings of our healthcare system. I believe one of the greatest opportunities for improvement lies in the delivering quality care at home; reducing hospital visits and helping patient achieve the best possible outcomes in the comfort of their homes.
           </p>
         </div>
@@ -155,7 +155,66 @@
           <h3 class="text-xl font-semibold text-gray-900 mb-4">Jonah Pregulman, MSN, RN</h3>
           <img src="static/photojonah.png" 
                alt="Jonah Pregulman"
-               class="w-full max-w-sm rounded-lg shadow-md mb-4 object-cover"
-               style="height: 300px;">
-          <p class="text-gray-700 leading-relaxed">
-            Jonah brings almost 10 years of nursing experience, including Emergency, Informatics, and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare. He is passionate in using technology to speed care and decrease frustration in a system that often adds needless steps
+               class="w-full rounded-lg shadow-md mb-4 object-cover"
+               style="height: 250px;">
+          <p class="text-gray-700 leading-relaxed text-sm">
+            Jonah brings almost 10 years of nursing experience, including Emergency, Informatics, and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare. He is passionate in using technology to speed care and decrease frustration in a system that often adds needless steps and complexity.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">
+      Our Story
+    </h2>
+    <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Add your company story content here. This is where you can share the journey of how North Peak Care came to be, the challenges you've overcome, and your vision for the future of home infusion care.
+      </p>
+      <p>
+        Include details about what inspired the founders to start this company, key milestones, and what makes North Peak Care unique in the healthcare staffing industry.
+      </p>
+      <p>
+        Share your commitment to quality care, innovation, and the difference you're making in patients' lives through better staffing solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
+          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col md:items-end">
+        <div class="flex space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  feather.replace();
+</script>
+
+</body>
+</html>
