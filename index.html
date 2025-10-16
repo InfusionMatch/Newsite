@@ -27,11 +27,6 @@
     };
   </script>
 
-  <!-- Animate.css & AOS (commented out – no animations) -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
-
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
@@ -41,7 +36,7 @@
       background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aaee 100%);
     }
     .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      background: #262262;
       color: white;
       transition: all 0.3s ease;
     }
@@ -148,19 +143,13 @@
   });
 </script>
 
-
-    <!-- Sign In Button -->
-    <a href="comingsoon.html" class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
-  </div>
-</nav>
-
 <!-- Hero Section -->
 <div class="hero-gradient pt-24 pb-28 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       <!-- Text column -->
       <div class="lg:col-span-6 flex flex-col justify-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold 600">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
           Home Infusion Nurses, Ready When You Are
         </h1>
         <p class="mt-4 text-lg sm:text-xl text-indigo-100 max-w-xl">
@@ -195,7 +184,7 @@
 <div class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
-      <h2 class="text-3xl font-semibold 600 text-gray-900 sm:text-4xl">
+      <h2 class="text-3xl font-semibold text-gray-900 sm:text-4xl">
         What We Offer:
       </h2>
     </div>
@@ -203,7 +192,7 @@
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <!-- 1️⃣ Expert Infusion Nurses -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md text-white mb-4" style="background-color: #2b3990;">
           <i data-feather="user"></i>
         </div>
         <h3 class="mt-2 text-lg font-medium text-gray-900">Expert Infusion Nurses</h3>
@@ -214,7 +203,7 @@
 
       <!-- 2️⃣ More Patients, More Efficiency -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md text-white mb-4" style="background-color: #2b3990;">
           <i data-feather="check-circle"></i>
         </div>
         <h3 class="mt-2 text-lg font-medium text-gray-900">More Patients, More Efficiency</h3>
@@ -225,7 +214,7 @@
 
       <!-- 3️⃣ Seamless Patient Care -->
       <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
-        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
+        <div class="flex items-center justify-center h-12 w-12 rounded-md text-white mb-4" style="background-color: #2b3990;">
           <i data-feather="heart"></i>
         </div>
         <h3 class="mt-2 text-lg font-medium text-gray-900">Seamless Patient Care</h3>
@@ -237,9 +226,8 @@
   </div>
 </div>
 
-<!-- Make sure Feather icons are initialized (already in your <head>) -->
+<!-- Make sure Feather icons are initialized -->
 <script>
-  // This runs after the page loads and replaces each <i data-feather> with the SVG icon.
   feather.replace();
 </script>
 
@@ -251,7 +239,6 @@
     <p class="mt-4 text-lg leading-6 text-indigo-200 max-w-3xl mx-auto">
       At North Peak Care, we're building more than a staffing platform; we're building the infrastructure for home infusion care's future. Our mission: empower pharmacies and clinicians to deliver life‑changing and cost‑effective therapies in patients' homes with confidence, efficiency and scale.
     </p>
-    <!-- Button removed -->
   </div>
 </div>
 
@@ -261,19 +248,17 @@
 <div class="py-16 bg-gray-50" id="contactus">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- Left Column – Image Placeholder -->
+      <!-- Left Column – Image -->
       <div class="flex items-center justify-center">
-        <!-- Remove rounded-lg and shadow-md to eliminate any background effects -->
         <img src="/static/newfoterlogo.png"
              alt="Logo"
              class="w-full max-w-md object-contain">
       </div>
 
-
       <!-- Right Column (Form) -->
       <div>
-          <!-- **New heading** -->
-  <h2 class="text-2xl font-bold mb-4 text-gray-900">Partner With Us</h2>
+        <h2 class="text-2xl font-bold mb-4 text-gray-900">Partner With Us</h2>
+        
         <!-- Success / Error messages -->
         <div id="form-success" class="hidden mb-6 rounded-lg bg-green-50 border border-green-200 p-4">
           <div class="flex items-start">
