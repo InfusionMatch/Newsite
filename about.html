@@ -3,27 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NorthPeak Care | About</title>
+  <title>North Peak Care | About Us</title>
+  <meta name="description"
+        content="Learn about North Peak Care's founders and mission to transform home infusion care.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
-  <!-- Google Font: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Open Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'open-sans': ['Open Sans', 'sans-serif'],
+            sans: ['Open Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+  <!-- Custom styles -->
   <style>
-    body { font-family: 'Montserrat', sans-serif; }
-    nav { height: 64px; z-index: 20; }
-    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
-    .btn-primary { background: linear-gradient(90deg, #262262 0%, #27aae1 100%); color: white; }
-    .nav-link { font-weight: 500; }
+    body {
+      font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+                   BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                   Arial, "Noto Sans", sans-serif;
+    }
+
+    .btn-primary {
+      background: #262262;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
+    }
+
+    nav { height: 60px; }
+    
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
-<body class="font-sans text-gray-800">
+
+<body class="font-open-sans antialiased text-gray-800">
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
@@ -55,7 +88,6 @@
       <button id="mobile-menu-btn"
               class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               aria-label="Toggle navigation">
-        <!-- Icon (three bars) -->
         <svg class="h-6 w-6 text-gray-800" xmlns="http://www.w3.org/2000/svg"
              fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -66,7 +98,7 @@
     </div>
   </div>
 
-  <!-- Mobile dropdown – hidden by default -->
+  <!-- Mobile dropdown -->
   <div id="mobile-menu"
        class="hidden sm:hidden bg-white border-t border-gray-200">
     <div class="px-4 py-2 space-y-1">
@@ -81,118 +113,49 @@
 </nav>
 
 <script>
-  // Simple toggle for the mobile menu
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-
   btn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
   });
 </script>
 
-<!-- Hero Section -->
-<section class="hero-gradient pt-24 pb-16 text-white relative text-center lg:text-left overflow-hidden">
+<!-- Hero Section - Our Founders -->
+<section class="pt-24 pb-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-      <!-- Text on the left -->
-      <div class="lg:col-span-6 order-2 lg:order-1">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-          About NorthPeak Care
-        </h1>
-        <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
-          NorthPeak Care is dedicated to providing trusted healthcare services with smarter staffing solutions. Learn about our mission, values, and team.
-        </p>
-      </div>
+    <div class="lg:grid lg:grid-cols-2 lg:gap-12">
       
-         <!-- Logo on the right -->
-      <div class="lg:col-span-6 order-1 lg:order-2 mt-10 lg:mt-0 flex justify-center lg:justify-center lg:pl-12 items-center">
-        <img src="static/indexlogo.png" alt="NorthPeak Care Logo"
-             class="w-auto h-32 sm:h-40 lg:h-48 object-contain">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Our Story Section – Text‑only version -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-        Our Story
-      </h2>
-      <p class="mt-4 text-lg text-gray-500">
-        NorthPeak Care was founded by two flight nurses who envisioned a better future for healthcare. 
-        They recognized a critical gap in home care services that often leads to unnecessary hospital visits, 
-        causing increased costs, delayed treatment, and increased risk to patients. 
-        We seek to enhance patient outcomes and improve lives by improving home healthcare staffing.
-      </p>
-      <p class="mt-4 text-lg text-gray-500">
-        NorthPeak Care was formed with the idea of streamlining the process and leveraging
-        technology to ensure patients receive timely and high‑quality care. Reducing costs to
-        both the patient and the healthcare system while maintaining quality of care.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Team Section with Indigo Background -->
-<section class="py-16 bg-indigo-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:text-center">
-      <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">The people behind NorthPeak Care</p>
-    </div>
-    <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2">
-      <div class="text-center">
-        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="/static/sam.jpg" alt="Sam">
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">Samuel Canales, BSN, RN</h3>
-        <p class="text-indigo-600">Co-Founder</p>
-        <p class="mt-2 text-gray-500">
-          With 12 years of nursing experience, including time in flight, emergency, and home infusion care, Sam has worked in settings ranging from rural communities to major urban centers and overseas.
+      <!-- Left Side - Header and Description -->
+      <div class="flex flex-col justify-center mb-12 lg:mb-0">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          Our Founders
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          North Peak Care was started by two nurses who are dedicated to providing trusted healthcare services to enhance and expand in-home patient visits and care.
         </p>
       </div>
-      <div class="text-center">
-        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="static/photojonah.png" alt="Jonah">
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">Jonah Pregulman, MSN, RN</h3>
-        <p class="text-indigo-600">Co-Founder</p>
-        <p class="mt-2 text-gray-500">
-          Jonah brings almost 10 years of nursing experience, including Emergency, Informatics, and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer class="bg-gray-800">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
-        <ul class="mt-4 space-y-4">
-          <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
-          <li><a href="privacy.html" class="text-gray-300 hover:text-white">Privacy</a></li>
-          <li><a href="terms.html" class="text-gray-300 hover:text-white">Terms</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col md:items-end">
-        <div class="flex space-x-6 mb-4">
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+      <!-- Right Side - Founders -->
+      <div class="space-y-8">
+        
+        <!-- Samuel Canales -->
+        <div class="bg-white">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Samuel Canales, BSN, RN</h3>
+          <img src="static/photosam.png" 
+               alt="Samuel Canales"
+               class="w-full max-w-sm rounded-lg shadow-md mb-4 object-cover"
+               style="height: 300px;">
+          <p class="text-gray-700 leading-relaxed">
+            With 12 years of nursing experience, including time in flight, emergency, and home infusion care. I've worked in settings ranging from rural communities to major urban centers and overseas. Throughout my career, I've seen both the strengths and shortcomings of our healthcare system. I believe one of the greatest opportunities for improvement lies in the delivering quality care at home; reducing hospital visits and helping patient achieve the best possible outcomes in the comfort of their homes.
+          </p>
         </div>
-        <p class="text-gray-400 text-sm">&copy; 2025 NorthPeak Care, LLC. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
-<script>
-  feather.replace();
-</script>
-
-</body>
-</html>
+        <!-- Jonah Pregulman -->
+        <div class="bg-white">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Jonah Pregulman, MSN, RN</h3>
+          <img src="static/photojonah.png" 
+               alt="Jonah Pregulman"
+               class="w-full max-w-sm rounded-lg shadow-md mb-4 object-cover"
+               style="height: 300px;">
+          <p class="text-gray-700 leading-relaxed">
+            Jonah brings almost 10 years of nursing experience, including Emergency, Informatics, and Critical Care Transport. His interests include leveraging technology to improve outcomes and lowering the cost of healthcare. He is passionate in using technology to speed care and decrease frustration in a system that often adds needless steps
