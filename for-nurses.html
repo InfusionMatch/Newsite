@@ -8,12 +8,24 @@
         content="Join NorthPeak Care as a nurse and take control of your schedule. Flexible shifts, competitive pay, and meaningful impact.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
-  <!-- Google Font: Open Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+  <!-- Questrial font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
         rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'questrial': ['Questrial', 'sans-serif'],
+            sans: ['Questrial', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -21,7 +33,7 @@
   <style>
     /* ---- Font ---- */
     body {
-      font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+      font-family: "Questrial", ui-sans-serif, system-ui, -apple-system,
                    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
                    Arial, "Noto Sans", sans-serif;
     }
@@ -84,7 +96,7 @@
   </style>
 </head>
 
-<body class="antialiased text-gray-800">
+<body class="font-questrial antialiased text-gray-800">
 
 <!-- Navigation -->
 <nav class="bg-white shadow-sm fixed w-full z-10">
@@ -152,11 +164,12 @@
 </script>
 
 <!-- ==================== Hero Section ==================== -->
-<section class="pt-16 pb-0 text-white relative text-center lg:text-left overflow-hidden" style="background-color: #2b3990; margin-top: -1px;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center relative" style="min-height: 450px;">
-      <!-- Text on the left -->
-      <div class="lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center relative z-10">
+<section class="relative overflow-hidden" style="background-color: #2b3990; margin-top: 64px; height: 500px;">
+  <!-- Content Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative z-10">
+    <div class="h-full flex items-center">
+      <!-- Text on the left - takes up half the container -->
+      <div class="w-full lg:w-1/2 text-white text-center lg:text-left py-8">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
           Take Control of Your Work‑Life Balance
         </h1>
@@ -169,20 +182,17 @@
           </a>
         </div>
       </div>
-      
-      <!-- Image on the right - breaks out to screen edge -->
-      <div class="lg:col-span-6 order-1 lg:order-2 mt-0 lg:mt-0">
-        <div class="lg:absolute lg:right-0 lg:top-0 lg:bottom-0" style="width: 50vw;">
-          <img src="static/nursesmiling.jpg" alt="Nurse Smiling with Clipboard"
-               class="w-full h-full object-cover"
-               style="height: 450px; object-position: right;">
-        </div>
-      </div>
     </div>
   </div>
+  
+  <!-- Image - absolutely positioned to fill right side and extend to screen edge -->
+  <div class="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
+    <img src="static/nursesmiling.jpg" 
+         alt="Nurse Smiling with Clipboard"
+         class="w-full h-full object-cover object-right"
+         style="min-width: 110%; margin-left: -10%;">
+  </div>
 </section>
-
-
 
 <!-- ==================== Features / Requirements ==================== -->
 <section id="features" class="py-12 bg-gray-50">
@@ -228,7 +238,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- ==================== FAQ ==================== -->
 <section class="bg-gray-50 py-16">
