@@ -15,7 +15,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Feather Icons (kept) -->
+  <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
@@ -26,11 +26,8 @@
                    Arial, "Noto Sans", sans-serif;
     }
 
-    /* ---- Colors / Gradients ---- */
-    .hero-gradient { background: linear-gradient(135deg, #262262 0%, #2b3990 50%, #27aae1 100%); }
-
     .btn-primary {
-      background: linear-gradient(90deg, #262262 0%, #27aae1 100%);
+      background: #262262;
       color: white;
     }
 
@@ -49,15 +46,7 @@
 
     nav { height: 64px; }
 
-    /* Hide features section initially – no fade‑in */
-    .features-hidden { display: none; }
-    .features-visible { display: block; }
-
-    /* Keep icons, just hide arrows */
-    .arrow-between { display: none; }
-
-    /* ---- FAQ styling (Tailwind @apply works only in a build step;
-        here we write the equivalent utilities directly) ---- */
+    /* ---- FAQ styling ---- */
     .faq-card {
       background: white;
       border-radius: 0.5rem;
@@ -163,12 +152,12 @@
 </script>
 
 <!-- ==================== Hero Section ==================== -->
-<section class="hero-gradient pt-24 pb-16 text-white relative text-center lg:text-left overflow-hidden">
+<section class="pt-24 pb-16 text-white relative text-center lg:text-left overflow-hidden" style="background-color: #2b3990;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
       <!-- Text on the left -->
       <div class="lg:col-span-6 order-2 lg:order-1">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold 600">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
           Take Control of Your Work‑Life Balance
         </h1>
         <p class="mt-4 text-xl text-indigo-100 max-w-xl mx-auto lg:mx-0">
@@ -197,9 +186,9 @@
       <div class="text-center max-w-2xl">
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700 text-left inline-block">
-          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>2+ years of nursing experience</li>
-          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>BLS Certification</li>
-          <li class="flex items-start"><i data-feather="check-circle" class="text-indigo-500 mr-3 mt-1"></i>Independent Malpractice Insurance</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>2+ years of nursing experience</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>BLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>Independent Malpractice Insurance</li>
         </ul>
       </div>
     </div>
@@ -212,29 +201,30 @@
     <h2 class="text-3xl font-bold text-center mb-8">Steps to Join</h2>
     <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-4">
       <!-- Step 1 -->
-      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#262262] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#262262] font-bold text-xl">1</div>
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs rounded-2xl shadow-md p-8 text-white" style="background-color: #2b3990;">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white font-bold text-xl" style="color: #2b3990;">1</div>
         <h3 class="text-xl font-semibold mb-2 text-center">Interview</h3>
         <p class="text-center">Meet with the North Peak Care team to discuss your experience and goals.</p>
       </div>
       
       <!-- Step 2 -->
-      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#2b3990] to-[#1c75bc] rounded-2xl shadow-md p-8 text-white">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#2b3990] font-bold text-xl">2</div>
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs rounded-2xl shadow-md p-8 text-white" style="background-color: #2b3990;">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white font-bold text-xl" style="color: #2b3990;">2</div>
         <h3 class="text-xl font-semibold mb-2 text-center">Onboard</h3>
         <p class="text-center">Use our easy online platform to complete onboarding quickly and efficiently.</p>
       </div>
       
       <!-- Step 3 -->
-      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs bg-gradient-to-br from-[#0097b2] to-[#27aae1] rounded-2xl shadow-md p-8 text-white">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white text-[#0097b2] font-bold text-xl">3</div>
+      <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs rounded-2xl shadow-md p-8 text-white" style="background-color: #2b3990;">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-white font-bold text-xl" style="color: #2b3990;">3</div>
         <h3 class="text-xl font-semibold mb-2 text-center">Start Picking Shifts</h3>
         <p class="text-center">Work when and where you want by choosing shifts that fit your schedule.</p>
       </div>
     </div>
   </div>
 </section>
-      <!-- ==================== FAQ ==================== -->
+
+<!-- ==================== FAQ ==================== -->
 <section class="bg-gray-50 py-16">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
@@ -317,7 +307,7 @@
   </div>
 </section>
 
-<!-- ---------- FAQ SCRIPT (place after feather.replace()) ---------- -->
+<!-- ---------- FAQ SCRIPT ---------- -->
 <script>
   // Ensure Feather icons are rendered first
   feather.replace();
@@ -408,7 +398,7 @@
                 </label>
                 <input id="first_name" name="first_name" required type="text"
                        autocomplete="given-name"
-                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
               </div>
               <div>
                 <label for="last_name"
@@ -417,7 +407,7 @@
                 </label>
                 <input id="last_name" name="last_name" required type="text"
                        autocomplete="family-name"
-                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
               </div>
             </div>
 
@@ -429,7 +419,7 @@
                 </label>
                 <input id="email" name="email" required type="email"
                        autocomplete="email"
-                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
               </div>
               <div>
                 <label for="phone"
@@ -438,7 +428,7 @@
                 </label>
                 <input id="phone" name="phone" required type="tel"
                        autocomplete="tel"
-                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
               </div>
             </div>
 
@@ -449,7 +439,7 @@
                   Zip Code <span class="text-red-500">*</span>
                 </label>
                 <input id="zip" name="zip" required type="text"
-                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                       class="mt-1 block w-full rounded-md border-gray-400 bg-gray-50 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
               </div>
             </div>
 
