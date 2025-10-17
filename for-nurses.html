@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North Peak Care | About Us</title>
+  <title>North Peak Care | For Nurses</title>
   <meta name="description"
-        content="Learn about North Peak Care's founders and mission to transform home infusion care.">
+        content="Join NorthPeak Care as a nurse and take control of your schedule. Flexible shifts, competitive pay, and meaningful impact.">
   <link rel="icon" type="image/x-icon" href="static/faviconv4.ico?v=4">
 
-  <!-- Questrial font -->
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <!-- Questrial font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+        rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,8 +30,8 @@
   <!-- Feather Icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-  <!-- Custom styles -->
   <style>
+    /* ---- Font ---- */
     body {
       font-family: "Questrial", ui-sans-serif, system-ui, -apple-system,
                    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
@@ -38,18 +41,58 @@
     .btn-primary {
       background: #262262;
       color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3 rgba(38,34,98,0.3), 0 4px 6px -2 rgba(38,34,98,0.1);
     }
 
-    nav { height: 60px; }
-    
-    html {
-      scroll-behavior: smooth;
+    /* Remove all hover/transition animations */
+    .btn-primary,
+    .feature-card,
+    .feature-card:hover,
+    .arrow-between,
+    .animate-bounce,
+    .animate-pulse,
+    .transition,
+    .transform {
+      transition: none !important;
+      animation: none !important;
     }
+
+    nav { height: 64px; }
+
+    /* ---- FAQ styling ---- */
+    .faq-card {
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem;
+      cursor: pointer;
+    }
+    .faq-card:hover { background: #f9fafb; }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      color: #4b5563;
+      margin-top: 0.5rem;
+      transition: max-height 0.3s ease-out;
+    }
+    .faq-answer.open { max-height: 100vh; }
+
+    .faq-icon i {
+      transition: transform 0.3s;
+    }
+    .faq-icon i.rotate { transform: rotate(180deg); }
+
+    /* ---- Smooth scrolling ---- */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 
@@ -204,15 +247,15 @@
     </h2>
 
     <div class="grid gap-6 md:grid-cols-2">
-      <!-- 1. What does it mean to be a 1099 Independent Contractor? -->
+      <!-- 1. What does it mean to be a private contractor? -->
       <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:bg-gray-50"
            onclick="toggleFAQ(this)">
         <div class="flex justify-between items-center text-lg font-medium text-gray-800">
-          What does it mean to be an 1099 Independent Contractor?
+          What does it mean to be an independent contractor?
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          As an 1099 Independent Contractor, you are responsible for your own income taxes and liability insurance. Contact your local tax professional for more details.
+          As an independent contractor (1099), you are responsible for your own income taxes and liability insurance. Contact your local tax professional for more details.
         </div>
       </div>
 
@@ -224,7 +267,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          As a 1099 Independent Contractor, liability insurance is a standard practice in our industry, and helps protect you from legal and financial risks. 
+          As a 1099 contractor, liability insurance is a standard practice in our industry, and helps protect you from legal and financial risks. 
         </div>
       </div>
 
@@ -260,7 +303,7 @@
           <span class="text-gray-500"><i data-feather="chevron-down"></i></span>
         </div>
         <div class="mt-2 text-gray-600 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-out">
-          As a 1099 Independent Contractor, and in line with industry standards, mileage and travel time are not compensated. However, you may be able to claim them as tax‑deductible expenses. Consult with your tax professional for more information. 
+          As a 1099 private contractor, and in line with industry standards, mileage and travel time are not compensated. However, you may be able to claim them as tax‑deductible expenses. Consult with your tax professional for more information. 
         </div>
       </div>
 
