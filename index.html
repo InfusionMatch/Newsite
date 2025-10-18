@@ -144,25 +144,23 @@
 </script>
 
 <!-- Hero Section -->
-<div class="text-white bg-[#27aae1] -mt-px pt-16 sm:pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center min-h-[500px]">
-    <!-- Text column -->
-    <div class="lg:col-span-6 flex flex-col justify-center py-8">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
-        Home Infusion Nurses, Ready When You Are
-      </h1>
-      <p class="mt-4 text-lg sm:text-xl max-w-xl">
-        Connecting qualified nurses to your patients and streamlining your home healthcare services.
-      </p>
-    </div>
-  </div>
-</div>
-
-
+<section class="relative overflow-hidden" style="background-color: #27aae1; margin-top: 64px; height: 500px;">
+  <!-- Content Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
+    <div class="h-full flex items-center">
+      <!-- Text on the left - constrained to left half with higher z-index -->
+      <div class="w-full lg:w-1/2 text-white text-center lg:text-left py-8 relative z-20">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
+          Home Infusion Nurses, Ready When You Are
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0">
+          Connecting qualified nurses to your patients and streamlining your home healthcare services.
+        </p>
+        
         <!-- Buttons – both white -->
-        <div class="mt-6 flex space-x-4">
+        <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center lg:justify-start">
           <a href="#contactus"
-             class="bg-white text-indigo-700 hover:bg-gray-50 px-6 py-3 rounded-md text-base font-medium">
+             class="bg-white text-indigo-700 hover:bg-gray-50 px-6 py-3 rounded-md text-base font-medium mb-3 sm:mb-0">
             Pharmacies
           </a>
           <a href="for-nurses.html"
@@ -171,21 +169,16 @@
           </a>
         </div>
       </div>
-
-      <!-- Image column -->
-      <div class="lg:col-span-6 flex" style="margin-top: -64px; padding-top: 0;">
-        <img src="static/StartingIV.jpg"
-             alt="Nurse administering infusion"
-             class="w-full object-cover"
-             style="height: 564px;">
-      </div>
     </div>
   </div>
-</div>
-
-
-
-
+  
+  <!-- Image - absolutely positioned to fill right side and extend to screen edge -->
+  <div class="absolute top-0 right-0 h-full hidden lg:block z-10" style="width: 55%; left: 45%;">
+    <img src="static/StartingIV.jpg" 
+         alt="Nurse administering infusion"
+         class="w-full h-full object-cover object-right">
+  </div>
+</section>
 
 <!-- Features Section – North Peak Care's Advantages -->
 <div class="py-16 bg-gray-50">
