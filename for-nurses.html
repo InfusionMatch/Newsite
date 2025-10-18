@@ -94,30 +94,82 @@
     /* ---- Smooth scrolling ---- */
     html { scroll-behavior: smooth; }
   </style>
+</head>
 
-  <script>
-    // Ensure DOM is fully loaded and elements are available before adding event listeners
-    document.addEventListener('DOMContentLoaded', () => {
-      // Logo Home Button Enhancement
-      const logoLink = document.querySelector('nav a[href="index.html"]');
-      if (logoLink) {
-        logoLink.addEventListener('click', (e) => {
-          // Ensure the link works on all devices
-          window.location.href = 'index.html';
-        });
-      }
+<body class="font-questrial antialiased text-gray-800">
 
-      // Mobile Menu Toggle with Enhanced Error Handling
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.
+<!-- Navigation -->
+<nav class="bg-white shadow-sm fixed w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <img src="static/full_color_horizontal.png"
+           alt="NorthPeak Care Logo"
+           class="h-10 w-auto object-contain">
+    </a>
+
+    <!-- Nav Links (visible on sm+ screens) -->
+    <div class="hidden sm:flex space-x-6 flex-1 justify-center">
+      <a href="index.html"
+         class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Pharmacies</a>
+      <a href="for-nurses.html"
+         class="nav-link text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="about.html"
+         class="nav-link text-gray-800 hover:text-indigo-500 font-medium">About</a>
+    </div>
+
+    <!-- Right side: Sign‑In + Hamburger -->
+    <div class="flex items-center space-x-2">
+      <a href="comingsoon.html"
+         class="btn-primary px-4 py-2 rounded-md text-sm font-medium">Sign In</a>
+
+      <!-- Hamburger – hidden on sm+ -->
+      <button id="mobile-menu-btn"
+              class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              aria-label="Toggle navigation">
+        <!-- Icon (three bars) -->
+        <svg class="h-6 w-6 text-gray-800" xmlns="http://www.w3.org/2000/svg"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown – hidden by default -->
+  <div id="mobile-menu"
+       class="hidden sm:hidden bg-white border-t border-gray-200">
+    <div class="px-4 py-2 space-y-1">
+      <a href="index.html"
+         class="block text-gray-800 hover:text-indigo-500 font-medium">Pharmacies</a>
+      <a href="for-nurses.html"
+         class="block text-gray-800 hover:text-indigo-500 font-medium">Nurses</a>
+      <a href="about.html"
+         class="block text-gray-800 hover:text-indigo-500 font-medium">About</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Simple toggle for the mobile menu
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 
 <!-- ==================== Hero Section ==================== -->
-<section class="relative overflow-hidden bg-[#27aae1] mt-16 h-[500px]">
+<section class="relative overflow-hidden" style="background-color: #27aae1; padding-top: 64px; height: 564px;">
   <!-- Content Container -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
     <div class="h-full flex items-center">
-      <!-- Text on the left -->
-      <div class="w-full lg:w-1/2 text-white text-center lg:text-left py-8">
+      <!-- Text on the left - constrained to left half with higher z-index -->
+      <div class="w-full lg:w-5/12 text-white text-center lg:text-left py-8 relative z-20">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
           Take Control of Your Work‑Life Balance
         </h1>
@@ -125,23 +177,21 @@
           Join North Peak Care as a nurse and pick shifts that fit your schedule, earn competitive pay, and make a meaningful impact.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row sm:space-x-4 justify-center lg:justify-start">
-          <!-- Button with white text -->
           <a href="#cta"
-             class="bg-indigo-600 text-white px-6 py-3 rounded-md text-base font-medium hover:bg-indigo-500">
+             class="bg-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-50"
+             style="color: #27aae1;">
             Sign Up Now!
           </a>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-  <!-- Image - absolutely positioned to fill right side and extend to screen edge -->
-  <div class="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
+  
+  <!-- Image - absolutely positioned to fill right side from 50% to edge -->
+  <div class="absolute top-0 right-0 h-full hidden lg:block z-10" style="width: 50%; left: 50%;">
     <img src="static/nursesmiling.jpg" 
          alt="Nurse Smiling with Clipboard"
-         class="w-full h-full object-cover object-right"
-         style="min-width: 110%; margin-left: -10%;">
+         class="w-full h-full object-cover object-center">
   </div>
 </section>
 
@@ -152,9 +202,9 @@
       <div class="text-center max-w-2xl">
         <h2 class="text-3xl font-bold mb-8 text-gray-900">Requirements for Nurses</h2>
         <ul class="space-y-4 text-lg text-gray-700 text-left inline-block">
-          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>2+ years of nursing experience</li>
-          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>BLS Certification</li>
-          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #2b3990;"></i>Independent Malpractice Insurance</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #27aae1;"></i>2+ years of nursing experience</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #27aae1;"></i>BLS Certification</li>
+          <li class="flex items-start"><i data-feather="check-circle" class="mr-3 mt-1" style="color: #27aae1;"></i>Independent Malpractice Insurance</li>
         </ul>
       </div>
     </div>
@@ -162,9 +212,9 @@
 </section>
 
 <!-- ==================== Steps ==================== -->
-<section class="py-12" style="background-color: white;">
+<section class="py-12 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-center mb-8 text-white">Steps to Join</h2>
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Steps to Join</h2>
     <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-4">
       <!-- Step 1 -->
       <div class="flex flex-col items-center w-full md:w-1/3 md:max-w-xs rounded-2xl shadow-md p-8 text-white" style="background-color: #27aae1;">
