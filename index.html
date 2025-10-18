@@ -79,7 +79,7 @@
 
 
 <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
+<nav class="bg-white shadow-sm fixed w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
     <!-- Logo -->
@@ -144,12 +144,12 @@
 </script>
 
 <!-- Hero Section -->
-<section class="relative overflow-hidden" style="background-color: #27aae1; margin-top: 64px; height: 500px;">
+<section class="relative overflow-hidden" style="background-color: #27aae1; padding-top: 64px; height: 564px;">
   <!-- Content Container -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
     <div class="h-full flex items-center">
       <!-- Text on the left - constrained to left half with higher z-index -->
-      <div class="w-full lg:w-1/2 text-white text-center lg:text-left py-8 relative z-20">
+      <div class="w-full lg:w-5/12 text-white text-center lg:text-left py-8 relative z-20">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold">
           Home Infusion Nurses, Ready When You Are
         </h1>
@@ -172,13 +172,14 @@
     </div>
   </div>
   
-  <!-- Image - absolutely positioned to fill right side and extend to screen edge -->
-  <div class="absolute top-0 right-0 h-full hidden lg:block z-10" style="width: 55%; left: 45%;">
+  <!-- Image - absolutely positioned to fill right side from 50% to edge -->
+  <div class="absolute top-0 right-0 h-full hidden lg:block z-10" style="width: 50%; left: 50%;">
     <img src="static/StartingIV.jpg" 
          alt="Nurse administering infusion"
-         class="w-full h-full object-cover object-right">
+         class="w-full h-full object-cover object-center">
   </div>
 </section>
+
 
 <!-- Features Section – North Peak Care's Advantages -->
 <div class="py-16 bg-gray-50">
